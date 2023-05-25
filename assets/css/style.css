@@ -1,0 +1,61 @@
+/* Initiallizing the page */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+  background: url("../images/rc-bellergy-YOcRBATGa54-unsplash.jpg");
+}
+/* Css for the main container */
+.main-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+/* Css for the top container starts here */
+.top-container {
+  display: flex;
+  background-color: aliceblue;
+  margin: 20px 0;
+  justify-content: space-between;
+}
+/* Css for the top container ends here */
+
+/* Css for the center container starts her */
+.center-container {
+  display: flex;
+  justify-content: center;
+  background-color: aqua;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-top-container {
+  display: flex;
+  background-color: lightcoral;
+  gap: 10%;
+}
+
+.center-left {
+  background-color: lawngreen;
+}
+
+.center-center {
+  background-color: rgba(252, 76, 0, 0.816);
+}
+
+.center-right {
+  background-color: rgb(227, 252, 0);
+}
+/* Css for the central container ends here */
+
+/* Css for the bottom container starts here */
+.bottom-container {
+  display: flex;
+  background: lightsteelblue;
+  justify-content: space-between;
+}
