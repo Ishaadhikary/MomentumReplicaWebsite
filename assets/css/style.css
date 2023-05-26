@@ -106,7 +106,7 @@ body {
 
 
 .popUp .popup-text{
-  display: none;
+  visibility: hidden;
   position: absolute;
   width: max-content;
   height: max-content;
@@ -114,9 +114,11 @@ body {
   border-radius: 4px;
   padding: 1vh;
   color: black;
+ 
 }
 .popUp .show{
-  display: block;
+  visibility: visible;
+ 
 }
 
 .toggle-bar{
