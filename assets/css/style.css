@@ -99,18 +99,13 @@ body {
   align-self: center;
 }
 
-.popUp {
-  position:relative}
-
-.toggle-bar{
-  display: none;
-  background:lightgreen;
-  border:1px solid white;
-  width:10px;
-  height: 20px;
+.popUp{
+  cursor: pointer;
+  position: relative;
 }
 
-.popup-text{
+
+.popUp .popup-text{
   display: none;
   position: absolute;
   width: max-content;
@@ -120,8 +115,16 @@ body {
   padding: 1vh;
   color: black;
 }
+.popUp .show{
+  display: block;
+}
 
-.show{display: block;
+.toggle-bar{
+  display: none;
+  background:lightgreen;
+  border:1px solid white;
+  width:10px;
+  height: 20px;
 }
 
 .center-middle{
