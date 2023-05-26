@@ -156,14 +156,16 @@ li {
   position: absolute;
   bottom: 50px;
 }
-
+.bottom-center:hover{
+  opacity: 0.5;
+  translate: 0 -15px;
+  transition-duration: 2s;
+}
 /* Media Query */
 
-@media screen and (max-width: 480px) {
-  body {
-    /* color: lightgreen; */
-  }
+@media screen and (max-width: 480px) and(min-width:375px) {
+  
   .center-center {
-    font-size: 34px;
+    font-size: 45px;
   }
 }
