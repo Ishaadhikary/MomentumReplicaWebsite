@@ -10,6 +10,7 @@ updatetime() {
       const timeDisplay = document.createTextNode( currentHour + ":" + currentMin);
       let centerCenter = document.querySelector(".center-center");
       centerCenter.appendChild(timeDisplay);
+      console.log(timeDisplay)
     }
     break;
     case "12hr":
@@ -21,6 +22,7 @@ updatetime() {
         let centerCenter = document.querySelector(".center-center");
         console.log(timeDisplay)
         centerCenter.append(timeDisplay);
+        console.log(timeDisplay)
       }
       break;
   }
@@ -30,8 +32,8 @@ updatetime() {
 const time = new Displaytime()
 time.updatetime()
 // For toggle bar
-function toggleBox() {
-  const popUpElement = document.getElementById("popId");
+function popBox(popElementId) {
+  const popUpElement = document.getElementById(popElementId);
   console.log(popUpElement);
   popUpElement.classList.toggle("show");
 }

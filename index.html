@@ -38,7 +38,7 @@
               <img src="assets/images/change.svg" alt="Change time display" />
             </div>
             <div class="center-center"></div>
-            <div class="center-right popUp" onclick="toggleBox()">
+            <div class="center-right popUp" onclick="popBox('popId')">
               <img src="assets/images/more.svg" alt="Change the time layout" />
               <p class="popup-text" id="popId">24hr clock</p>
             </div>
@@ -51,10 +51,31 @@
       <!-- Section containg Bottom container -->
       <section>
         <div class="bottom-container">
-          <div class="bottom-left">
-            <p>Setting</p>
+          <div class="bottom-left popUp" onclick="popBox('settingId')">
+            <img
+              src="assets/images/settings.svg"
+              alt="Change the time layout"
+            />
+            <div class="popup-text" id="settingId">
+              <div class="settings">
+                <div class="settingTopic">
+                  <ul>
+                    <li>GENERAL</li>
+                    <li>Todo</li>
+                    <li>Balance</li>
+                    <li>Mode</li>
+                    <li>About</li>
+                  </ul>
+                </div>
+                <div class="settingContent">
+                  <ul>
+                    <li>Guess</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="bottom-center"><p>Quote</p></div>
+          <div class="bottom-center"></div>
           <div class="bottom-right">
             <p>TODO</p>
           </div>
@@ -65,5 +86,6 @@
     <script src="assets/js/constant.js"></script>
     <script src="assets/js/utility.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/quotes.js"></script>
   </body>
 </html>
