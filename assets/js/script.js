@@ -30,3 +30,11 @@ function time() {
 }
 
 time();
+toggleBox();
+function toggleBox(){
+const popUpElement = document.querySelector('.popup-text')
+console.log(popUpElement)
+popUpElement.classList.toggle('show');
+
+}
+
