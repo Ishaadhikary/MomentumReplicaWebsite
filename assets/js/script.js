@@ -3,11 +3,11 @@ class Displaytime{
   }
 
 updatetime() {
-  const timeView = prompt("12hr or 24hr")
   switch (timeView) {
 
     case "24hr": {
-      const timeDisplay = document.createTextNode( currentHour + ":" + currentMin);
+      const timeDisplay =documet.
+      timeDisplay = document.createTextNode( currentHour + ":" + currentMin);
       let centerCenter = document.querySelector(".center-center");
       centerCenter.appendChild(timeDisplay);
       console.log(timeDisplay)
@@ -32,8 +32,17 @@ updatetime() {
 const time = new Displaytime()
 time.updatetime()
 // For toggle bar
-function popBox(popElementId) {
+function popBox(popElementId,parentElementId) {
+  const parentElement = document.getElementById(parentElementId)
   const popUpElement = document.getElementById(popElementId);
-  console.log(popUpElement);
+  // console.log('child:'+ popUpElement);
   popUpElement.classList.toggle("show");
+  popUpElement.addEventListener("click",function(){
+    timeView ="12hr"
+    console.log(timeView)
+    time.updatetime()
+  })
+  // else console.log("hello")
 }
+  
+  
