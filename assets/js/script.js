@@ -40,11 +40,15 @@ function popBox(popElementId, parentElementId) {
     if(timeView==='24hr'){
     timeView = "12hr";
     console.log(timeView);
-    time.updatetime();}
+    time.updatetime();
+    popUpElement.innerHTML=""
+    popUpElement.textContent="24hr Clock";}
     else{
       timeView = "24hr";
     console.log(timeView);
     time.updatetime();
+    popUpElement.innerHTML=""
+    popUpElement.textContent="12hr Clock"
     }
   });
   // else console.log("hello")
