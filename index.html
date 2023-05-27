@@ -4,7 +4,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Momentum Website</title>
-    <link rel="shortcut icon" href="assets/images/tabIcon.svg" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="assets/images/tabIcon.svg"
+      type="image/x-icon"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/normalize.css" />
     <link
@@ -39,12 +43,24 @@
               <img src="assets/images/change.svg" alt="Change time display" />
             </div>
             <div class="center-center"></div>
-            <div class="center-right popUp"  id ="clockParentId" onclick="popBox('popId','clockParentId')">
+            <div
+              class="center-right popUp"
+              id="clockParentId"
+              onclick="TimerPopBox('popId')"
+            >
               <img src="assets/images/more.svg" alt="Change the time layout" />
               <p class="popup-text" id="popId">12hr Clock</p>
             </div>
           </div>
-          <div class="center-middle"><p>Message</p></div>
+          <div class="center-middle">
+            <span>Message</span
+            ><span
+              ><form id="userName">
+                <label for="name"
+                  ><input type="text" id="name" placeholder="Your Name?"
+                /></label></form
+            ></span>
+          </div>
           <div class="center-bottom"><p>Main Task</p></div>
         </div>
       </section>
@@ -52,7 +68,7 @@
       <!-- Section containg Bottom container -->
       <section>
         <div class="bottom-container">
-          <div class="bottom-left popUp" onclick="popBox('settingId')">
+          <div class="bottom-left popUp" onclick="TimerPopBox('settingId')">
             <img
               src="assets/images/settings.svg"
               alt="Change the time layout"
@@ -76,7 +92,10 @@
               </div>
             </div>
           </div>
-          <div class="bottom-center">"Give every day the chance to be the most beautiful day of your life."</div>
+          <div class="bottom-center">
+            "Give every day the chance to be the most beautiful day of your
+            life."
+          </div>
           <div class="bottom-right">
             <p>TODO</p>
           </div>
@@ -86,6 +105,7 @@
 
     <script src="assets/js/constant.js"></script>
     <script src="assets/js/utility.js"></script>
+    <script src="assets/js/message.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/quotes.js"></script>
   </body>
