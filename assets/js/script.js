@@ -1,9 +1,11 @@
-class Displaytime {
-  constructor() {}
-
-  updatetime() {
+updateTime()
+setInterval(updateTime, 1000);
+ function updateTime() {
     let centerCenter = document.querySelector(".center-center");
     centerCenter.innerHTML = "";
+    const [currentHour,currentMin, period] = getTime()
+
+
     switch (timeView) {
       case "24hr":
         {
@@ -25,10 +27,7 @@ class Displaytime {
         break;
     }
   }
-}
 
-const time = new Displaytime();
-time.updatetime();
 // For Time Toggle bar
 function TimerPopBox(popElementId) {
   const popUpElement = document.getElementById(popElementId);
@@ -39,13 +38,13 @@ function TimerPopBox(popElementId) {
       if (timeView === "24hr") {
         //To change the time to 12hr display
         timeView = "12hr";
-        time.updatetime();
+        updateTime();
         popUpElement.innerHTML = "";
         popUpElement.textContent = "24hr Clock";
       } else {
         //To change the time to 24 hr display
         timeView = "24hr";
-        time.updatetime();
+        updateTime();
         popUpElement.innerHTML = "";
         popUpElement.textContent = "12hr Clock";
       }

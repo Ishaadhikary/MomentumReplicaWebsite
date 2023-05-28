@@ -145,16 +145,17 @@ li {
 .center-middle input{
   background: none;
   border:0;
-  border-bottom: 2px solid white;
-  /* border-bottom-color: var(--primart-color); */
+  border-bottom-left-radius: 8px;
+  border-bottom: 3px solid white;
   outline: none;
   color:var(--primart-color);
-  width:250px;
+  width: 250px;
 }
 
 .center-bottom {
   font-family: "primary-font-n";
 }
+
 /* Css for the central container ends here */
 
 /* Css for the bottom container starts here */
