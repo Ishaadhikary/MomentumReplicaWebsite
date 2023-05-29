@@ -139,6 +139,8 @@ li {
 
 .center-middle {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   font-family: "primary-font-b";
   font-size: var(--h3font);
   cursor: pointer;
