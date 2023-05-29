@@ -150,6 +150,7 @@ li {
   outline: none;
   color:var(--primart-color);
   width: 250px;
+  margin-left: 5px;
 }
 
 .center-bottom {

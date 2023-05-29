@@ -4,7 +4,7 @@ let userName = document.getElementById("nameId");
 
 let greeging = " ";
 function message() {
-  const [currentHour]= getTime()
+  const [currentHour] = getTime();
   console.log(currentHour);
   //goodmorning:4am-12am
   if (currentHour >= 4 && currentHour <= 12) {
@@ -26,27 +26,28 @@ function message() {
     console.log("good Night");
     greeging = "GOOD NIGNT!";
   }
-  
+
   let storedUserName = localStorage.getItem("userName");
-  centerMiddle.textContent = greeging + " "+storedUserName+".";
-  userName.style.display='none'
+  centerMiddle.textContent = greeging + " " + storedUserName + ".";
+  userName.style.display = "none";
 }
 message();
-addUserInfo()
-function addUserInfo(){
-userName.addEventListener("keydown", function (e) {
-  if (e.key === "Enter" && userName.value != null) {
-    localStorage.setItem("userName", userName.value);
-    let storedUserName = localStorage.getItem("userName");
-    console.log(storedUserName);
-    centerMiddle.textContent = greeging + " "+ storedUserName+".";
-    userName.style.display='none'
-    
-    // centerMiddle.classList.toggle(userName)
-  }
-});}
-centerMiddle.addEventListener("click",function(){
-  centerMiddle.textContent = greeging
-  userName.style.display = 'block'
-  addUserInfo()
-})
+addUserInfo();
+function addUserInfo() {
+  userName.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && userName.value != null) {
+      localStorage.setItem("userName", userName.value);
+      let storedUserName = localStorage.getItem("userName");
+      console.log(storedUserName);
+      centerMiddle.textContent = greeging + " " + storedUserName + ".";
+      userName.style.display = "none";
+
+      // centerMiddle.classList.toggle(userName)
+    }
+  });
+}
+centerMiddle.addEventListener("click", function () {
+  centerMiddle.textContent = greeging;
+  userName.style.display = "block";
+  addUserInfo();
+});
