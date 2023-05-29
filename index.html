@@ -19,6 +19,7 @@
     />
   </head>
   <body>
+    <div class="main-box">
     <div class="main-container">
       <!-- Section containg top container -->
       <section>
@@ -54,9 +55,9 @@
           </div>
           <div class="center-middle">
             <span></span>
-            <input type="text" id="nameId" placeholder=" Your Name?" />
+            <div><input type="text" id="nameId" placeholder=" Your Name?" /><hr></div>
           </div>
-          <div class="center-bottom"><p>Main Task</p></div>
+          <div class="center-bottom"><div>What is your main focus for today</div><input type="checkbox" id="mainTaskCheckId"> <input type="text" id="mainTaskTextId" placeholder=" Main Task for Today" /><hr></div>
         </div>
       </section>
 
@@ -97,11 +98,13 @@
         </div>
       </section>
     </div>
+  </div>
 
     <script src="assets/js/constant.js"></script>
     <script src="assets/js/utility.js"></script>
     <script src="assets/js/message.js"></script>
-    <script src="assets/js/script.js"></script>
     <script src="assets/js/quotes.js"></script>
+    <script src="assets/js/mainTask.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
