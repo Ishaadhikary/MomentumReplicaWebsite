@@ -14,7 +14,6 @@ function updateQuotes(){
         quoteShowingId.addEventListener('mouseenter', e => { 
             quoteShowingId.append(auth)//adding the author to the page when the pointer is set on the quote
         })
-        console.log(authorShowing)
         quoteShowingId.addEventListener('mouseleave', e => {quoteShowingId.removeChild(auth)}) //removing the authors name when the pointer is removed    
 }
 
