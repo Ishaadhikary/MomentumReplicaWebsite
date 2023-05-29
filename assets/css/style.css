@@ -174,8 +174,38 @@ hr{
   text-align: center;
   font-family: var(--backup-font);
   font-size: var(--h3font);
-
+  position: relative;
 }
+
+.center-bottom input[type="checkbox"]{
+  
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+/* Customized checkbox */
+.mainTaskCheckBox{
+  position: absolute;
+  width:2.5vh;
+  height: 2.5vh;
+  bottom:5.5%;
+  left:20%;
+  background: none;
+  border-radius: 4px;
+  border: 2px solid var(--primart-color);
+}
+.mainTaskCheckBox:hover{
+  background-color: var(--secondary-color-l);
+}
+.center-bottom input:checked ~ .mainTaskCheckBox {
+  background:url('../images/charm_tick.svg') no-repeat  center;
+  background-position:contain;
+  
+}
+
+
+
+
 
 /* Css for the central container ends here */
 
