@@ -200,7 +200,7 @@ hr{
 .center-bottom input:checked ~ .mainTaskCheckBox {
   background:url('../images/charm_tick.svg') no-repeat  center;
   background-position:contain;
-  
+
 }
 
 
