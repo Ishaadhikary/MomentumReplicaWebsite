@@ -11,3 +11,6 @@ const authorList = ['Mark Twain','Maria Robinson','William C. Hannan','Elbert Hu
 let centerMiddle = document.querySelector(".center-middle span");
 let userName = document.getElementById("nameId");
 let greeging = " ";
+
+//MainTask completion message
+const MainTaskPopUpTxt = ["Great job!","Well done!","You did it!","Keep up the good work!","That’s amazing!","You’re a rockstar!","Keep it up!"]

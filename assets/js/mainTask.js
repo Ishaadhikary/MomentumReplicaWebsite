@@ -10,8 +10,9 @@ inputTask.addEventListener("click", function () {
 //Initial Main Task container
 function mainTask() {
   let storageMainTask = localStorage.getItem("mainTaskText");
-  [currentHour] = getTime()
-  if(currentHour===17){
+  [currentHour, currentMin] = getTime()
+  //To remove the main task after each day
+  if(currentHour===17 && currentMin==="08"){//This needs to be changed to 00:00
     localStorage.removeItem(mainTaskText)
   }
   if (storageMainTask!=null){
@@ -33,6 +34,10 @@ function addMainTaskInfo() {
   });
 }
 
-
 mainTask();
 addMainTaskInfo()
+
+//When the task is marked as done
+//Check box tick:
+  //subscript the inputTask
+  //Pop up good job
