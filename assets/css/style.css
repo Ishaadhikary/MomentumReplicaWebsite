@@ -43,6 +43,7 @@ img {
   --primart-color: #e8e5e5;
   --secondary-color-l: #e8e5e5;
   --secondary-color-dark:rgb(33, 33, 33);
+  --border-radius:8px;
 }
 body {
   backface-visibility: hidden;
@@ -72,6 +73,41 @@ li {
   display: flex;
   /* background-color: aliceblue; */
   justify-content: space-between;
+}
+
+.header-center{
+  position: relative;
+}
+
+.brainDumpContainer{
+  display:none;
+  flex-direction: column;
+  position: absolute;
+  top:5vh;
+  left: -12vw;
+  width: 25vw;
+  height: 10vh;
+  background: var(--secondary-color-l);
+  border-radius:var( --border-radius);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
+  color: var(--secondary-color-dark);
+}
+.brainDumpHeader{
+  background: red;
+  z-index: 2;
+  padding: 4px;
+  
+  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+}
+.brainDumpContainer input{
+  /* border: none; */
+  background: #ffffe3;
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  width:75%
+  
 }
 /* Css for the top container ends here */
 
@@ -161,7 +197,7 @@ li {
   margin-left: 5px;
 }
 hr {
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border: 1.5px solid;
   width: 100%;
   border-color: var(--primart-color);
@@ -249,7 +285,7 @@ hr {
 .bottom-right {
   position: relative;
 }
-.todoListContainer {
+.todoListContainer{
   display:none;
   position: absolute;
   bottom: 40px;
@@ -257,8 +293,8 @@ hr {
   width: 400px;
   height: fit-content;
   min-height: 300px;
-  background: var(--primart-color);
-  border-radius: 8px;
+  background: var(--secondary-color-l);
+  border-radius: var(--border-radius);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   z-index: 1;
   color: var(--secondary-color-dark);
@@ -268,8 +304,8 @@ hr {
   justify-content: space-between;
   background-color: rgb(27, 126, 27);
   height: 30px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
   color: var(--primart-color);
   align-items: center;
   padding-left:15px;

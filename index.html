@@ -28,7 +28,24 @@
               <p>Links</p>
             </div>
             <div class="header-center">
-              <img src="assets/images/bulbOff.svg" alt="BrainDump" id="bulb" onclick="bulb()">
+              <img
+                src="assets/images/bulbOff.svg"
+                alt="BrainDump"
+                id="bulb"
+                onclick="bulb()"
+              />
+              <div class="brainDumpContainer">
+                <div class="brainDumpHeader">BrainDump</div>
+                <div class="brainDumpbody">
+                  <div class="braindumpInput">
+                    <input
+                      type="text"
+                      id="brainDumpInput"
+                      placeholder="Enter your Idea here "
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="mainTaskPopUp"></div>
             <div class="header-right">
@@ -116,7 +133,9 @@
             </div>
             <div class="bottom-right">
               <div class="todoListContainer">
-                <div> All Task<img src="assets/images/expand.svg" id="expand"></div>
+                <div>
+                  All Task<img src="assets/images/expand.svg" id="expand" />
+                </div>
                 <table width="100%">
                   <tr>
                     <th>Status</th>

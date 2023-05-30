@@ -20,14 +20,12 @@ expand.addEventListener("click", function(){
     todoListContainer.style.height="600px"
     expand.src="assets/images/collapse.svg"
     countE++
-    console.log(expand)
 }
     else {
     todoListContainer.style.width="400px"
     todoListContainer.style.height="300px"
     expand.src="assets/images/expand.svg"
     countE++
-    console.log(expand)
      }
 
 })
