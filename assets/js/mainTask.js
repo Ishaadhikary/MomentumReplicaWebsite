@@ -2,6 +2,7 @@ let mainTaskCheckId = document.getElementById("mainTaskCheckId");
 let mainTaskTextId = document.getElementById("mainTaskTextId");
 let mainTaskCheckBox = document.querySelector(".mainTaskCheckBox")
 let inputTask = document.querySelector(".inputTask");
+let mainTaskPopUp = document.querySelector(".mainTaskPopUp")
 
 //To edit the main task
 inputTask.addEventListener("click", function () {
@@ -34,6 +35,7 @@ function addMainTaskInfo() {
       inputTask.textContent = storageMainTask;
       mainTaskTextId.style.display="none"
       mainTaskCheckBox.style.display="inline-block"
+      inputTask.style.textDecoration="none"
     }
   });
 }
@@ -51,7 +53,10 @@ let randomIndexMainTask = randomNumbers(MainTaskPopUpTxt)
   }
     else{
       inputTask.style.textDecoration="line-through"
-      alert(MainTaskPopUpTxt[randomIndexMainTask])
+      mainTaskPopUp.textContent=MainTaskPopUpTxt[randomIndexMainTask]+ "👏"
+      mainTaskPopUp.style.display="block"
+      setTimeout(function (){mainTaskPopUp.style.display="none"}, 10000)
+      // alert(MainTaskPopUpTxt[randomIndexMainTask])
       count++
     }
 

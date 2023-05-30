@@ -204,7 +204,21 @@ hr{
 }
 
 
+/* Pop Up after the main task is completed. */
+.mainTaskPopUp{
+  display: none;
+  position: fixed;
+  top:1%;
+  left:45%;
+  background-color: var(--primart-color);
+  border-radius: 20px;
+  min-width: fit-content;
+  padding:0.5%;
+  height: fit-content;
+  color:black;
+  transition-timing-function: ease-in-out;
 
+}
 
 /* Css for the central container ends here */
 
