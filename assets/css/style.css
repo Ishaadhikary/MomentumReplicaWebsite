@@ -42,6 +42,7 @@ img {
   /* Font Color */
   --primart-color: #e8e5e5;
   --secondary-color-l: #e8e5e5;
+  --secondary-color-dark:rgb(33, 33, 33);
 }
 body {
   backface-visibility: hidden;
@@ -119,7 +120,7 @@ li {
   background-color: #e8e5e5;
   border-radius: 4px;
   padding: 1vh;
-  color: black;
+  color: var(--secondary-color-dark);
 }
 .popUp .show {
   visibility: visible;
@@ -213,7 +214,7 @@ hr {
   min-width: fit-content;
   padding: 0.5%;
   height: fit-content;
-  color: black;
+  color: var(--secondary-color-dark);
   transition-timing-function: ease-in-out;
 }
 
@@ -254,10 +255,33 @@ hr {
   bottom: 40px;
   right: 0;
   width: 400px;
-  height: 500px;
+  height: fit-content;
+  min-height: 300px;
   background: var(--primart-color);
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
+  color: var(--secondary-color-dark);
+}
+.todoListContainer div{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(27, 126, 27);
+  height: 30px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  color: var(--primart-color);
+  align-items: center;
+  padding-left:15px;
+  padding-right: 15px;
+}
+
+.todoListContainer div img{
+  width: 18px;
+  height: 18px;
+}
+.todoListContainer table, .todoListContainer th{
+  border:1px solid black;
 }
 
 /* Media Query */

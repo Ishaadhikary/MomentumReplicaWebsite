@@ -56,7 +56,6 @@ let randomIndexMainTask = randomNumbers(MainTaskPopUpTxt)
       mainTaskPopUp.textContent=MainTaskPopUpTxt[randomIndexMainTask]+ "👏"
       mainTaskPopUp.style.display="block"
       setTimeout(function (){mainTaskPopUp.style.display="none"}, 10000)
-
       count++
     }
 

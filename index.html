@@ -20,88 +20,119 @@
   </head>
   <body>
     <div class="main-box">
-    <div class="main-container">
-      <!-- Section containg top container -->
-      <section>
-        <div class="top-container">
-          <div class="header-left">
-            <p>Links</p>
-          </div>
-          <div class="header-center">
-            <p>BrainDump</p>
-          </div>
-          <div class="mainTaskPopUp"></div>
-          <div class="header-right">
-            <p>weather</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section containg Central container -->
-      <section>
-        <div class="center-container">
-          <div class="center-top-container">
-            <div class="center-left">
-              <img src="assets/images/change.svg" alt="Change time display" />
+      <div class="main-container">
+        <!-- Section containg top container -->
+        <section>
+          <div class="top-container">
+            <div class="header-left">
+              <p>Links</p>
             </div>
-            <div class="center-center"></div>
-            <div
-              class="center-right popUp"
-              id="clockParentId"
-              onclick="TimerPopBox('popId')"
-            >
-              <img src="assets/images/more.svg" alt="Change the time layout" />
-              <p class="popup-text" id="popId">12hr Clock</p>
+            <div class="header-center">
+              <p>BrainDump</p>
+            </div>
+            <div class="mainTaskPopUp"></div>
+            <div class="header-right">
+              <p>weather</p>
             </div>
           </div>
-          <div class="center-middle">
-            <span></span>
-            <div><input type="text" id="nameId" placeholder=" Your Name?" /><hr></div>
-          </div>
-          <div>What is your main focus for today</div>
-          <div class="center-bottom"><label><input type="checkbox" id="mainTaskCheckId" checked="checked"  ><span class = "mainTaskCheckBox"></span></label><span class="inputTask"> </span><input type="text" id="mainTaskTextId" placeholder=" Main Task for Today" /></div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Section containg Bottom container -->
-      <section>
-        <div class="bottom-container">
-          <div class="bottom-left popUp" onclick="TimerPopBox('settingId')">
-            <img
-              src="assets/images/settings.svg"
-              alt="Change the time layout"
-            />
-            <div class="popup-text" id="settingId">
-              <div class="settings">
-                <div class="settingTopic">
-                  <ul>
-                    <li>GENERAL</li>
-                    <li>Todo</li>
-                    <li>Balance</li>
-                    <li>Mode</li>
-                    <li>About</li>
-                  </ul>
-                </div>
-                <div class="settingContent">
-                  <ul>
-                    <li>Guess</li>
-                  </ul>
+        <!-- Section containg Central container -->
+        <section>
+          <div class="center-container">
+            <div class="center-top-container">
+              <div class="center-left">
+                <img src="assets/images/change.svg" alt="Change time display" />
+              </div>
+              <div class="center-center"></div>
+              <div
+                class="center-right popUp"
+                id="clockParentId"
+                onclick="TimerPopBox('popId')"
+              >
+                <img
+                  src="assets/images/more.svg"
+                  alt="Change the time layout"
+                />
+                <p class="popup-text" id="popId">12hr Clock</p>
+              </div>
+            </div>
+            <div class="center-middle">
+              <span></span>
+              <div>
+                <input type="text" id="nameId" placeholder=" Your Name?" />
+                <hr />
+              </div>
+            </div>
+            <div>What is your main focus for today</div>
+            <div class="center-bottom">
+              <label
+                ><input
+                  type="checkbox"
+                  id="mainTaskCheckId"
+                  checked="checked" /><span
+                  class="mainTaskCheckBox"
+                ></span></label
+              ><span class="inputTask"> </span
+              ><input
+                type="text"
+                id="mainTaskTextId"
+                placeholder=" Main Task for Today"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Section containg Bottom container -->
+        <section>
+          <div class="bottom-container">
+            <div class="bottom-left popUp" onclick="TimerPopBox('settingId')">
+              <img
+                src="assets/images/settings.svg"
+                alt="Change the time layout"
+              />
+              <div class="popup-text" id="settingId">
+                <div class="settings">
+                  <div class="settingTopic">
+                    <ul>
+                      <li>GENERAL</li>
+                      <li>Todo</li>
+                      <li>Balance</li>
+                      <li>Mode</li>
+                      <li>About</li>
+                    </ul>
+                  </div>
+                  <div class="settingContent">
+                    <ul>
+                      <li>Guess</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="bottom-center">
+              "Give every day the chance to be the most beautiful day of your
+              life."
+            </div>
+            <div class="bottom-right">
+              <div class="todoListContainer">
+                <div> All Task<img src="assets/images/expand.svg" id="expand"></div>
+                <table width="100%">
+                  <tr>
+                    <th>Status</th>
+                    <th width="50%">Task Title</th>
+                    <th>Category</th>
+                    <th>Timer</th>
+                    <th>Priority</th>
+                  </tr>
+                </table>
+              </div>
+              <p id="todo" onclick="todoList()">TODO</p>
+            </div>
           </div>
-          <div class="bottom-center">
-            "Give every day the chance to be the most beautiful day of your
-            life."
-          </div>
-          <div class="bottom-right">
-            <div class="todoListContainer"></div>
-            <p id="todo" onclick="todoList()">TODO</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
-  </div>
 
     <script src="assets/js/constant.js"></script>
     <script src="assets/js/utility.js"></script>
