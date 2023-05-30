@@ -9,3 +9,11 @@ currentMin = currentMin < oneDigitCheck ? "0" + currentMin : currentMin;
 
 return [currentHour,currentMin,period]
 }
+
+//generate random Numbers
+function randomNumbers(arrayName)
+{
+    let randomIndex = Math.floor(Math.random()*arrayName.length)
+    return randomIndex
+        
+}

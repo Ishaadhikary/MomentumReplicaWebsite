@@ -4,11 +4,10 @@ auth.style.textAlign='center';
 updateQuotes()
 setInterval(updateQuotes,10000) 
 function updateQuotes(){
-    
-        let randomIndex = Math.floor(Math.random()*quotesList.length)
+    let randomIndexQuotes = randomNumbers(quotesList)
         const quoteShowingId = document.querySelector('.bottom-center') ;
-        let authorShowing = authorList[randomIndex]//to get the authors name
-        const quoteShowing = quotesList[randomIndex];//to get the quote
+        let authorShowing = authorList[randomIndexQuotes]//to get the authors name
+        const quoteShowing = quotesList[randomIndexQuotes];//to get the quote
         quoteShowingId.textContent=quoteShowing;//adding the quote to the webpage
         auth.textContent="-" + authorShowing
         quoteShowingId.addEventListener('mouseenter', e => { 

@@ -2,6 +2,7 @@ let mainTaskCheckId = document.getElementById("mainTaskCheckId");
 let mainTaskTextId = document.getElementById("mainTaskTextId");
 let mainTaskCheckBox = document.querySelector(".mainTaskCheckBox")
 let inputTask = document.querySelector(".inputTask");
+
 //To edit the main task
 inputTask.addEventListener("click", function () {
   inputTask.textContent=""
@@ -42,16 +43,16 @@ addMainTaskInfo();
 let count = 1
 mainTaskCheckId.addEventListener("click",function(){
   
-  console.log("beforeif",count)
+let randomIndexMainTask = randomNumbers(MainTaskPopUpTxt)
+  
     if ((count % 2 ) != 0 ){
-    inputTask.style.textDecoration="line-through"
-    count=count+1
-    console.log("if",count)
-  }
-    else{
       inputTask.style.textDecoration="none"
       count++
-      console.log("else",count)
+  }
+    else{
+      inputTask.style.textDecoration="line-through"
+      alert(MainTaskPopUpTxt[randomIndexMainTask])
+      count++
     }
 
 })
