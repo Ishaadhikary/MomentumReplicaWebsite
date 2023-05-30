@@ -56,12 +56,8 @@ let randomIndexMainTask = randomNumbers(MainTaskPopUpTxt)
       mainTaskPopUp.textContent=MainTaskPopUpTxt[randomIndexMainTask]+ "👏"
       mainTaskPopUp.style.display="block"
       setTimeout(function (){mainTaskPopUp.style.display="none"}, 10000)
-      // alert(MainTaskPopUpTxt[randomIndexMainTask])
+
       count++
     }
 
 })
-//When the task is marked as done
-//Check box tick:
-  //subscript the inputTask
-  //Pop up good job

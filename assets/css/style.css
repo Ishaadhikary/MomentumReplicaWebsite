@@ -4,7 +4,7 @@
   margin-bottom: 0;
   padding: 0;
 }
-img{
+img {
   width: 100%;
 }
 
@@ -37,8 +37,8 @@ img{
   --backup-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --h1font: 20vh;
-  --h2font:5vh;
-  --h3font:3.5vh;
+  --h2font: 5vh;
+  --h3font: 3.5vh;
   /* Font Color */
   --primart-color: #e8e5e5;
   --secondary-color-l: #e8e5e5;
@@ -47,10 +47,9 @@ body {
   backface-visibility: hidden;
   font-family: var(--backup-font);
   color: var(--primart-color);
-  
 }
-.main-box{
-  background: url("../images/wallpage3.svg") no-repeat ;
+.main-box {
+  background: url("../images/wallpage3.svg") no-repeat;
   opacity: 0.95;
 }
 li {
@@ -64,7 +63,7 @@ li {
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  width:100vw;
+  width: 100vw;
 }
 /* Css for the top container starts here */
 .top-container {
@@ -97,8 +96,9 @@ li {
 .center-left {
   background-color: lawngreen;
 } */
-.center-left, .center-right{
-  width:2.5vw;
+.center-left,
+.center-right {
+  width: 2.5vw;
 }
 .center-center {
   font-family: "primary-font-b";
@@ -150,74 +150,71 @@ li {
   font-size: var(--h2font);
   cursor: pointer;
 }
-.center-middle input, .center-bottom input{
+.center-middle input,
+.center-bottom input {
   background: none;
-  border:0;
+  border: 0;
   outline: none;
-  color:var(--primart-color);
+  color: var(--primart-color);
   width: max-content;
   margin-left: 5px;
 }
-hr{
+hr {
   border-radius: 8px;
   border: 1.5px solid;
   width: 100%;
   border-color: var(--primart-color);
 }
 
-.center-container ::placeholder{
+.center-container ::placeholder {
   color: var(--primart-color);
   font-family: "primary-font-l";
 }
 
-.center-bottom , 
-.center-middle+div{
+.center-bottom,
+.center-middle + div {
   text-align: center;
   font-family: var(--backup-font);
   font-size: var(--h3font);
   position: relative;
 }
 
-.center-bottom input[type="checkbox"]{
-  
-    cursor: pointer;
-    height: 0;
-    width: 0;
+.center-bottom input[type="checkbox"] {
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 /* Customized checkbox */
-.mainTaskCheckBox{
+.mainTaskCheckBox {
   position: absolute;
-  width:2.5vh;
+  width: 2.5vh;
   height: 2.5vh;
-  bottom:5.5%;
-  left:-50%;
+  bottom: 5.5%;
+  left: -50%;
   border-radius: 4px;
   border: 2px solid var(--primart-color);
 }
-.mainTaskCheckBox:hover{
+.mainTaskCheckBox:hover {
   background-color: var(--secondary-color-l);
 }
 .center-bottom input:checked ~ .mainTaskCheckBox {
-
-  background:url('../images/charm_tick.svg') no-repeat  center;
-  background-position:contain;
+  background: url("../images/charm_tick.svg") no-repeat center;
+  background-position: contain;
 }
 
-
 /* Pop Up after the main task is completed. */
-.mainTaskPopUp{
+.mainTaskPopUp {
   display: none;
   position: fixed;
-  top:1%;
-  left:45%;
+  top: 1%;
+  left: 45%;
   background-color: var(--primart-color);
   border-radius: 20px;
   min-width: fit-content;
-  padding:0.5%;
+  padding: 0.5%;
   height: fit-content;
-  color:black;
+  color: black;
   transition-timing-function: ease-in-out;
-
 }
 
 /* Css for the central container ends here */
@@ -239,7 +236,7 @@ hr{
   bottom: 50px;
 }
 
-.bottom-center{
+.bottom-center {
   text-align: center;
 }
 .bottom-center:hover {
@@ -247,5 +244,21 @@ hr{
   translate: 0 -15px;
   transition-duration: 2s;
 }
+
+.bottom-right {
+  position: relative;
+}
+.todoListContainer {
+  display:none;
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  width: 400px;
+  height: 500px;
+  background: var(--primart-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 /* Media Query */
 /* Design for Tablets */
