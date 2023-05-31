@@ -1,3 +1,4 @@
+let changeOptionsContainer = document.querySelector(".changeOptionsContainer")
 updateTime()
 setInterval(updateTime, 1000);
  function updateTime() {
@@ -49,4 +50,26 @@ function TimerPopBox(popElementId) {
         popUpElement.textContent = "12hr Clock";
       }
     });}
+}
+//Change the display of time(percentage,pomodoro)
+let countD = 1
+function changeDisplay(){
+if (countD % 2 != 0 ){
+changeOptionsContainer.style.display="flex"
+countD++
+}
+else{
+  changeOptionsContainer.style.display="none"
+  countD --
+}
+}
+
+function percentageDisplay(){
+  console.log("%")
+}
+function clockDisplay(){
+  console.log("time")
+}
+function pomodoroDisplay(){
+  console.log("polo")
 }

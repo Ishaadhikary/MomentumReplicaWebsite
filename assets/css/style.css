@@ -170,11 +170,23 @@ li {
   justify-content: center;
   width: 70%;
 }
-
-/* 
-.center-left {
-  background-color: lawngreen;
-} */
+.center-left{
+  position: relative;
+}
+.changeOptionsContainer{
+  position: absolute;
+  display:none;
+  justify-content: space-between;
+  width:10vw ;
+  height: 2vw;
+  right:2vw;
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-color-l);
+  padding: 1%;
+  top:0;
+  transition:transform 1s ease-in-out ;
+  transform: translateX(-10%);
+}
 .center-left,
 .center-right {
   width: 2.5vw;

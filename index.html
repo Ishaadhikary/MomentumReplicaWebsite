@@ -40,11 +40,17 @@
                   <div class="brainDumpInput">
                     <input
                       type="text"
-                      id="brainDumpInput" 
+                      id="brainDumpInput"
                       placeholder="Enter your Idea here "
                     />
-                    <button class="addIdeas" id=" brainDumpAdd" onclick="addIdeas()">Add</button>
-                   </div>
+                    <button
+                      class="addIdeas"
+                      id=" brainDumpAdd"
+                      onclick="addIdeas()"
+                    >
+                      Add
+                    </button>
+                  </div>
                   <ul class="brainDumpIdeas"></ul>
                 </div>
               </div>
@@ -61,7 +67,20 @@
           <div class="center-container">
             <div class="center-top-container">
               <div class="center-left">
-                <img src="assets/images/change.svg" alt="Change time display" />
+                <img
+                  src="assets/images/change.svg"
+                  alt="Change time display"
+                  onclick="changeDisplay()"
+                />
+                <div class="changeOptionsContainer">
+                  <img
+                    src="assets/images/percentage.svg"
+                    alt="Percentage Symbol" onclick="percentageDisplay()"
+                  /><img src="assets/images/clock.svg" alt="Clock Symbol" onclick="clockDisplay()"/><img
+                    src="assets/images/pomodoro.svg"
+                    alt="Pomodoro Symbol" onclick="pomodoroDisplay()"
+                  />
+                </div>
               </div>
               <div class="center-center"></div>
               <div
