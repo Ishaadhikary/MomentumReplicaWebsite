@@ -92,16 +92,18 @@ li {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   z-index: 1;
   color: var(--secondary-color-dark);
+  gap:10px
 }
 .brainDumpHeader{
   background: #FFD95A;
   z-index: 2;
-  padding: 4px;
-  
+  padding: 8px 20px;
   border-top-right-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
 }
 .brainDumpInput{
+  margin-left: 20px;
+  margin-right: 20px;
   padding: 4px;
   display: flex;
   justify-content: space-between;
@@ -109,9 +111,11 @@ li {
   border-radius: var(--border-radius);
 }
 .brainDumpContainer input{
-  border: none;
+  padding: 4px;
   background: none;
-  width:90%
+  border: none;
+  width: 100%;
+
   
 }
 .brainDumpInput button{
@@ -121,11 +125,22 @@ li {
   height: max-content;
   width: max-content;
   border: none;
+  margin-right: 4px;
   padding: 1% 3% 1% 3%;
-
-
 }
-/* Css for the top container ends here */
+
+.brainDumpIdeas{
+  /* overflow-y: scroll; */
+  padding: 4px;
+  margin: 8px 20px;
+}
+
+.brainDumpIdeas li{
+  border-radius: var(--border-radius);
+  background: #ffffff;
+  padding:8px;
+  margin-bottom: 8px;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}/* Css for the top container ends here */
 
 /* Css for the center container starts her */
 .center-container {
