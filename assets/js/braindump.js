@@ -2,6 +2,7 @@ let brainDumpInput = document.getElementById("brainDumpInput");
 let brainDumpContainer = document.querySelector(".brainDumpContainer");
 let bulbId = document.getElementById("bulb");
 let brainDumpIdeas = document.querySelector(".brainDumpIdeas");
+let editIdeas = document.querySelectorAll(".brainDumpIdeas li")
 
 let countB = 1;
 function bulb() {
@@ -30,12 +31,20 @@ function addIdeas() {
   let storedIdeas = JSON.parse(localStorage.getItem("ideas"));
   brainDumpIdeas.innerHTML = "";
   storedIdeas.forEach((storedIdea) => {
+    let eachIdeaContainer = document.createElement("div")
+    eachIdeaContainer.id = "eachIdeaContainer"
+    let editIcon = document.createElement("img")
+    editIcon.src="assets/images/edit.svg"
+    let deleteIcon = document.createElement("img")
+    deleteIcon.src="assets/images/delete.svg"
     let li = document.createElement("li");
     li.innerHTML = storedIdea;
     if(li.innerHTML !=""){
-
-      brainDumpIdeas.append(li);
+      eachIdeaContainer.append(li,editIcon,deleteIcon)
+      brainDumpIdeas.append(eachIdeaContainer);
     }
   
   });
 }
+//edit each of the Ideas
+
