@@ -1,7 +1,8 @@
+let brainDumpInput = document.getElementById("brainDumpInput");
 let brainDumpContainer = document.querySelector(".brainDumpContainer");
 let bulbId = document.getElementById("bulb");
 let brainDumpIdeas = document.querySelector(".brainDumpIdeas");
-let ideas = [];
+
 
 let countB = 1;
 function bulb() {
@@ -17,14 +18,19 @@ function bulb() {
     countB++;
   }
 }
-let brainDumpInput = document.getElementById("brainDumpInput");
 function addIdeas() {
-  ideas.push(brainDumpInput.value);
-  localStorage.setItem("ideas", JSON.stringify(ideas));
+  let newIdeas = brainDumpInput.value
+  if(localStorage.getItem("ideas")==null){
+    localStorage.setItem("ideas",'[]')
+  }
+  let oldIdeas = JSON.parse(localStorage.getItem("ideas"))
+  oldIdeas.unshift(newIdeas)
+  localStorage.setItem("ideas", JSON.stringify(oldIdeas));
   let storedIdeas = JSON.parse(localStorage.getItem("ideas"));
   brainDumpIdeas.innerHTML=""
- storedIdeas.forEach(storedIdea => {
-
+  // ideas.push(brainDumpInput.value);
+  storedIdeas.forEach(storedIdea => {
+    
     let li = document.createElement("li")
     li.innerHTML = storedIdea
     brainDumpIdeas.append(li)
