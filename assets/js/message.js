@@ -2,20 +2,20 @@ function message() {
   const [currentHour] = getTime();
   //goodmorning:4am-12am
   if (currentHour >= 4 && currentHour <= 12) {
-    greeging = "GOOD MORNING!";
+    greeging = "GOOD MORNING,";
     console.log("GoodMorning");
   }
   //goodafternoon:12:1am-5pm
   else if (currentHour > 12 && currentHour < 17) {
-    greeging = "GOOD AFTERNOON!";
+    greeging = "GOOD AFTERNOON,";
   }
   //goodevening:5:01pm-11pm
   else if (currentHour >= 17 && currentHour < 23) {
-    greeging = "GOOD EVENING!";
+    greeging = "GOOD EVENING,";
   }
   //goodNight:11:01-3:59pm
   else if (currentHour >= 23 && currentHour > 4) {
-    greeging = "GOOD NIGNT!";
+    greeging = "GOOD NIGNT,";
   }
 
   let storedUserName = localStorage.getItem("userName");
