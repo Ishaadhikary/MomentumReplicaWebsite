@@ -3,7 +3,6 @@ function message() {
   //goodmorning:4am-12am
   if (currentHour >= 4 && currentHour <= 12) {
     greeging = "GOOD MORNING,";
-    console.log("GoodMorning");
   }
   //goodafternoon:12:1am-5pm
   else if (currentHour > 12 && currentHour < 17) {
