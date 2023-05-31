@@ -18,12 +18,13 @@ function bulb() {
   }
 }
 let brainDumpInput = document.getElementById("brainDumpInput");
-
 function addIdeas() {
   ideas.push(brainDumpInput.value);
   localStorage.setItem("ideas", JSON.stringify(ideas));
   let storedIdeas = JSON.parse(localStorage.getItem("ideas"));
+  brainDumpIdeas.innerHTML=""
  storedIdeas.forEach(storedIdea => {
+
     let li = document.createElement("li")
     li.innerHTML = storedIdea
     brainDumpIdeas.append(li)
