@@ -201,10 +201,44 @@ li {
 
 #centerPercentage{
   display: none;
-  width: 30px;
-  height: 30px;
-  background: red;
+  width: 30vh;
+  height: 30vh;
+  /* background: red; */
+  position: relative;
+
 }
+
+#innerCircle{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 20vh;
+  height: 20vh;
+  border: 1px solid red;
+  margin:5vh;
+  border-radius: 50%;
+}
+
+#outerCircle{
+  position: absolute;
+  width: 30vh;
+  height: 30vh;
+  
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
+#innerText{
+  font-size: var(--h2font);
+}
+#innerText p{
+  font-size: var(--h3font);
+}
+
+
 
 .cennter-pomodoro{
   background: yellow;

@@ -2,6 +2,7 @@ let changeOptionsContainer = document.querySelector(".changeOptionsContainer")
 let centerCenter = document.querySelector(".center-center");
 let centerTime = document.querySelector(".center-time")
 let centerPercentage = document.querySelector(".center-percentage")
+
 updateTime()
 setInterval(updateTime, 1000);
  function updateTime() {
@@ -67,6 +68,16 @@ else{
 }
 
 function percentageDisplay(){
+  let outerCircle = document.createElement("div")
+  let innerCircle = document.createElement("div")
+  let innerText = document.createElement("div")
+  innerText.id = "innerText"
+  outerCircle.id ="outerCircle"
+  innerCircle.id ="innerCircle"
+  innerText.innerHTML = "40%"+ "<p>"+"Day"+"</p>"
+  innerCircle.append(innerText)
+  
+  centerPercentage.append(outerCircle,innerCircle)
   centerTime.style.display="none"
   centerPercentage.id = "centerPercentage"
   centerPercentage.style.display="block"
