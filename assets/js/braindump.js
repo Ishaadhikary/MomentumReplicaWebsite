@@ -25,7 +25,8 @@ function addIdeas() {
   getTheBrainIdeas()//To add new idea to the container
 }
 function getTheBrainIdeas(){
-  let newIdeas = brainDumpInput.value;//To get the input from the user
+  let newIdeas=""
+  newIdeas = brainDumpInput.value;//To get the input from the user
   if (localStorage.getItem("ideas") == null) {//To check if ideas are stored or not
     localStorage.setItem("ideas", "[]");//Initialize an array for ideas if not avaliable 
   }
@@ -53,16 +54,17 @@ function getTheBrainIdeas(){
 
     editIndex++;
     editIcon.onclick = () => editIdeas(editIndex);//Function to edit the idea
+    deleteIcon.onclick=() =>deleteIdeas(editIndex);//Function to delete the idea 
   });
 }
 
-//Edit each of the Ideas
+//Edit each of the Ideas: 
 function editIdeas(editIndex) {
   editIdeasButton.style.display = "inline-block";
-  let oldIdeas = JSON.parse(localStorage.getItem("ideas"));//Get all the ideas
+  let oldIdeas = JSON.parse(localStorage.getItem("ideas"));
   let editValue = oldIdeas.slice(editIndex - 1, editIndex);//Get the idea to edit
   brainDumpInput.value = editValue;// Append the idea to edit in the input container
-  addIdeasButton.style.display = "none";//Remove the add option
+  addIdeasButton.style.display = "none";
   editIdeasButton.addEventListener("click", function () {//When edit button is clicked
     oldIdeas.splice(editIndex-1,1)//Removing only the editing idea from the array
     localStorage.setItem("ideas",JSON.stringify(oldIdeas))//Storing all the ideas except the editing idea in localstorage
@@ -70,4 +72,12 @@ function editIdeas(editIndex) {
     addIdeasButton.style.display="inline-block"
     getTheBrainIdeas()//To add the edited idea into the idea container
   });
+}
+
+function deleteIdeas(editIndex){
+  let oldIdeas = JSON.parse(localStorage.getItem("ideas"))
+  oldIdeas.splice(editIndex-1,1)
+  localStorage.setItem("ideas",JSON.stringify(oldIdeas))
+  brainDumpInput.value=null
+  getTheBrainIdeas()
 }
