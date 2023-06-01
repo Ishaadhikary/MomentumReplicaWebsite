@@ -17,3 +17,10 @@ function randomNumbers(arrayName)
     return randomIndex
         
 }
+
+//to display time in percentage
+function dayPercentageTextDisplay(){
+    const[currentHour,currentMin]=getTime()
+    let dayPercentageTextDisplay =(((currentHour+(currentMin/60))/24)*100).toFixed(2)
+    return dayPercentageTextDisplay
+}

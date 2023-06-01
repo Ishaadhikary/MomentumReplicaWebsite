@@ -74,7 +74,8 @@ function percentageDisplay(){
   innerText.id = "innerText"
   outerCircle.id ="outerCircle"
   innerCircle.id ="innerCircle"
-  innerText.innerHTML = "40%"+ "<p>"+"Day"+"</p>"
+  let dayPercentageTxt = dayPercentageTextDisplay()
+  innerText.innerHTML = dayPercentageTxt+"%"+ "<p>"+"Day"+"</p>"
   innerCircle.append(innerText)
   
   centerPercentage.append(outerCircle,innerCircle)

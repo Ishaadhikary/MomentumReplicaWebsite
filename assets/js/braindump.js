@@ -2,7 +2,6 @@ let brainDumpInput = document.getElementById("brainDumpInput");
 let brainDumpContainer = document.querySelector(".brainDumpContainer");
 let bulbId = document.getElementById("bulb");
 let brainDumpIdeas = document.querySelector(".brainDumpIdeas");
-let editIdeas = document.querySelectorAll(".brainDumpIdeas li")
 
 let countB = 1;
 function bulb() {
@@ -25,26 +24,39 @@ function addIdeas() {
     localStorage.setItem("ideas", "[]");
 
   }
-  let oldIdeas = JSON.parse(localStorage.getItem("ideas"));
+  var oldIdeas = JSON.parse(localStorage.getItem("ideas"));
   oldIdeas.unshift(newIdeas);
   localStorage.setItem("ideas", JSON.stringify(oldIdeas));
   let storedIdeas = JSON.parse(localStorage.getItem("ideas"));
   brainDumpIdeas.innerHTML = "";
-  storedIdeas.forEach((storedIdea) => {
+  storedIdeas.forEach((storedIdea,index) => {
     let eachIdeaContainer = document.createElement("div")
     eachIdeaContainer.id = "eachIdeaContainer"
     let editIcon = document.createElement("img")
     editIcon.src="assets/images/edit.svg"
+    editIcon.id ="editIcon"
     let deleteIcon = document.createElement("img")
     deleteIcon.src="assets/images/delete.svg"
+    deleteIcon.id = "deleteIcon"
     let li = document.createElement("li");
     li.innerHTML = storedIdea;
     if(li.innerHTML !=""){
       eachIdeaContainer.append(li,editIcon,deleteIcon)
       brainDumpIdeas.append(eachIdeaContainer);
     }
-  
+    if(li.innerHTML=="" && localStorage.getItem("ideas") == null){
+      localStorage.removeItem("ideas", "")
+    }
+    index++
+    editIcon.onclick = () => editIdeas(index);
   });
+  // console.log(index)
 }
+
 //edit each of the Ideas
+function editIdeas(index){
+  console.log(index)
+  let oldIdeas = JSON.parse(localStorage.getItem("ideas"));
+  console.log(oldIdeas[index]) 
+}
 
