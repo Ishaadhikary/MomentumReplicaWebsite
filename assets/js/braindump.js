@@ -73,11 +73,11 @@ function editIdeas(editIndex) {
     getTheBrainIdeas()//To add the edited idea into the idea container
   });
 }
-
+//Function to delete the selected item
 function deleteIdeas(editIndex){
   let oldIdeas = JSON.parse(localStorage.getItem("ideas"))
   oldIdeas.splice(editIndex-1,1)
   localStorage.setItem("ideas",JSON.stringify(oldIdeas))
-  brainDumpInput.value=null
+  brainDumpInput.value=null//so that the previous items on input box is not added to the list
   getTheBrainIdeas()
 }
