@@ -9,6 +9,7 @@ let countB = 1;
 function bulb() {
   if (countB % 2 != 0) {
     bulbId.src = "assets/images/bulbOn.svg";
+    brainDumpInput.style.border="none"
     brainDumpContainer.style.display = "flex";
     countB++;
     editIdeasButton.style.display = "none";
@@ -22,6 +23,7 @@ function bulb() {
   }
 }
 function addIdeas() {
+  brainDumpInput.style.border="none"
   getTheBrainIdeas()//To add new idea to the container
 }
 function getTheBrainIdeas(){
@@ -78,6 +80,6 @@ function deleteIdeas(editIndex){
   let oldIdeas = JSON.parse(localStorage.getItem("ideas"))
   oldIdeas.splice(editIndex-1,1)
   localStorage.setItem("ideas",JSON.stringify(oldIdeas))
-  brainDumpInput.value=null//so that the previous items on input box is not added to the list
+  brainDumpInput.value=null//So that the previous items on input box is not added to the list
   getTheBrainIdeas()
 }

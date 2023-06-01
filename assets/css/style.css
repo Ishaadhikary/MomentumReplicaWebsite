@@ -52,10 +52,14 @@ body {
 }
 .main-box {
   background: url("../images/wallpage0.svg") no-repeat;
-  opacity: 0.95;
+  /* opacity: 0.95; */
 }
 li {
   list-style-type: none;
+}
+input{
+  border: none;
+  outline: none;
 }
 
 .main-container {
