@@ -61,7 +61,6 @@ function getTheBrainIdeas(){
 //edit each of the Ideas
 function editIdeas(editIndex) {
   editIdeasButton.style.display = "inline-block";
-  addIdeasButton.textContent="edit"
   console.log(editIndex);
   let oldIdea = JSON.parse(localStorage.getItem("ideas"));
   let editValue = oldIdea.slice(editIndex - 1, editIndex);
@@ -75,6 +74,8 @@ function editIdeas(editIndex) {
     oldIdeas.splice(editIndex-1,1)
     localStorage.setItem("ideas",JSON.stringify(oldIdeas))
     getTheBrainIdeas()
+    editIdeasButton.style.display="none"
+    addIdeasButton.style.display="inline-block"
   });
 }
 // function editOldIdeas(){
