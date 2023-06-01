@@ -182,7 +182,7 @@ li {
   right:2vw;
   border-radius: var(--border-radius);
   background-color: var(--secondary-color-l);
-  padding: 1%;
+  padding: 2%;
   top:0;
   transition:transform 1s ease-in-out ;
   transform: translateX(-10%);
@@ -195,8 +195,20 @@ li {
   font-family: "primary-font-b";
   font-size: var(--h1font);
   align-self: center;
+  display: flex;
+  position: relative;
 }
 
+#centerPercentage{
+  display: none;
+  width: 30px;
+  height: 30px;
+  background: red;
+}
+
+.cennter-pomodoro{
+  background: yellow;
+}
 .popUp {
   cursor: pointer;
   position: relative;

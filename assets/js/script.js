@@ -1,9 +1,11 @@
 let changeOptionsContainer = document.querySelector(".changeOptionsContainer")
+let centerCenter = document.querySelector(".center-center");
+let centerTime = document.querySelector(".center-time")
+let centerPercentage = document.querySelector(".center-percentage")
 updateTime()
 setInterval(updateTime, 1000);
  function updateTime() {
-    let centerCenter = document.querySelector(".center-center");
-    centerCenter.innerHTML = "";
+    centerTime.innerHTML = "";
     const [currentHour,currentMin, period] = getTime()
 
 
@@ -13,7 +15,7 @@ setInterval(updateTime, 1000);
           let timeDisplay = document.createTextNode(
             currentHour + ":" + currentMin
           );
-          centerCenter.appendChild(timeDisplay);
+          centerTime.appendChild(timeDisplay);
         }
         break;
       case "12hr":
@@ -23,7 +25,7 @@ setInterval(updateTime, 1000);
           const timeDisplay = document.createTextNode(
             currentHour12 + ":" + currentMin + " " + period
           );
-          centerCenter.append(timeDisplay);
+          centerTime.append(timeDisplay);
         }
         break;
     }
@@ -59,16 +61,20 @@ changeOptionsContainer.style.display="flex"
 countD++
 }
 else{
-  changeOptionsContainer.style.display="none"
+  changeOptionsContainer.style="none"
   countD --
 }
 }
 
 function percentageDisplay(){
-  console.log("%")
+  centerTime.style.display="none"
+  centerPercentage.id = "centerPercentage"
+  centerPercentage.style.display="block"
+
 }
 function clockDisplay(){
-  console.log("time")
+  centerTime.style.display="inline-block"
+  centerPercentage.style.display="none"
 }
 function pomodoroDisplay(){
   console.log("polo")
