@@ -2,7 +2,7 @@ let brainDumpInput = document.getElementById("brainDumpInput");
 let brainDumpContainer = document.querySelector(".brainDumpContainer");
 let bulbId = document.getElementById("bulb");
 let brainDumpIdeas = document.querySelector(".brainDumpIdeas");
-let editIdeasButton = document.querySelector(".editIdeas");
+let editIdeasButton = document.getElementById("editIdeas");
 let addIdeasButton = document.querySelector(".addIdeas");
 
 let countB = 1;
@@ -22,10 +22,12 @@ function bulb() {
   }
 }
 function addIdeas() {
+  getTheBrainIdeas()
+}
+function getTheBrainIdeas(){
   let newIdeas = brainDumpInput.value;
   if (localStorage.getItem("ideas") == null) {
     localStorage.setItem("ideas", "[]");
-    console.log("check");
   }
   var oldIdeas = JSON.parse(localStorage.getItem("ideas"));
   if (newIdeas != "") {
@@ -59,6 +61,7 @@ function addIdeas() {
 //edit each of the Ideas
 function editIdeas(editIndex) {
   editIdeasButton.style.display = "inline-block";
+  addIdeasButton.textContent="edit"
   console.log(editIndex);
   let oldIdea = JSON.parse(localStorage.getItem("ideas"));
   let editValue = oldIdea.slice(editIndex - 1, editIndex);
@@ -70,7 +73,8 @@ function editIdeas(editIndex) {
     let oldIdeas = JSON.parse(localStorage.getItem("ideas"));
     console.log(oldIdeas);
     oldIdeas.splice(editIndex-1,1)
-    console.log(oldIdeas);
+    localStorage.setItem("ideas",JSON.stringify(oldIdeas))
+    getTheBrainIdeas()
   });
 }
 // function editOldIdeas(){
