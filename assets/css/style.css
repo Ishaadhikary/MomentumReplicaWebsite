@@ -383,10 +383,12 @@ hr {
 
 .bottom-center {
   text-align: center;
+  font-size: 20px;
+  font-weight: 400 ;
 }
 .bottom-center:hover {
-  opacity: 0.5;
   translate: 0 -15px;
+
   transition-duration: 2s;
 }
 
