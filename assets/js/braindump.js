@@ -27,8 +27,7 @@ function addIdeas() {
   getTheBrainIdeas()//To add new idea to the container
 }
 function getTheBrainIdeas(){
-  let newIdeas=""
-  newIdeas = brainDumpInput.value;//To get the input from the user
+  let newIdeas = brainDumpInput.value;//To get the input from the user
   if (localStorage.getItem("ideas") == null) {//To check if ideas are stored or not
     localStorage.setItem("ideas", "[]");//Initialize an array for ideas if not avaliable 
   }
@@ -55,11 +54,10 @@ function getTheBrainIdeas(){
     brainDumpIdeas.append(eachIdeaContainer);
 
     editIndex++;
-    brainDumpInput.value=null//So that the previous items on input box is not added to the list
-  
+    
     editIcon.onclick = () => editIdeas(editIndex);//Function to edit the idea
     deleteIcon.onclick=() =>deleteIdeas(editIndex);//Function to delete the idea 
-  });
+     });
 }
 
 //Edit each of the Ideas: 
@@ -75,6 +73,7 @@ function editIdeas(editIndex) {
     editIdeasButton.style.display="none"
     addIdeasButton.style.display="inline-block"
     getTheBrainIdeas()//To add the edited idea into the idea container
+
   });
 }
 //Function to delete the selected item
