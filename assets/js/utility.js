@@ -21,6 +21,17 @@ function randomNumbers(arrayName)
 //to display time in percentage
 function dayPercentageTextDisplay(){
     const[currentHour,currentMin]=getTime()
-    let dayPercentageTextDisplay =(((currentHour+(currentMin/60))/24)*100).toFixed(2)
+    let dayPercentageTextDisplay =(((parseFloat(currentHour)+(currentMin/60))/24)*100).toFixed(2)
+    let minConversion = (currentMin/60)
+    let currentTime = parseFloat(currentHour)+minConversion
+    let perDay = currentTime/24
+    let perc = perDay *100
+    console.log("min corv", minConversion)
+    console.log("time", currentTime)
+    console.log("perDay", perDay)
+    console.log("perc",perc)
+
+    console.log("M",currentMin)
+    console.log(dayPercentageTextDisplay)
     return dayPercentageTextDisplay
 }
