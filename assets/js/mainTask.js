@@ -48,14 +48,16 @@ mainTaskCheckId.addEventListener("click",function(){
 let randomIndexMainTask = randomNumbers(MainTaskPopUpTxt)
   
     if ((count % 2 ) != 0 ){
-      inputTask.style.textDecoration="none"
-      count++
-  }
-    else{
       inputTask.style.textDecoration="line-through"
       mainTaskPopUp.textContent=MainTaskPopUpTxt[randomIndexMainTask]+ "👏"
       mainTaskPopUp.style.display="block"
       setTimeout(function (){mainTaskPopUp.style.display="none"}, 10000)
+      count++
+
+     
+  }
+    else{
+      inputTask.style.textDecoration="none"
       count++
     }
 
