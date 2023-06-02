@@ -76,14 +76,24 @@
                 <div class="changeOptionsContainer">
                   <img
                     src="assets/images/percentage.svg"
-                    alt="Percentage Symbol" onclick="percentageDisplay()"
-                  /><img src="assets/images/clock.svg" alt="Clock Symbol" onclick="clockDisplay()"/><img
+                    alt="Percentage Symbol"
+                    onclick="percentageDisplay()"
+                  /><img
+                    src="assets/images/clock.svg"
+                    alt="Clock Symbol"
+                    onclick="clockDisplay()"
+                  /><img
                     src="assets/images/pomodoro.svg"
-                    alt="Pomodoro Symbol" onclick="pomodoroDisplay()"
+                    alt="Pomodoro Symbol"
+                    onclick="pomodoroDisplay()"
                   />
                 </div>
               </div>
-              <div class="center-center"><div class="center-time"></div><div class="center-percentage"></div><div class="center-pomodoro"></div></div>
+              <div class="center-center">
+                <div class="center-time"></div>
+                <div class="center-percentage"></div>
+                <div class="center-pomodoro"></div>
+              </div>
               <div
                 class="center-right popUp"
                 id="clockParentId"
@@ -106,10 +116,7 @@
             <div>What is your main focus for today</div>
             <div class="center-bottom">
               <label
-                ><input
-                  type="checkbox"
-                  id="mainTaskCheckId"
-                   /><span
+                ><input type="checkbox" id="mainTaskCheckId" /><span
                   class="mainTaskCheckBox"
                 ></span></label
               ><span class="inputTask"> </span
@@ -160,16 +167,16 @@
                 </div>
                 <table width="100%" id="todoTable">
                   <tr>
-                    <th id = "statusColumn">Status</th>
-                    <th  id= "taskColumn"width="90%">Task Title</th>
+                    <th id="statusColumn">Status</th>
+                    <th id="taskColumn" width="90%">Task Title</th>
                     <th id="categoryColumn">Category</th>
-                    <th id = "timerColumn">Timer</th>
+                    <th id="timerColumn">Timer</th>
                     <th id="priorityColumn">Priority</th>
                   </tr>
                 </table>
               </div>
               <p id="todo" onclick="todoList()">TODO</p>
-            </div>           
+            </div>
           </div>
         </section>
       </div>

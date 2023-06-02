@@ -55,6 +55,8 @@ function getTheBrainIdeas(){
     brainDumpIdeas.append(eachIdeaContainer);
 
     editIndex++;
+    brainDumpInput.value=null//So that the previous items on input box is not added to the list
+  
     editIcon.onclick = () => editIdeas(editIndex);//Function to edit the idea
     deleteIcon.onclick=() =>deleteIdeas(editIndex);//Function to delete the idea 
   });

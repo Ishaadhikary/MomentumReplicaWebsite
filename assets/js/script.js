@@ -1,36 +1,35 @@
-let changeOptionsContainer = document.querySelector(".changeOptionsContainer")
+let changeOptionsContainer = document.querySelector(".changeOptionsContainer");
 let centerCenter = document.querySelector(".center-center");
-let centerTime = document.querySelector(".center-time")
-let centerPercentage = document.querySelector(".center-percentage")
+let centerTime = document.querySelector(".center-time");
+let centerPercentage = document.querySelector(".center-percentage");
 
-updateTime()
+updateTime();
 setInterval(updateTime, 1000);
- function updateTime() {
-    centerTime.innerHTML = "";
-    const [currentHour,currentMin, period] = getTime()
+function updateTime() {
+  centerTime.innerHTML = "";
+  const [currentHour, currentMin, period] = getTime();
 
-
-    switch (timeView) {
-      case "24hr":
-        {
-          let timeDisplay = document.createTextNode(
-            currentHour + ":" + currentMin
-          );
-          centerTime.appendChild(timeDisplay);
-        }
-        break;
-      case "12hr":
-        {
-          let currentHour12 =
-            currentHour > amPmCheck ? currentHour - 12 : currentHour;
-          const timeDisplay = document.createTextNode(
-            currentHour12 + ":" + currentMin + " " + period
-          );
-          centerTime.append(timeDisplay);
-        }
-        break;
-    }
+  switch (timeView) {
+    case "24hr":
+      {
+        let timeDisplay = document.createTextNode(
+          currentHour + ":" + currentMin
+        );
+        centerTime.appendChild(timeDisplay);
+      }
+      break;
+    case "12hr":
+      {
+        let currentHour12 =
+          currentHour > amPmCheck ? currentHour - 12 : currentHour;
+        const timeDisplay = document.createTextNode(
+          currentHour12 + ":" + currentMin + " " + period
+        );
+        centerTime.append(timeDisplay);
+      }
+      break;
   }
+}
 
 // For Time Toggle bar
 function TimerPopBox(popElementId) {
@@ -52,42 +51,41 @@ function TimerPopBox(popElementId) {
         popUpElement.innerHTML = "";
         popUpElement.textContent = "12hr Clock";
       }
-    });}
+    });
+  }
 }
 //Change the display of time(percentage,pomodoro)
-let countD = 1
-function changeDisplay(){
-if (countD % 2 != 0 ){
-changeOptionsContainer.style.display="flex"
-countD++
-}
-else{
-  changeOptionsContainer.style="none"
-  countD --
-}
+let countD = 1;
+function changeDisplay() {
+  if (countD % 2 != 0) {
+    changeOptionsContainer.style.display = "flex";
+    countD++;
+  } else {
+    changeOptionsContainer.style = "none";
+    countD--;
+  }
 }
 
-function percentageDisplay(){
-  let outerCircle = document.createElement("div")
-  let innerCircle = document.createElement("div")
-  let innerText = document.createElement("div")
-  innerText.id = "innerText"
-  outerCircle.id ="outerCircle"
-  innerCircle.id ="innerCircle"
-  let dayPercentageTxt = dayPercentageTextDisplay()
-  innerText.innerHTML = dayPercentageTxt+"%"+ "<p>"+"Day"+"</p>"
-  innerCircle.append(innerText)
-  
-  centerPercentage.append(outerCircle,innerCircle)
-  centerTime.style.display="none"
-  centerPercentage.id = "centerPercentage"
-  centerPercentage.style.display="block"
+function percentageDisplay() {
+  let outerCircle = document.createElement("div");
+  let innerCircle = document.createElement("div");
+  let innerText = document.createElement("div");
+  innerText.id = "innerText";
+  outerCircle.id = "outerCircle";
+  innerCircle.id = "innerCircle";
+  let dayPercentageTxt = dayPercentageTextDisplay();
+  innerText.innerHTML = dayPercentageTxt + "%" + "<p>" + "Day" + "</p>";
+  innerCircle.append(innerText);
 
+  centerPercentage.append(outerCircle, innerCircle);
+  centerTime.style.display = "none";
+  centerPercentage.id = "centerPercentage";
+  centerPercentage.style.display = "block";
 }
-function clockDisplay(){
-  centerTime.style.display="inline-block"
-  centerPercentage.style.display="none"
+function clockDisplay() {
+  centerTime.style.display = "inline-block";
+  centerPercentage.style.display = "none";
 }
-function pomodoroDisplay(){
-  console.log("polo")
+function pomodoroDisplay() {
+  console.log("polo");
 }
