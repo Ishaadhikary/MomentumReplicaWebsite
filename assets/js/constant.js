@@ -14,3 +14,29 @@ let greeging = " ";
 
 //MainTask completion message
 const MainTaskPopUpTxt = ["Great job!","Well done!","You did it!","Keep up the good work!","That’s amazing!","You’re a rockstar!","Keep it up!"]
+
+//For Center-Container
+let  percentageImg = document.getElementById("percentageImg")
+let clockImg = document.getElementById("clockImg")
+let pomodoroImg = document.getElementById("pomodoroImg")
+let changeOptionsContainer = document.querySelector(".changeOptionsContainer");
+let centerCenter = document.querySelector(".center-center");
+let centerTime = document.querySelector(".center-time");
+let centerPercentage = document.querySelector(".center-percentage");
+let centerPomodoro = document.querySelector(".center-pomodoro");
+//Pomodoro audio
+let click = new Audio("../assets/audio/click.mp3");
+let alarm = new Audio("../assets/audio/alarm.mp3");
+let countP = 0;
+//Pomodoro Pop-ups
+const gifArray = ["../assets/images/short.gif","../assets/images/work.gif","../assets/images/long.gif"];
+const textArrayH1 = [
+  "Short Break",
+  "Work-Time",
+  "Long Break"
+];
+const textArrayH2 = [
+  "Go grab a refreshing drink",
+  "Time to get back to work",
+  "Play the song you love and dance to it "
+];

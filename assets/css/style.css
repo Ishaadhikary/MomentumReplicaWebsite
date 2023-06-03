@@ -46,6 +46,8 @@ img {
   --secondary-color-l: #e8e5e5;
   --secondary-color-dark: rgb(33, 33, 33);
   --border-radius: 8px;
+  /* Box Shadow */
+  --box-shadow-m:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 body {
   backface-visibility: hidden;
@@ -95,7 +97,7 @@ input {
   min-height: 10vh;
   background: var(--secondary-color-l);
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: var(--box-shadow-m);
   z-index: 1;
   color: var(--secondary-color-dark);
   gap: 10px;
@@ -150,7 +152,7 @@ input {
   background: #ffffff;
   padding: 8px;
   margin-bottom: 8px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: var(--box-shadow-m);
 }
 .brainDumpIdeas li {
   width: 85%;
@@ -184,7 +186,7 @@ input {
 .changeOptionsContainer {
   position: absolute;
   display: none;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 10vw;
   height: 2vw;
   right: 2vw;
@@ -252,10 +254,11 @@ input {
   height:30vh;
   background: rgba(255, 255, 255, 0.332);
   border-radius: var(--border-radius);
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: var(--box-shadow-m);
 }
 
 #pomodoroTopContainer{
+  position: relative;
   display: flex;
   justify-content: center;
   border-top-left-radius:  var(--border-radius);
@@ -263,6 +266,34 @@ input {
   height: 25%;
   gap:10px;
   align-items: center;
+}
+#pomodoroPopUpContainer{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+  width: 20vw;
+  height: 27vh;
+  top:1.5vh;
+  border-radius: var(--border-radius);
+  background: #ffffff;
+  box-shadow: var(--box-shadow-m);
+  transition-timing-function: ease-in-out;
+  z-index: 2;
+  color:black;
+
+}
+#popUpImg{
+  width:20%
+}
+#popUpTextH1{
+  font-size: 15px;
+  color:black;
+}
+#popUpTextH2{
+  font-size: 12px;
+  color:var(--secondary-color-dark)
 }
 #pomodoroTopContainer button, #pomodoroBottomContainer button{
   border:none;
@@ -283,6 +314,8 @@ height:50%;
 }
 
 #pomodoroBottomContainer{
+  display: flex;
+  justify-content: center;
   height: 25%;
   text-align: center;
   font-size: var(--h3font);
@@ -450,7 +483,7 @@ hr {
   min-height: 300px;
   background: var(--secondary-color-l);
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: var(--box-shadow-m);
   z-index: 1;
   color: var(--secondary-color-dark);
 }
