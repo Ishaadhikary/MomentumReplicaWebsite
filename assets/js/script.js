@@ -2,6 +2,7 @@ let changeOptionsContainer = document.querySelector(".changeOptionsContainer");
 let centerCenter = document.querySelector(".center-center");
 let centerTime = document.querySelector(".center-time");
 let centerPercentage = document.querySelector(".center-percentage");
+let centerPomodoro = document.querySelector(".center-pomodoro")
 
 updateTime();
 setInterval(updateTime, 1000);
@@ -66,7 +67,9 @@ function changeDisplay() {
   }
 }
 
+//Displays the Day in percentage
 function percentageDisplay() {
+  centerTime.style.display = "none";
   let outerCircle = document.createElement("div");
   let innerCircle = document.createElement("div");
   let innerText = document.createElement("div");
@@ -78,7 +81,6 @@ function percentageDisplay() {
   innerCircle.append(innerText);
 
   centerPercentage.append(outerCircle, innerCircle);
-  centerTime.style.display = "none";
   centerPercentage.id = "centerPercentage";
   centerPercentage.style.display = "block";
 }
@@ -87,5 +89,29 @@ function clockDisplay() {
   centerPercentage.style.display = "none";
 }
 function pomodoroDisplay() {
-  console.log("polo");
+  centerPercentage.style.display="none"
+  centerTime.style.display="none"
+  let pomodoroContainer= document.createElement("div")
+  pomodoroContainer.id = "pomodoroContainer"
+  let pomodoroTopContainer = document.createElement("div")
+  let pomodoroCenterContainer = document.createElement("div")
+  let pomodoroBottomContainer = document.createElement("div")
+  let pomodoroTopLeft = document.createElement("button")
+  let pomodoroTopRight = document.createElement("button")
+  let pomodoroBottom = document.createElement("button")
+  pomodoroTopContainer.id = "pomodoroTopContainer"
+  pomodoroTopLeft.id = "pomodoroTopLeft"
+  pomodoroTopRight.id = "pomodoroTopRight"
+  pomodoroBottom.id = "pomodoroBottom" 
+  pomodoroTopLeft.innerText="Pomodoro"
+  pomodoroTopRight.innerText="Break"
+  pomodoroBottom.innerText = "START"
+  pomodoroCenterContainer.innerText="Timer Here"
+pomodoroCenterContainer.id = "pomodoroCenterContainer" 
+pomodoroBottomContainer.id = "pomodoroBottomContainer"
+pomodoroBottomContainer.append(pomodoroBottom)
+pomodoroTopContainer.append(pomodoroTopLeft,pomodoroTopRight)
+pomodoroContainer.append(pomodoroTopContainer,pomodoroCenterContainer,pomodoroBottomContainer)
+centerPomodoro.append(pomodoroContainer)
+  
 }

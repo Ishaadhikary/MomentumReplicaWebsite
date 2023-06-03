@@ -70,7 +70,6 @@ function editIdeas(index) {
   addIdeasButton.style.display = "none";
   editIdeasButton.addEventListener("click", function () {//When edit button is clicked
     editTheBrainIdea(index)
-    getTheBrainIdeas()
     editIdeasButton.style.display="none"
     addIdeasButton.style.display="inline-block"
     
@@ -90,6 +89,7 @@ function editTheBrainIdea(editIndex){
   })
   localStorage.setItem("ideas",JSON.stringify(storedIdeas))
   brainDumpInput.value=null
+  getTheBrainIdeas()
   }
   
   //Storing the elelment in the edit index 
