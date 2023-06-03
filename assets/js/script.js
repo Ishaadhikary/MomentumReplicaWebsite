@@ -90,6 +90,7 @@ function clockDisplay() {
   centerTime.style.display = "inline-block";
   centerPercentage.style.display = "none";
 }
+let countP = 0;
 function pomodoroDisplay() {
   centerPercentage.style.display="none"
   centerTime.style.display="none"
@@ -115,8 +116,8 @@ function pomodoroDisplay() {
   pomodoroTopRight.innerText="Break"
   pomodoroBottomShortBreak.innerHTML="BREAK"
   pomodoroBottom.innerText = "START"
-  pomodoroCenterLeft.innerHTML="25 : "
-  pomodoroCenterRight.innerHTML=" 00"
+  pomodoroCenterLeft.innerHTML="24 : "
+  pomodoroCenterRight.innerHTML=" 59"
 pomodoroCenterContainer.id = "pomodoroCenterContainer" 
 pomodoroBottomContainer.id = "pomodoroBottomContainer"
 pomodoroCenterContainer.append(pomodoroCenterLeft,pomodoroCenterRight)
@@ -126,48 +127,98 @@ pomodoroContainer.append(pomodoroTopContainer,pomodoroCenterContainer,pomodoroBo
 centerPomodoro.append(pomodoroContainer) 
 pomodoroTopLeft.style.backgroundColor="#424242"
 pomodoroBottomShortBreak.style.display="none"
-pomodoroBottom.onclick=()=>pomodoroTimer()
+pomodoroBottomShortBreak.addEventListener("click", shortBreakTimer)
+pomodoroBottom.addEventListener("click", pomodoroTimer)    
 }
-
+let minIntervalId;
+let secIntervalId;
+//Pomodoro timer activated
 function pomodoroTimer(){
   click.play()
-  let minIntervalId = setInterval(minChange,60000)
-  let secInterval= setInterval(secChange,1000)
+  minIntervalId = setInterval(pomoMinChange,60000)
+  secIntervalId= setInterval(secChange,1000)
+  //Stopt the pomodoro time after 25 mins and activate short break function
   setTimeout(function(){
     clearInterval(minIntervalId);
-    clearInterval(secInterval)
+    clearInterval(secIntervalId)
     pomodoroTopLeft.style.background="none";
     pomodoroTopRight.style.backgroundColor="#424242"
-    pomodoroCenterLeft.innerHTML= "05:"
-    pomodoroCenterRight.innerHTML = "00"
+    pomodoroCenterLeft.innerHTML= "04:"
+    pomodoroCenterRight.innerHTML = "59"
     alarm.play() 
-    breakTimer()
-}, 60000);
-
-}
-let min = 0
-function minChange(){
-  
-  let pomodoroCenterLeft = document.querySelector("#pomodoroCenterLeft")
-  if(min>=0)
-  {
-    min--
-    pomodoroCenterLeft.innerHTML=min + " : "
-    
+    pomodoroBottom.style.display="none"
+    pomodoroBottomShortBreak.style.display="inline-block" 
+    count++
+    console.log(count,'count')
+}, 120000);//This is ending the timer in one min: change it to 25 min for demo
+   //To check if the pomodoroTimer has been executed 4 times
+  if (count ==4){
+    console.log("Take long break")
   }
 
-  
- 
 }
+let pomoMin =24
+//function to change minutes for pomodoro
+function pomoMinChange(){
+  
+  let pomodoroCenterLeft = document.querySelector("#pomodoroCenterLeft")
+  if(pomoMin>=0)
+  {
+    pomoMin--
+    pomodoroCenterLeft.innerHTML= (pomoMin<10)?"0"+pomoMin+ " :" : pomoMin + " :"
+    
+    
+  }
+}
+
+
 let sec = 59
+//Function to change the second
 function secChange()
 { 
   let pomodoroCenterRight = document.querySelector("#pomodoroCenterRight")
   if(sec>0){
     sec--
-  pomodoroCenterRight.innerHTML= (sec>=10)?sec: "0"+sec
+  pomodoroCenterRight.innerHTML= (sec>=10)?" " +sec: " 0"+sec
   }
   else{
     sec = 59
   }
 }
+
+//Function to run for the short break
+function shortBreakTimer(){
+  click.play()
+  minIntervalId = setInterval(shortMinChange,60000)
+  secIntervalId= setInterval(secChange,1000)
+  setTimeout(function(){
+    clearInterval(minIntervalId);
+    clearInterval(secIntervalId)
+    pomodoroTopLeft.style.background="none";
+    pomodoroTopRight.style.backgroundColor="#424242"
+    pomodoroCenterLeft.innerHTML= "25:"
+    pomodoroCenterRight.innerHTML = "00"
+    alarm.play() 
+    pomodoroBottom.style.display="inline-block"
+    pomodoroBottomShortBreak.style.display="none" 
+  pomodoroBottom.addEventListener("click", pomodoroTimer)
+    count++
+}, 300000);
+
+}
+let shortMin = 4
+//function to change minutes for pomodoro
+function shortMinChange(){
+  count ++
+  let pomodoroCenterLeft = document.querySelector("#pomodoroCenterLeft")
+  if(shortMin>=0)
+  {
+    shortMin--
+    pomodoroCenterLeft.innerHTML= "0 : " + shortMin
+
+  }
+
+}
+
+
+
