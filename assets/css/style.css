@@ -40,6 +40,7 @@ img {
   --h2font: 5vh;
   --h3font: 3.5vh;
   --h4font:15px;
+  --timerFont:13vh;
   /* Font Color */
   --primart-color: #e8e5e5;
   --secondary-color-l: #e8e5e5;
@@ -256,7 +257,6 @@ input {
 
 #pomodoroTopContainer{
   display: flex;
-  /* background:red; */
   justify-content: center;
   border-top-left-radius:  var(--border-radius);
   border-top-right-radius:  var(--border-radius);
@@ -264,29 +264,33 @@ input {
   gap:10px;
   align-items: center;
 }
-#pomodoroTopLeft, #pomodoroTopRight, #pomodoroBottom{
+#pomodoroTopContainer button, #pomodoroBottomContainer button{
+  border:none;
+  }
+#pomodoroTopLeft, #pomodoroTopRight, #pomodoroBottom, #pomodoroBottomShortBreak{
   align-self: center;
-  /* background: green; */
-  /* opacity: 1; */
+  padding: 1vh;
+  background: none;
+  border-radius: var(--border-radius);
   font-size:var(--h4font);
 }
 #pomodoroCenterContainer{
   display: flex;
-font-size: var(--h2font);
+font-size: var(--timerFont);
 align-items: center;
 justify-content: center;
 height:50%;
-/* background:pink */
 }
-#pomodoroTopContainer button, #pomodoroBottomContainer button{
-border:none;
-background: none;
-}
+
 #pomodoroBottomContainer{
   height: 25%;
   text-align: center;
-  /* background: yellow; */
   font-size: var(--h3font);
+}
+#pomodoroBottom, #pomodoroBottomShortBreak{
+  background: var(--primart-color);
+  color:#424242;
+  letter-spacing: 1.2px;
 }
 
 

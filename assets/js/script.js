@@ -2,7 +2,9 @@ let changeOptionsContainer = document.querySelector(".changeOptionsContainer");
 let centerCenter = document.querySelector(".center-center");
 let centerTime = document.querySelector(".center-time");
 let centerPercentage = document.querySelector(".center-percentage");
-let centerPomodoro = document.querySelector(".center-pomodoro")
+let centerPomodoro = document.querySelector(".center-pomodoro");
+let click = new Audio("../assets/audio/click.mp3")
+let alarm = new Audio("../assets/audio/alarm.mp3")
 
 updateTime();
 setInterval(updateTime, 1000);
@@ -95,23 +97,77 @@ function pomodoroDisplay() {
   pomodoroContainer.id = "pomodoroContainer"
   let pomodoroTopContainer = document.createElement("div")
   let pomodoroCenterContainer = document.createElement("div")
+  let pomodoroCenterLeft = document.createElement("span")
+  let pomodoroCenterRight = document.createElement("span")
   let pomodoroBottomContainer = document.createElement("div")
   let pomodoroTopLeft = document.createElement("button")
   let pomodoroTopRight = document.createElement("button")
   let pomodoroBottom = document.createElement("button")
+  let pomodoroBottomShortBreak = document.createElement("button")
   pomodoroTopContainer.id = "pomodoroTopContainer"
   pomodoroTopLeft.id = "pomodoroTopLeft"
   pomodoroTopRight.id = "pomodoroTopRight"
   pomodoroBottom.id = "pomodoroBottom" 
+  pomodoroCenterLeft.id = "pomodoroCenterLeft"
+  pomodoroCenterRight.id= "pomodoroCenterRight"
+  pomodoroBottomShortBreak.id ="pomodoroBottomShortBreak"
   pomodoroTopLeft.innerText="Pomodoro"
   pomodoroTopRight.innerText="Break"
+  pomodoroBottomShortBreak.innerHTML="BREAK"
   pomodoroBottom.innerText = "START"
-  pomodoroCenterContainer.innerText="Timer Here"
+  pomodoroCenterLeft.innerHTML="25 : "
+  pomodoroCenterRight.innerHTML=" 00"
 pomodoroCenterContainer.id = "pomodoroCenterContainer" 
 pomodoroBottomContainer.id = "pomodoroBottomContainer"
-pomodoroBottomContainer.append(pomodoroBottom)
+pomodoroCenterContainer.append(pomodoroCenterLeft,pomodoroCenterRight)
+pomodoroBottomContainer.append(pomodoroBottom,pomodoroBottomShortBreak)
 pomodoroTopContainer.append(pomodoroTopLeft,pomodoroTopRight)
 pomodoroContainer.append(pomodoroTopContainer,pomodoroCenterContainer,pomodoroBottomContainer)
-centerPomodoro.append(pomodoroContainer)
+centerPomodoro.append(pomodoroContainer) 
+pomodoroTopLeft.style.backgroundColor="#424242"
+pomodoroBottomShortBreak.style.display="none"
+pomodoroBottom.onclick=()=>pomodoroTimer()
+}
+
+function pomodoroTimer(){
+  click.play()
+  let minIntervalId = setInterval(minChange,60000)
+  let secInterval= setInterval(secChange,1000)
+  setTimeout(function(){
+    clearInterval(minIntervalId);
+    clearInterval(secInterval)
+    pomodoroTopLeft.style.background="none";
+    pomodoroTopRight.style.backgroundColor="#424242"
+    pomodoroCenterLeft.innerHTML= "05:"
+    pomodoroCenterRight.innerHTML = "00"
+    alarm.play() 
+    breakTimer()
+}, 60000);
+
+}
+let min = 0
+function minChange(){
   
+  let pomodoroCenterLeft = document.querySelector("#pomodoroCenterLeft")
+  if(min>=0)
+  {
+    min--
+    pomodoroCenterLeft.innerHTML=min + " : "
+    
+  }
+
+  
+ 
+}
+let sec = 59
+function secChange()
+{ 
+  let pomodoroCenterRight = document.querySelector("#pomodoroCenterRight")
+  if(sec>0){
+    sec--
+  pomodoroCenterRight.innerHTML= (sec>=10)?sec: "0"+sec
+  }
+  else{
+    sec = 59
+  }
 }
