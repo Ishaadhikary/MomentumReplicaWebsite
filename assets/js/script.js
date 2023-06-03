@@ -141,8 +141,10 @@ let secIntervalId;
 //Pomodoro timer activated
 function pomodoroTimer(){
   click.play()
-  minIntervalId = setInterval(pomoMinChange,60000)
+  pomodoroCenterLeft.innerHTML= "24:"
+  pomodoroCenterRight.innerHTML = "59"
   secIntervalId= setInterval(secChange,1000)
+  minIntervalId = setInterval(pomoMinChange,60000)
   //Stopt the pomodoro time after 25 mins and activate short break function
   setTimeout(function(){
     clearInterval(minIntervalId);
@@ -177,24 +179,23 @@ function pomoMinChange(){
   let pomodoroCenterLeft = document.querySelector("#pomodoroCenterLeft")
   if(pomoMin>=0)
   {
-    pomoMin--
+    pomoMin-- 
     pomodoroCenterLeft.innerHTML= (pomoMin<10)?"0"+pomoMin+ " :" : pomoMin + " :" 
-    
   }
 }
 
 
-let sec = 59
+let sec = 60
 //Function to change the second
 function secChange()
 { 
   let pomodoroCenterRight = document.querySelector("#pomodoroCenterRight")
   if(sec>0){
-    sec--
+  sec--
   pomodoroCenterRight.innerHTML= (sec>=10)?" " +sec: " 0"+sec
   }
   else{
-    sec = 59
+    sec = 60
   }
 }
 
