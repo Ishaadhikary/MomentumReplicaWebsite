@@ -133,29 +133,13 @@
         <!-- Section containg Bottom container -->
         <section>
           <div class="bottom-container">
-            <div class="bottom-left popUp" onclick="TimerPopBox('settingId')">
+            <div class="bottom-left" >
+              <div id="settingContainer"></div>
               <img
                 src="assets/images/settings.svg"
-                alt="Change the time layout"
+                alt="Change the time layout" onclick="setting()"
               />
-              <div class="popup-text" id="settingId">
-                <div class="settings">
-                  <div class="settingTopic">
-                    <ul>
-                      <li>GENERAL</li>
-                      <li>Todo</li>
-                      <li>Balance</li>
-                      <li>Mode</li>
-                      <li>About</li>
-                    </ul>
-                  </div>
-                  <div class="settingContent">
-                    <ul>
-                      <li>Guess</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              
             </div>
             <div class="bottom-center">
               "Give every day the chance to be the most beautiful day of your
@@ -192,6 +176,7 @@
     <script src="assets/js/todolist.js"></script>
     <script src="assets/js/percentage.js"></script>
     <script src="assets/js/pomodoro.js"></script>
+    <script src = "assets/js/setting.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
