@@ -112,10 +112,8 @@ backgroundDiv6.addEventListener("click", function(){mainBox.style.backgroundImag
 
 
 //Balance event listner
-uptimeHourOption1.addEventListener("click", function (){uptime(0)})
-uptimeHourOption2.addEventListener("click", function (){uptime(1)})
-uptimeHourOption3.addEventListener("click", function (){uptime(2)})
-
+let eventListnerId;
+balanceCheckBox.addEventListener("change", function (){if(this.checked){balanceSchedule(eventListnerId)} if(!this.checked){defaultValues()}})
 
 function generalSetting(){
 settingGeneralContainer.style.display="block"

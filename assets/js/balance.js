@@ -21,36 +21,61 @@ function balanceSetting(){
     uptimeHourOption3.innerText = " 09:30 - 17:30"
 }
 
-function uptime(uptimeIndex){
-    [currentHour,currentMin] =getTime()
-    let timeChecker = parseFloat(currentHour+(currentMin/60))
+function balanceSchedule(eventListnerId){
+  
+uptimeHourOption1.addEventListener("click", function (){balanceSchedule(0)})
+uptimeHourOption2.addEventListener("click", function (){balanceSchedule(1)})
+uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
+  
+    const [currentHour,currentMin] =getTime()
+    let timeChecker = parseFloat(currentHour)+(parseFloat(currentMin/60))
     console.log(timeChecker)
-    if(uptimeIndex == 0 ){
-      if(timeChecker<8.5 || timeChecker>17.6){
-        
-      }
-      else{
-        console.log("work")
-      }
-    }
-    if(uptimeIndex == 1 ){
-       if(timeChecker<9 || timeChecker>17){
-        console.log("Take a break:2")
+    if(eventListnerId==undefined){
+      if(timeChecker<8 || timeChecker>17){
+        UptimeOver()
        }
        else{
-        console.log("work")
+        defaultValues()
+      }
+
+    }
+    if(eventListnerId == 0 ){
+      if(timeChecker<8 || timeChecker>17){
+     UptimeOver()
+     }
+     else{
+     defaultValues()
+    }}
+
+
+    if(eventListnerId == 1 ){
+       if(timeChecker<9 || timeChecker>23){
+        UptimeOver()
+       }
+       else{
+        defaultValues()
       }
     }
-    if(uptimeIndex == 2 ){
+    if(eventListnerId == 2 ){
         if(timeChecker<9.5 || timeChecker>17.5){
             focusQue.textContent="TAKE A BREAK!!!"
             centerBottom.style.display="none"
             bottomRight.style.visibility="hidden"
            }
            else{
-            focusQue.textContent="What is your main focus for today"
-            centerBottom.style.display="block"
-            bottomRight.style.display="block"
+            defaultValues()
           }
     }
  }
+
+function defaultValues(){
+  focusQue.textContent="What is your main focus for today"
+            centerBottom.style.display="block"
+            bottomRight.style.display="block"
+}
+
+function UptimeOver(){
+  focusQue.textContent="TAKE A BREAK!!!"
+            centerBottom.style.display="none"
+            bottomRight.style.visibility="hidden"
+}
