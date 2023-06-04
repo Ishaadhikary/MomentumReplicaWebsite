@@ -29,6 +29,16 @@ let settingOptionsBalanceList = document.createElement("li")
 let settingOptionsAboutList = document.createElement("li")
 
 //FOr background change options
+let backgroundMainContainer = document.createElement("div")
+
+let backgroundDiv1 = document.createElement("div")
+let backgroundDiv2 = document.createElement("div")
+let backgroundDiv3 = document.createElement("div")
+let backgroundDiv4 = document.createElement("div")
+backgroundMainContainer.append(backgroundDiv1,backgroundDiv2,backgroundDiv3,backgroundDiv4)
+backgroundMainContainer.id="backgroundMainContainer"
+
+settingBackgroundChangeContainer.append(backgroundMainContainer)
 
 //Proving Ids to each of the elements
 settingOptions.id ="settingOptions"
@@ -64,7 +74,15 @@ function changeBackgroundSetting(){
     settingGeneralContainer.style.display="none"
     settingBalanceContainer.style.display="none"
     settingBackgroundChangeContainer.style.display="block"
-    settingBackgroundChangeContainer.textContent="Change Background"
+    settingBackgroundChangeContainer.style.width="100%"
+    settingBackgroundChangeContainer.style.height="100%"
+
+    backgroundDiv1.style.height="10%"
+    backgroundDiv1.style.width="10%"
+    backgroundDiv1.style.background="yellow"
+    
+
+    // settingBackgroundChangeContainer.textContent="Change Background"
     console.log("change background")
 }
 
