@@ -19,8 +19,10 @@ let settingBackgroundChangeContainer =document.createElement("div")
 let settingBalanceContainer = document.createElement("div")
 let settingAboutContainer = document.createElement("div")
 //For general setting
-let settingHeading = document.createElement("h1")
-let settingHeadingDescription=document.createElement("p")
+let headingGeneral = document.createElement("h1")
+let headingDescriptionGeneral=document.createElement("p")
+
+
 //For setting options
 let settingOptionsListContainer = document.createElement("ul")
 let settingOptionsGeneralList = document.createElement("li")
@@ -35,22 +37,27 @@ let backgroundDiv1 = document.createElement("div")
 let backgroundDiv2 = document.createElement("div")
 let backgroundDiv3 = document.createElement("div")
 let backgroundDiv4 = document.createElement("div")
-backgroundMainContainer.append(backgroundDiv1,backgroundDiv2,backgroundDiv3,backgroundDiv4)
-backgroundMainContainer.id="backgroundMainContainer"
+let backgroundDiv5 = document.createElement("div")
+let backgroundDiv6 = document.createElement("div")
 
-settingBackgroundChangeContainer.append(backgroundMainContainer)
+let headingChangeBg = document.createElement("h1")
+let headingDescriptionChangeBg = document.createElement("p")
 
 //Proving Ids to each of the elements
 settingOptions.id ="settingOptions"
 settingOptionInformation.id = "settingOptionInformation"
+settingBackgroundChangeContainer.id = "settingBackgroundChangeContainer"
+backgroundMainContainer.id="backgroundMainContainer"
 //Adding the elements to the container
 //General Setting
-settingGeneralContainer.append(settingHeading,settingHeadingDescription)
+settingGeneralContainer.append(headingGeneral ,headingDescriptionGeneral)
 settingOptionInformation.append(settingGeneralContainer,settingBackgroundChangeContainer,settingBalanceContainer,settingAboutContainer)
-
 settingOptionsListContainer.append(settingOptionsGeneralList, settingOptionsChangeBgList, settingOptionsBalanceList,settingOptionsAboutList)
 settingOptions.append(settingOptionsListContainer)
 settingContainer.append(settingOptions,settingOptionInformation)
+//Background change setting append
+backgroundMainContainer.append(backgroundDiv1,backgroundDiv2,backgroundDiv3,backgroundDiv4,backgroundDiv5,backgroundDiv6)
+settingBackgroundChangeContainer.append(headingChangeBg,headingDescriptionChangeBg,backgroundMainContainer)
 
 settingOptionsGeneralList.textContent="General"
 settingOptionsBalanceList.textContent="Balance"
@@ -73,16 +80,12 @@ settingHeadingDescription.textContent="Customize Your Dashboard"
 function changeBackgroundSetting(){
     settingGeneralContainer.style.display="none"
     settingBalanceContainer.style.display="none"
-    settingBackgroundChangeContainer.style.display="block"
+    settingBackgroundChangeContainer.style.display="flex"
+    headingChangeBg.textContent="Change Background"
+    headingDescriptionChangeBg.textContent="Change your background"
+
     settingBackgroundChangeContainer.style.width="100%"
     settingBackgroundChangeContainer.style.height="100%"
-
-    backgroundDiv1.style.height="10%"
-    backgroundDiv1.style.width="10%"
-    backgroundDiv1.style.background="yellow"
-    
-
-    // settingBackgroundChangeContainer.textContent="Change Background"
     console.log("change background")
 }
 

@@ -50,7 +50,7 @@ img {
   --secondary-color-settings:rgb(109 107 107);
   --setting-h1: 24px;
   --setting-p: 15px;
-  --setting-h2: 18px
+  --setting-h2: 18px;
   /* Box Shadow */
   --box-shadow-m:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -61,7 +61,7 @@ body {
 }
 .main-box {
   background: url("../images/wallpage0.svg") no-repeat ;
-  background-position: center;
+  /* background-position: center; */
   /* background-size: cover; */
   /* opacity: 0.95; */
 }
@@ -535,9 +535,7 @@ hr {
   font-size: 18px;
 }
 
-#settingOptionInformation{
-  width:60%;
-}
+
 #settingOptions{
   width: 30%;
   border-right: 2px solid var(--secondary-color-dark-t);
@@ -557,9 +555,11 @@ hr {
 }
 
 #settingOptionInformation{
-  margin-top:2%;
+  /* margin-top:2%; */
   margin-left:4%;
   height: 85%;
+  width: 60%;
+  /* background-color: red; */
 }
 
 #settingOptionInformation h1{
@@ -573,11 +573,29 @@ hr {
   font-size:var(--setting-p)
 }
 
-#backgroundMainContainer{
-  background-color: red;
-  width:100%;
-  height: 100%;
+#settingBackgroundChangeContainer{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
 }
+#backgroundMainContainer{
+  display: flex;
+  width: 100%;
+  height: 70%;
+  gap:40px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  /* background: yellow; */
+}
+ #backgroundMainContainer> *{
+width:25%;
+height:40%;
+border-radius: var(--border-radius);
+box-shadow: var(--box-shadow-m);
+ }
 
 
 
