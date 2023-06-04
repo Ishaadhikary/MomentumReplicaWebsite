@@ -564,6 +564,7 @@ hr {
 }
 
 #settingOptionInformation h1{
+  color:var(--secondary-color-dark);
   font-size:var(--setting-h1);
   margin-bottom:0px
 }
@@ -573,6 +574,8 @@ hr {
 }
 
 #settingOptionInformation h2{
+  
+  color:var(--secondary-color-dark);
   font-size: var(--setting-h2);
 }
 #settingBackgroundChangeContainer{
@@ -602,15 +605,20 @@ background-size: cover;
  }
 
 /* Balance Setting */
-#enableBalanceModeContainer{
-  display: flex;
-  width:90%;
-  justify-content: space-between;
+#enableBalanceModeContainer, #hourContainer{
   margin-top:1.5vh;
   border-top: 0.5px solid var(--secondary-color-dark-t);
   padding: 1.5vh 0;
   border-bottom: 0.5px solid var(--secondary-color-dark-t);
   margin-bottom: 1.5vh;
 }
-
+#enableBalanceModeContainer{
+  display: flex;
+  width:90%;
+  justify-content: space-between;
+}
+#uptimeHourContainer>*:hover{
+  cursor: pointer;
+  color: var(--secondary-color-dark);
+}
 

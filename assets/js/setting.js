@@ -56,26 +56,28 @@ let eneableBalanceP = document.createElement("p")
 let balanceCheacker = document.createElement("div")
 let balanceCheckBox = document.createElement("input")
 balanceCheckBox.type="checkbox"
-
+let uptimeDuration = document.createElement("div")
 let uptimeBalanceH2 = document.createElement("h2")
 let uptimeeBalanceP = document.createElement("p")
 
-let uptimeduration = document.createElement("div")
+let hourContainer = document.createElement("div")
 let uptimeHourH2 = document.createElement("h2")
 let uptimeHourContainer =document.createElement("div")
 let uptimeHourOption1 = document.createElement("span")
 let uptimeHourOption2 = document.createElement("span")
 let uptimeHourOption3 = document.createElement("span")
-
+uptimeHourContainer.id="uptimeHourContainer"
 //Balance setting appending
+
+hourContainer.append(uptimeHourH2,uptimeHourContainer)
+hourContainer.id = "hourContainer"
 uptimeHourContainer.append(uptimeHourOption1,uptimeHourOption2,uptimeHourOption3)
-uptimeduration.append(uptimeBalanceH2,uptimeHourContainer)
+uptimeDuration.append(uptimeBalanceH2,uptimeeBalanceP)
 enableBalanceMode.append(enableBalanceH2,eneableBalanceP)
 balanceCheacker.append(balanceCheckBox)
 enableBalanceModeContainer.append(enableBalanceMode,balanceCheacker)
-// enableBalanceModeContainer.append(balanceCheacker)
 enableBalanceModeContainer.id ="enableBalanceModeContainer"
-settingBalanceContainer.append(headingBalance,headingDescriptionBalance,enableBalanceModeContainer,uptimeBalanceH2,uptimeeBalanceP,uptimeduration)
+settingBalanceContainer.append(headingBalance,headingDescriptionBalance,enableBalanceModeContainer,uptimeDuration,hourContainer)
 
 
 
@@ -108,6 +110,11 @@ backgroundDiv4.addEventListener("click", function(){mainBox.style.backgroundImag
 backgroundDiv5.addEventListener("click", function(){mainBox.style.backgroundImage="url('../assets/images/wallpaper4.svg')"})
 backgroundDiv6.addEventListener("click", function(){mainBox.style.backgroundImage="url('../assets/images/wallpaper5.svg')"})
 
+
+//Balance event listner
+uptimeHourOption1.addEventListener("click", function (){uptime(0)})
+uptimeHourOption2.addEventListener("click", function (){uptime(1)})
+uptimeHourOption3.addEventListener("click", function (){uptime(2)})
 
 
 function generalSetting(){
