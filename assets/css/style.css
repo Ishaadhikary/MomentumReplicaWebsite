@@ -559,20 +559,22 @@ hr {
   margin-left:4%;
   height: 85%;
   width: 60%;
+  color: var(--secondary-color-settings);
   /* background-color: red; */
 }
 
 #settingOptionInformation h1{
-  color: var(--secondary-color-settings);
   font-size:var(--setting-h1);
   margin-bottom:0px
 }
 
 #settingOptionInformation p{
-  color: var(--secondary-color-settings);
   font-size:var(--setting-p)
 }
 
+#settingOptionInformation h2{
+  font-size: var(--setting-h2);
+}
 #settingBackgroundChangeContainer{
   display: none;
   flex-direction: column;
@@ -599,5 +601,16 @@ background-repeat: no-repeat;
 background-size: cover;
  }
 
+/* Balance Setting */
+#enableBalanceModeContainer{
+  display: flex;
+  width:90%;
+  justify-content: space-between;
+  margin-top:1.5vh;
+  border-top: 0.5px solid var(--secondary-color-dark-t);
+  padding: 1.5vh 0;
+  border-bottom: 0.5px solid var(--secondary-color-dark-t);
+  margin-bottom: 1.5vh;
+}
 
 

@@ -46,7 +46,7 @@ function pomodoroTimer() {
     setTimeout(function () {
       pomodoroPopUpContainer.style.display = "none";
       pomodoroBottomShortBreak.style.display = "flex";
-    }, 1000);
+    }, 5000);
     pomodoroCenterLeft.innerHTML = "04:";
     pomodoroCenterRight.innerHTML = "59";
     alarm.play();
@@ -104,14 +104,14 @@ function shortBreakTimer() {
     setTimeout(function () {
       pomodoroPopUpContainer.style.display = "none";
       pomodoroBottom.style.display = "flex";
-    }, 1000);
+    }, 5000);
     pomodoroCenterLeft.innerHTML = "24:";
     pomodoroCenterRight.innerHTML = "00";
     alarm.play();
     pomodoroBottom.style.display = "inline-block";
     pomodoroBottomShortBreak.style.display = "none";
     pomodoroBottomLongBreak.style.display = "none";
-  }, 3000);
+  }, 300000);
   // 300000
 }
 let shortMin = 4;
@@ -140,13 +140,13 @@ function longBreakTimer() {
     setTimeout(function () {
       pomodoroPopUpContainer.style.display = "none";
       pomodoroBottom.style.display = "flex";
-    }, 1000);
+    }, 5000);
     pomodoroTopRight.style.background = "none";
     alarm.play();
     pomodoroBottom.style.display = "inline-block";
     pomodoroBottomShortBreak.style.display = "none";
     pomodoroBottomLongBreak.style.display = "none";
-  }, 3000);
+  }, 900000);
   //900000
 }
 let longMin = 14;
