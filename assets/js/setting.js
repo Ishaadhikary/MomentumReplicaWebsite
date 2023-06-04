@@ -1,3 +1,4 @@
+let mainBox = document.getElementById("main-box")
 let settingContainer = document.getElementById("settingContainer")
 let countS = 1
 function setting(){
@@ -67,6 +68,14 @@ settingOptionsAboutList.textContent="About"
 settingOptionsGeneralList.addEventListener("click",generalSetting)
 settingOptionsChangeBgList.addEventListener("click",changeBackgroundSetting)
 settingOptionsBalanceList.addEventListener("click",balanceSetting)
+//Changing the background on clicking the background option
+backgroundDiv1.addEventListener("click", function(){mainBox.style.backgroundImage="url('../assets/images/wallpaper0.svg')"})
+backgroundDiv2.addEventListener("click", function(){mainBox.style.backgroundImage="url('../assets/images/wallpaper1.svg')"})
+backgroundDiv3.addEventListener("click", function(){mainBox.style.backgroundImage="url('../assets/images/wallpaper2.svg')"})
+backgroundDiv4.addEventListener("click", function(){mainBox.style.backgroundImage="url('../assets/images/wallpaper3.svg')"})
+backgroundDiv5.addEventListener("click", function(){mainBox.style.backgroundImage="url('../assets/images/wallpaper4.svg')"})
+backgroundDiv6.addEventListener("click", function(){mainBox.style.backgroundImage="url('../assets/images/wallpaper5.svg')"})
+
 
 
 function generalSetting(){
@@ -77,17 +86,7 @@ settingHeading.textContent="General"
 settingHeadingDescription.textContent="Customize Your Dashboard"
 }
 
-function changeBackgroundSetting(){
-    settingGeneralContainer.style.display="none"
-    settingBalanceContainer.style.display="none"
-    settingBackgroundChangeContainer.style.display="flex"
-    headingChangeBg.textContent="Change Background"
-    headingDescriptionChangeBg.textContent="Change your background"
 
-    settingBackgroundChangeContainer.style.width="100%"
-    settingBackgroundChangeContainer.style.height="100%"
-    console.log("change background")
-}
 
 function balanceSetting(){
     settingGeneralContainer.style.display="none"

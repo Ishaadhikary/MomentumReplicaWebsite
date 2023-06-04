@@ -40,3 +40,6 @@ const textArrayH2 = [
   "Time to get back to work",
   "Play the song you love and dance to it "
 ];
+
+//Change background Images
+const changeBgArray = ["../assets/images/wallpaper0.svg"]
