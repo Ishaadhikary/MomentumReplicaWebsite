@@ -1,6 +1,6 @@
 centerPomodoro.style.display="none"
 updateTime();
-setInterval(updateTime, 1000);
+setInterval(updateTime, 10000);
 function updateTime() {
   centerTime.innerHTML = "";
   const [currentHour, currentMin, period] = getTime();

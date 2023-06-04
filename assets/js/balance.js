@@ -20,7 +20,7 @@ function balanceSetting(){
     uptimeHourOption2.innerText = " 09:00 - 17:00 |"
     uptimeHourOption3.innerText = " 09:30 - 17:30"
 }
-
+// let invervalIdBalance = setInterval(balanceSchedule,1000)
 function balanceSchedule(eventListnerId){
   
 uptimeHourOption1.addEventListener("click", function (){balanceSchedule(0)})
@@ -29,41 +29,65 @@ uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
   
     const [currentHour,currentMin] =getTime()
     let timeChecker = parseFloat(currentHour)+(parseFloat(currentMin/60))
-    console.log(timeChecker)
     if(eventListnerId==undefined){
-      if(timeChecker<8 || timeChecker>17){
+      if(timeChecker<6 || timeChecker>23){
+        uptimeHourOption1.style.color="var(--secondary-color-dark)"
+        uptimeHourOption2.style.color="var(--secondary-color-settings)"
+        uptimeHourOption3.style.color="var(--secondary-color-settings)"
         UptimeOver()
        }
        else{
         defaultValues()
+        
+        uptimeHourOption1.style.color="var(--secondary-color-dark)"
+        uptimeHourOption2.style.color="var(--secondary-color-settings)"
+        uptimeHourOption3.style.color="var(--secondary-color-settings)"
       }
 
     }
     if(eventListnerId == 0 ){
       if(timeChecker<8 || timeChecker>17){
+        
+        uptimeHourOption1.style.color="var(--secondary-color-dark)"
+        uptimeHourOption2.style.color="var(--secondary-color-settings)"
+        uptimeHourOption3.style.color="var(--secondary-color-settings)"
      UptimeOver()
      }
      else{
      defaultValues()
+     uptimeHourOption1.style.color="var(--secondary-color-dark)"
+     uptimeHourOption2.style.color="var(--secondary-color-settings)"
+     uptimeHourOption3.style.color="var(--secondary-color-settings)"
     }}
 
 
     if(eventListnerId == 1 ){
        if(timeChecker<9 || timeChecker>23){
-        UptimeOver()
+        uptimeHourOption2.style.color="var(--secondary-color-dark)"
+         uptimeHourOption1.style.color="var(--secondary-color-settings)"
+         uptimeHourOption3.style.color="var(--secondary-color-settings)"
+
+         UptimeOver()
        }
        else{
         defaultValues()
+        uptimeHourOption2.style.color="var(--secondary-color-dark)"
+         uptimeHourOption1.style.color="var(--secondary-color-settings)"
+         uptimeHourOption3.style.color="var(--secondary-color-settings)"
       }
     }
     if(eventListnerId == 2 ){
-        if(timeChecker<9.5 || timeChecker>17.5){
-            focusQue.textContent="TAKE A BREAK!!!"
-            centerBottom.style.display="none"
-            bottomRight.style.visibility="hidden"
+        if(timeChecker<9.5 || timeChecker>18.5){  
+          UptimeOver()
+        uptimeHourOption3.style.color="var(--secondary-color-dark)"
+        uptimeHourOption1.style.color="var(--secondary-color-settings)"
+        uptimeHourOption2.style.color="var(--secondary-color-settings)"
            }
            else{
-            defaultValues()
+            defaultValues()   
+        uptimeHourOption3.style.color="var(--secondary-color-dark)"
+        uptimeHourOption1.style.color="var(--secondary-color-settings)"
+        uptimeHourOption2.style.color="var(--secondary-color-settings)"
           }
     }
  }
@@ -71,11 +95,11 @@ uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
 function defaultValues(){
   focusQue.textContent="What is your main focus for today"
             centerBottom.style.display="block"
-            bottomRight.style.display="block"
+            bottomRight.style.display="block"    
 }
 
 function UptimeOver(){
-  focusQue.textContent="TAKE A BREAK!!!"
+  focusQue.textContent="✨TAKE A BREAK. YOU DESERVE IT✨"
             centerBottom.style.display="none"
-            bottomRight.style.visibility="hidden"
+            bottomRight.style.visibility="hidden" 
 }

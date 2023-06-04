@@ -14,11 +14,12 @@ inputTask.addEventListener("click", function () {
 //Initial Main Task container
 function mainTask() {
   let storageMainTask = localStorage.getItem("mainTaskText");
-  [currentHour, currentMin] = getTime();
+  const [currentHour, currentMin] = getTime();
+  console.log(currentHour,currentMin)
   //To remove the main task after each day
-  if (currentHour === 17 && currentMin === "08") {
+  if (currentHour == "21" && currentMin == "44") {
     //This needs to be changed to 00:00
-    localStorage.removeItem(mainTaskText);
+    localStorage.removeItem("mainTaskText");
   }
   if (storageMainTask != null) {
     inputTask.textContent = storageMainTask; //Get the main Task from Storage
@@ -31,8 +32,8 @@ function addMainTaskInfo() {
   //To add the new main task
   mainTaskTextId.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-      localStorage.setItem("mainTaskText", mainTaskTextId.value);
-      storageMainTask = localStorage.getItem("mainTaskText");
+      localStorage.setItem("mainTaskText", (mainTaskTextId.value));
+      let storageMainTask = localStorage.getItem("mainTaskText");
       inputTask.textContent = storageMainTask;
       mainTaskTextId.style.display = "none";
       mainTaskCheckBox.style.display = "inline-block";
