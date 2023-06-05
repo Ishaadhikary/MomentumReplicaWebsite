@@ -593,13 +593,38 @@ hr {
 }
 
 #settingOptionInformation{
-  /* margin-top:2%; */
   margin-left:4%;
   height: 85%;
   width: 60%;
   color: var(--secondary-color-settings);
-  /* background-color: red; */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
+/* For Setting Scroll */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: var(--border-radius);
+  background: #f1f1f1; 
+  box-shadow: var(--box-shadow-m);
+  border-radius: var(--border-radius);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: var(--border-radius);
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color-settings)
+}
+/* End of the scroll css */
 
 #settingOptionInformation h1{
   color:var(--secondary-color-dark);
@@ -661,13 +686,20 @@ background-size: cover;
 
 
 /* General Setting */
+#settingGeneralContainer,#settingBalanceContainer, #settingAboutContainer, #settingBackgroundChangeContainer{
+  margin-right: 1.5vh;
+}
+#settingBalanceContainer, #settingAboutContainer, #settingBackgroundChangeContainer{
+  overflow:visible
+}
+
 
 #showContainer h3{
   font-weight: normal;
   font-size: 17px;
 }
 
-#linkDiv,#greetingDiv,#mainTaskDiv,#todoDiv,#quoteDiv{
+#linkDiv,#greetingDiv,#mainTaskDiv,#todoDiv,#quoteDiv,#brainDumpDiv,#timerDiv,#weatherDiv{
   display: flex;
   justify-content: space-between;
   margin-top:1.5vh;

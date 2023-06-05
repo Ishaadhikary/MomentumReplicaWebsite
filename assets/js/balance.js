@@ -5,9 +5,20 @@ function balanceSetting(){
     //Initializing the container
     settingGeneralContainer.style.display="none"
     settingBackgroundChangeContainer.style.display="none"
+    settingAboutContainer.style.display="none"
     settingBalanceContainer.style.display="block"
+
     settingOptionsBalanceList.style.color="var(--secondary-color-dark)"
     settingOptionsBalanceList.style.fontWeight="bold"
+
+    settingOptionsGeneralList.style.color="var(--secondary-color-settings)"
+    settingOptionsChangeBgList.style.color="var(--secondary-color-settings)"
+    settingOptionsAboutList.style.color="var(--secondary-color-settings)"
+    
+    settingOptionsGeneralList.style.fontWeight="normal"
+    settingOptionsAboutList.style.fontWeight="normal"
+    settingOptionsChangeBgList.style.fontWeight="normal"
+
     headingBalance.innerText="Balance Setting"
     headingDescriptionBalance.innerHTML= "Have a work life balance"
     enableBalanceH2.innerHTML="Enable Balance Mode"

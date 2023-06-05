@@ -2,7 +2,16 @@ function changeBackgroundSetting(){
     //Initializing the container
     settingGeneralContainer.style.display="none"
     settingBalanceContainer.style.display="none"
+    settingAboutContainer.style.display="none"
+
+    settingOptionsChangeBgList.style.fontWeight="bold"
     settingOptionsChangeBgList.style.color="var(--secondary-color-dark)"
+    
+    
+    settingOptionsGeneralList.style.fontWeight="normal"
+    settingOptionsBalanceList.style.fontWeight="normal"
+    settingOptionsAboutList.style.fontWeight="normal"
+    
     settingBackgroundChangeContainer.style.display="flex"
     headingChangeBg.textContent="Change Background"
     headingDescriptionChangeBg.textContent="Change your background"

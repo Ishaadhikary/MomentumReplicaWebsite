@@ -46,3 +46,6 @@ const textArrayH2 = [
 let mainBox = document.getElementById("main-box");
 let settingContainer = document.getElementById("settingContainer");
 let headerLeft = document.querySelector(".header-left")
+let headerCenter = document.querySelector(".header-center")
+let centerTopContainer = document.querySelector(".center-top-container")
+let topRight = document.querySelector(".header-right")

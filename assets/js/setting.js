@@ -2,6 +2,8 @@ let countS = 1;
 function setting() {
   if (countS % 2 != 0) {
     settingContainer.style.display = "flex";
+    generalSetting()
+
     countS++;
   } else {
     settingContainer.style.display = "none";
@@ -13,9 +15,13 @@ function setting() {
 let settingOptions = document.createElement("div");
 let settingOptionInformation = document.createElement("div");
 let settingGeneralContainer = document.createElement("div");
+settingGeneralContainer.id="settingGeneralContainer"
 let settingBackgroundChangeContainer = document.createElement("div");
+settingBackgroundChangeContainer.id="settingBackgroundChangeContainer"
 let settingBalanceContainer = document.createElement("div");
+settingBalanceContainer.id = "settingBalanceContainer"
 let settingAboutContainer = document.createElement("div");
+settingAboutContainer.id = "settingAboutContainer"
 //For setting options
 let settingOptionsListContainer = document.createElement("ul");
 let settingOptionsGeneralList = document.createElement("li");
@@ -28,24 +34,28 @@ let headingDescriptionGeneral = document.createElement("p");
 let generalH2 = document.createElement("h2")
 let showContainer = document.createElement("div")
 showContainer.id = "showContainer"
+
 let linkDiv = document.createElement("div")
 linkDiv.id = "linkDiv"
 let linkText = document.createElement("h3")
 let linkCheckBox = document.createElement("input");
 linkCheckBox.type="checkbox"
 linkCheckBox.checked=true
+
 let greetingDiv = document.createElement("div")
 greetingDiv.id = "greetingDiv"
 let greetingText = document.createElement("h3")
 let greetingCheckBox = document.createElement("input")
 greetingCheckBox.type="checkbox"
 greetingCheckBox.checked=true
+
 let mainTaskDiv = document.createElement("div")
 mainTaskDiv.id= "mainTaskDiv"
 let mainTaskText = document.createElement("h3")
 let mainTaskCheckbox = document.createElement("input")
 mainTaskCheckbox.type= "checkbox"
 mainTaskCheckbox.checked=true
+
 let todoDiv = document.createElement("div")
 todoDiv.id= "todoDiv"
 let todoText = document.createElement("h3")
@@ -60,14 +70,38 @@ let quoteCheckbox = document.createElement("input")
 quoteCheckbox.type= "checkbox"
 quoteCheckbox.checked=true
 
+let brainDumpDiv = document.createElement("div")
+brainDumpDiv.id= "brainDumpDiv"
+let brainDumpText = document.createElement("h3")
+let brainDumpCheckbox = document.createElement("input")
+brainDumpCheckbox.type= "checkbox"
+brainDumpCheckbox.checked=true
 
-//General Setting
+let timerDiv = document.createElement("div")
+timerDiv.id= "timerDiv"
+let timerText = document.createElement("h3")
+let timerCheckbox = document.createElement("input")
+timerCheckbox.type= "checkbox"
+timerCheckbox.checked=true
+
+let weatherDiv = document.createElement("div")
+weatherDiv.id= "weatherDiv"
+let weatherText = document.createElement("h3")
+let weatherCheckbox = document.createElement("input")
+weatherCheckbox.type= "checkbox"
+weatherCheckbox.checked=true
+
+
+//General Setting Appending
 linkDiv.append(linkText,linkCheckBox)
 greetingDiv.append(greetingText,greetingCheckBox)
 mainTaskDiv.append(mainTaskText,mainTaskCheckbox)
 todoDiv.append(todoText,todoCheckbox)
 quoteDiv.append(quoteText,quoteCheckbox)
-showContainer.append(linkDiv,greetingDiv,mainTaskDiv,todoDiv,quoteDiv)
+brainDumpDiv.append(brainDumpText,brainDumpCheckbox)
+timerDiv.append(timerText,timerCheckbox)
+weatherDiv.append(weatherText,weatherCheckbox)
+showContainer.append(linkDiv,greetingDiv,mainTaskDiv,todoDiv,quoteDiv,brainDumpDiv,timerDiv,weatherDiv)
 
 settingGeneralContainer.append(headingGeneral, headingDescriptionGeneral,generalH2,showContainer);
 
@@ -284,6 +318,51 @@ quoteCheckbox.addEventListener("change",function(){
     quoteShowingId.style.visibility="hidden"
     // focusQue.style.visibility="hidden"
     quoteCheckbox.style.background="var(--toggle-bg)"
+
+  }
+})
+
+brainDumpCheckbox.addEventListener("change",function(){
+  if(this.checked){
+    headerCenter.style.visibility="visible"
+    // focusQue.style.visibility="visible"
+    brainDumpCheckbox.style.background="var(--toggle-bg-green)"
+
+  }
+  if(!this.checked){
+    headerCenter.style.visibility="hidden"
+    // focusQue.style.visibility="hidden"
+    brainDumpCheckbox.style.background="var(--toggle-bg)"
+
+  }
+})
+
+timerCheckbox.addEventListener("change",function(){
+  if(this.checked){
+    centerTopContainer.style.visibility="visible"
+    // focusQue.style.visibility="visible"
+    timerCheckbox.style.background="var(--toggle-bg-green)"
+
+  }
+  if(!this.checked){
+    centerTopContainer.style.visibility="hidden"
+    // focusQue.style.visibility="hidden"
+    timerCheckbox.style.background="var(--toggle-bg)"
+
+  }
+})
+
+weatherCheckbox.addEventListener("change",function(){
+  if(this.checked){
+    topRight.style.visibility="visible"
+    // focusQue.style.visibility="visible"
+    weatherCheckbox.style.background="var(--toggle-bg-green)"
+
+  }
+  if(!this.checked){
+    topRight.style.visibility="hidden"
+    // focusQue.style.visibility="hidden"
+    weatherCheckbox.style.background="var(--toggle-bg)"
 
   }
 })

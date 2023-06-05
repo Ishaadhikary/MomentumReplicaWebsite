@@ -20,7 +20,8 @@ function generalSetting() {
     mainTaskText.textContent="Main Task"
     todoText.textContent="TODO"
     quoteText.textContent="Quotes"
-
-
+    brainDumpText.textContent="BrainDump"
+    timerText.textContent="Time"
+    weatherText.textContent="Weather"
   }
   
