@@ -26,8 +26,8 @@ let centerTime = document.querySelector(".center-time");
 let centerPercentage = document.querySelector(".center-percentage");
 let centerPomodoro = document.querySelector(".center-pomodoro");
 //Pomodoro audio
-let click = new Audio("../assets/audio/click.mp3");
-let alarm = new Audio("../assets/audio/alarm.mp3");
+let click = new Audio("./assets/audio/click.mp3");
+let alarm = new Audio("./assets/audio/alarm.mp3");
 let countP = 0;
 //Pomodoro Pop-ups
 const gifArray = ["../assets/images/short.gif","../assets/images/work.gif","../assets/images/long.gif"];
