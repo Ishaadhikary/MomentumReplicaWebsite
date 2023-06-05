@@ -52,6 +52,7 @@ img {
   --setting-p: 15px;
   --setting-h2: 18px;
   --toggle-bg:rgb(211, 211, 211);
+  --toggle-bg-green: #4cbf3f;
   /* Box Shadow */
   --box-shadow-m:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -77,7 +78,7 @@ input {
 input[type="checkbox"]{
   padding: 0;
   appearance: none;
-  background: var(--toggle-bg);
+  background: var(--toggle-bg-green);
   margin:0;
   font:inherit;
   color:currentColor;
@@ -414,6 +415,7 @@ height:50%;
   font-family: "primary-font-b";
   font-size: var(--h2font);
   cursor: pointer;
+  transition-timing-function:  120s ease-in-out;
 }
 
 .center-middle input,
@@ -650,7 +652,6 @@ background-size: cover;
 }
 #enableBalanceModeContainer{
   display: flex;
-  width:90%;
   justify-content: space-between;
 }
 #uptimeHourContainer>*:hover{
@@ -659,4 +660,19 @@ background-size: cover;
 }
 
 
+/* General Setting */
+
+#showContainer h3{
+  font-weight: normal;
+  font-size: 17px;
+}
+
+#linkDiv,#greetingDiv,#mainTaskDiv,#todoDiv,#quoteDiv{
+  display: flex;
+  justify-content: space-between;
+  margin-top:1.5vh;
+  border-top: 0.5px solid var(--secondary-color-dark-t);
+  padding-top: 0.75vh;
+  align-items: flex-end;
+}
 

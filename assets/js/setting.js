@@ -1,5 +1,3 @@
-let mainBox = document.getElementById("main-box");
-let settingContainer = document.getElementById("settingContainer");
 let countS = 1;
 function setting() {
   if (countS % 2 != 0) {
@@ -27,8 +25,52 @@ let settingOptionsAboutList = document.createElement("li");
 //For general setting
 let headingGeneral = document.createElement("h1");
 let headingDescriptionGeneral = document.createElement("p");
+let generalH2 = document.createElement("h2")
+let showContainer = document.createElement("div")
+showContainer.id = "showContainer"
+let linkDiv = document.createElement("div")
+linkDiv.id = "linkDiv"
+let linkText = document.createElement("h3")
+let linkCheckBox = document.createElement("input");
+linkCheckBox.type="checkbox"
+linkCheckBox.checked=true
+let greetingDiv = document.createElement("div")
+greetingDiv.id = "greetingDiv"
+let greetingText = document.createElement("h3")
+let greetingCheckBox = document.createElement("input")
+greetingCheckBox.type="checkbox"
+greetingCheckBox.checked=true
+let mainTaskDiv = document.createElement("div")
+mainTaskDiv.id= "mainTaskDiv"
+let mainTaskText = document.createElement("h3")
+let mainTaskCheckbox = document.createElement("input")
+mainTaskCheckbox.type= "checkbox"
+mainTaskCheckbox.checked=true
+let todoDiv = document.createElement("div")
+todoDiv.id= "todoDiv"
+let todoText = document.createElement("h3")
+let todoCheckbox = document.createElement("input")
+todoCheckbox.type= "checkbox"
+todoCheckbox.checked=true
+
+let quoteDiv = document.createElement("div")
+quoteDiv.id= "quoteDiv"
+let quoteText = document.createElement("h3")
+let quoteCheckbox = document.createElement("input")
+quoteCheckbox.type= "checkbox"
+quoteCheckbox.checked=true
+
+
 //General Setting
-settingGeneralContainer.append(headingGeneral, headingDescriptionGeneral);
+linkDiv.append(linkText,linkCheckBox)
+greetingDiv.append(greetingText,greetingCheckBox)
+mainTaskDiv.append(mainTaskText,mainTaskCheckbox)
+todoDiv.append(todoText,todoCheckbox)
+quoteDiv.append(quoteText,quoteCheckbox)
+showContainer.append(linkDiv,greetingDiv,mainTaskDiv,todoDiv,quoteDiv)
+
+settingGeneralContainer.append(headingGeneral, headingDescriptionGeneral,generalH2,showContainer);
+
 
 //FOr background change options
 let backgroundMainContainer = document.createElement("div");
@@ -65,11 +107,10 @@ let enableBalanceH2 = document.createElement("h2");
 let eneableBalanceP = document.createElement("p");
 let balanceCheacker = document.createElement("div");
 let balanceCheckBox = document.createElement("input");
-let balanceLable = document.createElement("label")
 balanceCheckBox.type = "checkbox";
+balanceCheckBox.style.background="var(--toggle-bg)"
 
 
-// balanceCheckBox.checked="checked"
 let uptimeDuration = document.createElement("div");
 let uptimeBalanceH2 = document.createElement("h2");
 let uptimeeBalanceP = document.createElement("p");
@@ -92,7 +133,7 @@ uptimeHourContainer.append(
 );
 uptimeDuration.append(uptimeBalanceH2, uptimeeBalanceP);
 enableBalanceMode.append(enableBalanceH2, eneableBalanceP);
-balanceCheacker.append(balanceLable,balanceCheckBox);
+balanceCheacker.append(balanceCheckBox);
 enableBalanceModeContainer.append(enableBalanceMode, balanceCheacker);
 enableBalanceModeContainer.id = "enableBalanceModeContainer";
 settingBalanceContainer.append(
@@ -163,7 +204,7 @@ balanceCheckBox.addEventListener("change", function () {
     uptimeHourOption1.addEventListener("click", function (){balanceSchedule(0)})
     uptimeHourOption2.addEventListener("click", function (){balanceSchedule(1)})
     uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
-    balanceCheckBox.style.background="green"  
+    balanceCheckBox.style.background="var(--toggle-bg-green)"  
   }
   if (!this.checked) {
     defaultValues()
@@ -179,10 +220,70 @@ balanceCheckBox.addEventListener("change", function () {
   }
 });
 
-function generalSetting() {
-  settingGeneralContainer.style.display = "block";
-  settingBackgroundChangeContainer.style.display = "none";
-  settingBalanceContainer.style.display = "none";
-  headingGeneral.textContent = "General";
-  headingDescriptionGeneral.textContent = "Customize Your Dashboard";
-}
+//Adding Event Listner for the General toggle settings
+linkCheckBox.addEventListener("change",function(){
+  if(this.checked){
+    headerLeft.style.visibility="visible"
+    linkCheckBox.style.background="var(--toggle-bg-green)" 
+  }
+  if(!this.checked){
+    headerLeft.style.visibility="hidden"
+    linkCheckBox.style.background="var(--toggle-bg)"
+  }
+})
+
+greetingCheckBox.addEventListener("change",function(){
+  if(this.checked){
+    centerMiddle.style.display="block"
+    greetingCheckBox.style.background="var(--toggle-bg-green)" 
+  }
+  if(!this.checked){
+    centerMiddle.style.display="none"
+    greetingCheckBox.style.background="var(--toggle-bg)"
+  }
+})
+
+mainTaskCheckbox.addEventListener("change",function(){
+  if(this.checked){
+    centerBottom.style.visibility="visible"
+    focusQue.style.visibility="visible"
+    mainTaskCheckbox.style.background="var(--toggle-bg-green)"
+
+  }
+  if(!this.checked){
+    centerBottom.style.visibility="hidden"
+    focusQue.style.visibility="hidden"
+    mainTaskCheckbox.style.background="var(--toggle-bg)"
+
+  }
+})
+
+todoCheckbox.addEventListener("change",function(){
+  if(this.checked){
+    bottomRight.style.visibility="visible"
+    // focusQue.style.visibility="visible"
+    todoCheckbox.style.background="var(--toggle-bg-green)"
+
+  }
+  if(!this.checked){
+    bottomRight.style.visibility="hidden"
+    // focusQue.style.visibility="hidden"
+    todoCheckbox.style.background="var(--toggle-bg)"
+
+  }
+})
+
+quoteCheckbox.addEventListener("change",function(){
+  if(this.checked){
+    quoteShowingId.style.visibility="visible"
+    // focusQue.style.visibility="visible"
+    quoteCheckbox.style.background="var(--toggle-bg-green)"
+
+  }
+  if(!this.checked){
+    quoteShowingId.style.visibility="hidden"
+    // focusQue.style.visibility="hidden"
+    quoteCheckbox.style.background="var(--toggle-bg)"
+
+  }
+})
