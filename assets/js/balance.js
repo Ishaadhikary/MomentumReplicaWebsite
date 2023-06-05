@@ -20,31 +20,10 @@ function balanceSetting(){
     uptimeHourOption2.innerText = " 09:00 - 17:00 |"
     uptimeHourOption3.innerText = " 09:30 - 17:30"
 }
-// let invervalIdBalance = setInterval(balanceSchedule,1000)
 function balanceSchedule(eventListnerId){
-  
-uptimeHourOption1.addEventListener("click", function (){balanceSchedule(0)})
-uptimeHourOption2.addEventListener("click", function (){balanceSchedule(1)})
-uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
-  
-    const [currentHour,currentMin] =getTime()
+  const [currentHour,currentMin] =getTime()
     let timeChecker = parseFloat(currentHour)+(parseFloat(currentMin/60))
-    if(eventListnerId==undefined){
-      if(timeChecker<6 || timeChecker>23){
-        uptimeHourOption1.style.color="var(--secondary-color-dark)"
-        uptimeHourOption2.style.color="var(--secondary-color-settings)"
-        uptimeHourOption3.style.color="var(--secondary-color-settings)"
-        UptimeOver()
-       }
-       else{
-        defaultValues()
-        
-        uptimeHourOption1.style.color="var(--secondary-color-dark)"
-        uptimeHourOption2.style.color="var(--secondary-color-settings)"
-        uptimeHourOption3.style.color="var(--secondary-color-settings)"
-      }
 
-    }
     if(eventListnerId == 0 ){
       if(timeChecker<8 || timeChecker>17){
         
@@ -77,7 +56,7 @@ uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
       }
     }
     if(eventListnerId == 2 ){
-        if(timeChecker<9.5 || timeChecker>18.5){  
+        if(timeChecker<11 || timeChecker>18.5){  
           UptimeOver()
         uptimeHourOption3.style.color="var(--secondary-color-dark)"
         uptimeHourOption1.style.color="var(--secondary-color-settings)"
@@ -90,7 +69,20 @@ uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
         uptimeHourOption2.style.color="var(--secondary-color-settings)"
           }
     }
- }
+    if(eventListnerId==undefined){
+      if(timeChecker<6 || timeChecker>23){
+        uptimeHourOption1.style.color="var(--secondary-color-dark)"
+        uptimeHourOption2.style.color="var(--secondary-color-settings)"
+        uptimeHourOption3.style.color="var(--secondary-color-settings)"
+        UptimeOver()
+       }
+       else{
+        defaultValues()
+        uptimeHourOption1.style.color="var(--secondary-color-dark)"
+        uptimeHourOption2.style.color="var(--secondary-color-settings)"
+        uptimeHourOption3.style.color="var(--secondary-color-settings)"
+      }
+ }}
 
 function defaultValues(){
   focusQue.textContent="What is your main focus for today"

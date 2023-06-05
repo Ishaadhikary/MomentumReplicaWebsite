@@ -50,11 +50,12 @@ function getTheBrainIdeas(){
     deleteIcon.id = "deleteIcon";
     let li = document.createElement("li");
     li.innerHTML = storedIdea;
-
+    
     eachIdeaContainer.append(li, editIcon, deleteIcon);
     brainDumpIdeas.append(eachIdeaContainer);
 
     index++;
+    console.log(index)
     editIcon.onclick = () => editIdeas(index);
     deleteIcon.onclick=() =>deleteIdeas(index);//Function to delete the idea 
   });
@@ -62,6 +63,7 @@ function getTheBrainIdeas(){
 
 //Edit each of the Ideas: 
 function editIdeas(index) {
+  console.log(index)
   editIdeasButton.style.display = "inline-block";
   let oldIdeas = JSON.parse(localStorage.getItem("ideas"));
   let editValue = oldIdeas.slice(index - 1, index);//Get the idea to edit

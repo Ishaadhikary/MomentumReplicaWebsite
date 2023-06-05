@@ -154,19 +154,25 @@ backgroundDiv6.addEventListener("click", function () {
 
 //Balance event listner
 let eventListnerId;
-invervalIdBalance= setInterval(balanceSchedule(eventListnerId), 1000);
+
+setInterval(balanceSchedule(eventListnerId),1000)
+let intervalId;
 balanceCheckBox.addEventListener("change", function () {
   if (this.checked) {
-    balanceCheckBox.style.background="green"
-  balanceSchedule(eventListnerId)
-    
-    console.log("Test")
+    balanceSchedule(eventListnerId);
+    uptimeHourOption1.addEventListener("click", function (){balanceSchedule(0)})
+    uptimeHourOption2.addEventListener("click", function (){balanceSchedule(1)})
+    uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
+    balanceCheckBox.style.background="green"  
   }
   if (!this.checked) {
-    
+    uptimeHourOption1.style.color="var(--secondary-color-settings)"
+    uptimeHourOption2.style.color="var(--secondary-color-settings)"
+    uptimeHourOption3.style.color="var(--secondary-color-settings)"
+    uptimeHourOption3.addEventListener("click", function (){balanceSchedule(undefined)})
+    uptimeHourOption2.addEventListener("click", function (){balanceSchedule(undefined)})
+    uptimeHourOption1.addEventListener("click", function (){balanceSchedule(undefined)})
     balanceCheckBox.style.background="var(--toggle-bg)"
-    defaultValues();
-    clearInterval(invervalIdBalance);
     console.log("noChecked")
 
   }
