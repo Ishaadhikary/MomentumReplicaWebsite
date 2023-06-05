@@ -166,6 +166,7 @@ balanceCheckBox.addEventListener("change", function () {
     balanceCheckBox.style.background="green"  
   }
   if (!this.checked) {
+    defaultValues()
     uptimeHourOption1.style.color="var(--secondary-color-settings)"
     uptimeHourOption2.style.color="var(--secondary-color-settings)"
     uptimeHourOption3.style.color="var(--secondary-color-settings)"
