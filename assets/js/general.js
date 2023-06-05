@@ -14,7 +14,7 @@ function generalSetting() {
     //Content for the general Setting container
     headingGeneral.textContent = "General";
     headingDescriptionGeneral.textContent = "Customize Your Dashboard";
-    generalH2.textContent="HIDE COMPONENTS"
+    generalH2.textContent="SHOW"
     linkText.textContent="Links"
     greetingText.textContent="Greeting"
     mainTaskText.textContent="Main Task"
@@ -23,5 +23,10 @@ function generalSetting() {
     brainDumpText.textContent="BrainDump"
     timerText.textContent="Time"
     weatherText.textContent="Weather"
+    apperanceH2.textContent="Apperance"
+    themeText.textContent="Theme"
+    darkTheme.textContent="Dark" 
+    themeBorder.textContent="|"
+    lightTheam.textContent="Light"
   }
   

@@ -91,7 +91,15 @@ let weatherCheckbox = document.createElement("input")
 weatherCheckbox.type= "checkbox"
 weatherCheckbox.checked=true
 
-
+let apperanceH2 = document.createElement("h2")
+let themeContainer = document.createElement("div")
+themeContainer.id="themeContainer"
+let themeText = document.createElement("h3")
+let themeDiv = document.createElement("div")
+themeDiv.id="themeDiv"
+let darkTheme = document.createElement("span")
+let themeBorder = document.createElement("span")
+let lightTheam = document.createElement("span")
 //General Setting Appending
 linkDiv.append(linkText,linkCheckBox)
 greetingDiv.append(greetingText,greetingCheckBox)
@@ -101,7 +109,9 @@ quoteDiv.append(quoteText,quoteCheckbox)
 brainDumpDiv.append(brainDumpText,brainDumpCheckbox)
 timerDiv.append(timerText,timerCheckbox)
 weatherDiv.append(weatherText,weatherCheckbox)
-showContainer.append(linkDiv,greetingDiv,mainTaskDiv,todoDiv,quoteDiv,brainDumpDiv,timerDiv,weatherDiv)
+themeDiv.append(darkTheme,themeBorder,lightTheam)
+themeContainer.append(themeText,themeDiv)
+showContainer.append(linkDiv,greetingDiv,mainTaskDiv,todoDiv,quoteDiv,brainDumpDiv,timerDiv,weatherDiv, apperanceH2,themeContainer)
 
 settingGeneralContainer.append(headingGeneral, headingDescriptionGeneral,generalH2,showContainer);
 
@@ -365,4 +375,11 @@ weatherCheckbox.addEventListener("change",function(){
     weatherCheckbox.style.background="var(--toggle-bg)"
 
   }
+})
+
+//For dark and light mode
+darkTheme.addEventListener("click", function(){
+  var element = document.getElementById("settingContainer")
+  element.classList.toggle("dark-mode",true)
+  console.log("darkmode on")
 })

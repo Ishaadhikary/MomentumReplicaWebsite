@@ -693,6 +693,9 @@ background-size: cover;
   overflow:visible
 }
 
+#settingGeneralContainer h2{
+  margin-top: 1.5vh;
+}
 
 #showContainer h3{
   font-weight: normal;
@@ -707,4 +710,17 @@ background-size: cover;
   padding-top: 0.75vh;
   align-items: flex-end;
 }
+#themeContainer{
+  display: flex;
+  justify-content: space-between;
+}
+#themeDiv{
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+}
 
+.dark-mode{
+  color:var(--primart-color);
+  background:var(--secondary-color-dark);
+}
