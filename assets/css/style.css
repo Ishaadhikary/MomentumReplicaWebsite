@@ -51,6 +51,7 @@ img {
   --setting-h1: 24px;
   --setting-p: 15px;
   --setting-h2: 18px;
+  --toggle-bg:rgb(211, 211, 211);
   /* Box Shadow */
   --box-shadow-m:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -71,6 +72,41 @@ li {
 input {
   border: none;
   outline: none;
+}
+/* Input box for all toggle items */
+input[type="checkbox"]{
+  padding: 0;
+  appearance: none;
+  background: var(--toggle-bg);
+  margin:0;
+  font:inherit;
+  color:currentColor;
+  width: 2.2em;
+  height: 1.24em;
+  border: 0.15em solid var(--toggle-bg);
+  border-radius: 10px;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  background: var(--primart-color);
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin-left: -13px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+input[type="checkbox"]:checked::before {
+  border-radius: 50%;
+  background: var(--primart-color);
+  margin-left: 18px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .main-container {
@@ -621,4 +657,6 @@ background-size: cover;
   cursor: pointer;
   color: var(--secondary-color-dark);
 }
+
+
 

@@ -65,7 +65,10 @@ let enableBalanceH2 = document.createElement("h2");
 let eneableBalanceP = document.createElement("p");
 let balanceCheacker = document.createElement("div");
 let balanceCheckBox = document.createElement("input");
+let balanceLable = document.createElement("label")
 balanceCheckBox.type = "checkbox";
+
+
 // balanceCheckBox.checked="checked"
 let uptimeDuration = document.createElement("div");
 let uptimeBalanceH2 = document.createElement("h2");
@@ -89,7 +92,7 @@ uptimeHourContainer.append(
 );
 uptimeDuration.append(uptimeBalanceH2, uptimeeBalanceP);
 enableBalanceMode.append(enableBalanceH2, eneableBalanceP);
-balanceCheacker.append(balanceCheckBox);
+balanceCheacker.append(balanceLable,balanceCheckBox);
 enableBalanceModeContainer.append(enableBalanceMode, balanceCheacker);
 enableBalanceModeContainer.id = "enableBalanceModeContainer";
 settingBalanceContainer.append(
@@ -154,13 +157,18 @@ let eventListnerId;
 invervalIdBalance= setInterval(balanceSchedule(eventListnerId), 1000);
 balanceCheckBox.addEventListener("change", function () {
   if (this.checked) {
+    balanceCheckBox.style.background="green"
   balanceSchedule(eventListnerId)
     
     console.log("Test")
   }
   if (!this.checked) {
+    
+    balanceCheckBox.style.background="var(--toggle-bg)"
     defaultValues();
     clearInterval(invervalIdBalance);
+    console.log("noChecked")
+
   }
 });
 

@@ -95,7 +95,7 @@ uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
 function defaultValues(){
   focusQue.textContent="What is your main focus for today"
             centerBottom.style.display="block"
-            bottomRight.style.display="block"    
+            bottomRight.style.visibility="visible"   
 }
 
 function UptimeOver(){
