@@ -67,7 +67,7 @@ function balanceSchedule(eventListnerId){
       }
     }
     if(eventListnerId == 2 ){
-        if(timeChecker<11 || timeChecker>18.5){  
+        if(timeChecker<13 || timeChecker>18.5){  
           UptimeOver()
         uptimeHourOption3.style.color="var(--secondary-color-dark)"
         uptimeHourOption1.style.color="var(--secondary-color-settings)"

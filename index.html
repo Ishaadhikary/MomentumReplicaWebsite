@@ -9,7 +9,7 @@
       href="assets/images/tabIcon.svg"
       type="image/x-icon"
     />
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/normalize.css" />
     <link
@@ -71,21 +71,24 @@
               <div class="center-left">
                 <img
                   src="assets/images/change.svg"
-                  alt="Change time display" 
+                  alt="Change time display"
                   onclick="changeDisplay()"
                 />
                 <div class="changeOptionsContainer">
                   <img
                     src="assets/images/percentage.svg"
-                    alt="Percentage Symbol" id="percentageImg"
+                    alt="Percentage Symbol"
+                    id="percentageImg"
                     onclick="percentageDisplay()"
                   /><img
                     src="assets/images/clock.svg"
-                    alt="Clock Symbol" id="clockImg"
+                    alt="Clock Symbol"
+                    id="clockImg"
                     onclick="clockDisplay()"
                   /><img
                     src="assets/images/timer.svg"
-                    alt="Pomodoro Symbol" id="pomodoroImg"
+                    alt="Pomodoro Symbol"
+                    id="pomodoroImg"
                     onclick="pomodoroDisplay()"
                   />
                 </div>
@@ -118,7 +121,7 @@
             <div class="center-bottom">
               <label
                 ><input type="checkbox" id="mainTaskCheckId" /><span
-                  class="mainTaskCheckBox" 
+                  class="mainTaskCheckBox"
                 ></span></label
               ><span class="inputTask"> </span
               ><input
@@ -133,13 +136,13 @@
         <!-- Section containg Bottom container -->
         <section>
           <div class="bottom-container">
-            <div class="bottom-left" >
+            <div class="bottom-left">
               <div id="settingContainer"></div>
               <img
                 src="assets/images/settings.svg"
-                alt="Change the time layout" onclick="setting()"
+                alt="Change the time layout"
+                onclick="setting()"
               />
-              
             </div>
             <div class="bottom-center">
               "Give every day the chance to be the most beautiful day of your
@@ -148,8 +151,8 @@
             <div class="bottom-right">
               <div class="todoListContainer">
                 <div>
-                  All Task<img src="assets/images/expand.svg" id="expand" />
-                </div>
+                  All Task  <!--/<img src="assets/images/expand.svg" id="expand" /> -->
+                 </div>
                 <table width="100%" id="todoTable">
                   <tr>
                     <th id="statusColumn">Status</th>
@@ -159,8 +162,47 @@
                     <th id="priorityColumn">Priority</th>
                   </tr>
                 </table>
+                <button id="initialAddTask" onclick="initialAddtaskPopUp()">ADD TASK</button>
+
               </div>
               <p id="todo" onclick="todoList()">TODO</p>
+              <div id =addTaskPopUp>
+                <form id="addtaskForm">
+                  <label for="taskName">Task</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your task here"
+                    id="taskName"
+                  /><br>
+                  <label for="priority">Priority</label>
+                  <select name="priority" id="priority">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select><br>
+                  <label for="alarm">Alarm</label>
+                  <select name="alarm" id="alarm">
+                    <option value="00:00">00:00</option>
+                    <option value="00:00">01:00</option>
+                    <option value="00:00">02:00</option>
+                    <option value="00:00">03:00</option>
+                    <option value="00:00">04:00</option>
+                    <option value="00:00">05:00</option>
+                    <option value="00:00">06:00</option>
+                    <option value="00:00">07:00</option>
+                    <option value="00:00">08:00</option>
+                    <option value="00:00">09:00</option>
+                    <option value="00:00">10:00</option>
+                    <option value="00:00">11:00</option>
+                    <option value="00:00">12:00</option>
+                  </select>
+                  <select name="alarmType" id="alarmType">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                  </select><br>
+                  <input type="submit" value="Add Task" id="addNewTask"> 
+                </form>
+              </div>
             </div>
           </div>
         </section>
@@ -173,13 +215,13 @@
     <script src="assets/js/quotes.js"></script>
     <script src="assets/js/braindump.js"></script>
     <script src="assets/js/mainTask.js"></script>
-    <script src="assets/js/todolist.js"></script>
+    <script src="assets/js/todoFullTask.js"></script>
     <script src="assets/js/percentage.js"></script>
     <script src="assets/js/pomodoro.js"></script>
     <script src="assets/js/balance.js"></script>
     <script src="assets/js/background.js"></script>
     <script src="assets/js/general.js"></script>
-    <script src = "assets/js/setting.js"></script>
+    <script src="assets/js/setting.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
