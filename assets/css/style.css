@@ -536,11 +536,14 @@ hr {
   flex-direction: column;
   height: fit-content;
   min-height: 300px;
+  max-height: 600px;
   background: var(--todo-container-color);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-m);
   z-index: 1;
   color: var(--secondary-color);
+  border: none;
+  overflow-y: auto;
 }
 .todoListContainer div {
   display: flex;
@@ -557,23 +560,29 @@ hr {
   font-weight:bold;
   text-align: center;
 }
-#toDoTableheader{
-  background-color: var(--todo-header-container-color);
-  color:var(--primary-color)
-}
+
 
 .todoListContainer div img {
   width: 18px;
   height: 18px;
 }
-.todoListContainer table,
-.todoListContainer th {
-  border: 1px solid --primary-color;
+
+.todoListContainer tr {
+  border-bottom: 2px solid var(--primary-color);
+  height:30px;
+}
+#toDoTableheader{
+  border: none;
+  background-color: var(--todo-header-container-color);
+  color:var(--primary-color);
+  margin:0;
 }
 
 
+
+
 #initialAddTask{
-  position: absolute;
+  position: sticky;
   bottom:2%;
   cursor: pointer;
   background: var(--toggle-bg-green);
@@ -585,6 +594,9 @@ hr {
   width: fit-content;
   align-self: center;
 }
+#initialAddTask:hover{
+  background: green;
+}
 #crossTodo{
   margin-bottom: 0.5vh;
   display: flex;
@@ -594,13 +606,14 @@ hr {
   justify-content: space-between;
   padding: 0 0.5vh;
 }
-
+#tableBody{
+  text-align: center;
+}
 #addTaskPopUp{
   display: none;
   position: absolute;
   left: -400px;
     top: -33vh;
-  /* bottom: -10; */
   background-color: var(--primary-color);
   z-index: 2;
   width: fit-content;
