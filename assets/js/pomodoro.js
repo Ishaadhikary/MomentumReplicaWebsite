@@ -61,7 +61,7 @@ function pomodoroTimer() {
       pomodoroCenterLeft.innerHTML = "15:";
       pomodoroCenterRight.innerHTML = "59";
     }
-  }, 1500000);
+  }, 3000);
   //This is ending the timer in one min: change it to 25 min for demo 1500000
   
 }
@@ -111,7 +111,7 @@ function shortBreakTimer() {
     pomodoroBottom.style.display = "inline-block";
     pomodoroBottomShortBreak.style.display = "none";
     pomodoroBottomLongBreak.style.display = "none";
-  }, 300000);
+  }, 3000);
   // 300000
 }
 let shortMin = 4;

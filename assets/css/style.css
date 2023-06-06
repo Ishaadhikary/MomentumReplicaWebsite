@@ -53,12 +53,11 @@ img {
   --setting-h2: 18px;
   --toggle-bg:rgb(211, 211, 211);
   --toggle-bg-green: #4cbf3f;
+  
   /* Box Shadow */
   --box-shadow-m:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  /* --todoListHeader: rgb(37, 66, 37); */
   --todo-container-color:#ECFBD5;
-  --todo-header-container-color:#0F5C08;
-  /* --todo-header-color: var(--primary-color); */
+  --todo-header-container-color:#0d9a00;
 
 }
 body {
@@ -545,7 +544,7 @@ hr {
 }
 .todoListContainer div {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   background-color: var(--todo-header-container-color);
   height: 30px;
   border-top-left-radius: var(--border-radius);
@@ -554,6 +553,13 @@ hr {
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
+  color:var(--primary-color);
+  font-weight:bold;
+  text-align: center;
+}
+#toDoTableheader{
+  background-color: var(--todo-header-container-color);
+  color:var(--primary-color)
 }
 
 .todoListContainer div img {
@@ -579,12 +585,21 @@ hr {
   width: fit-content;
   align-self: center;
 }
+#crossTodo{
+  margin-bottom: 0.5vh;
+  display: flex;
+  width: 100%;
+  padding: 0vh 0vh 0.2vh ;
+  cursor: pointer;
+  justify-content: space-between;
+  padding: 0 0.5vh;
+}
 
 #addTaskPopUp{
   display: none;
   position: absolute;
   left: -400px;
-    top: -30vh;
+    top: -33vh;
   /* bottom: -10; */
   background-color: var(--primary-color);
   z-index: 2;
@@ -594,6 +609,10 @@ hr {
   padding: 2vh;
   color:var(--secondary-color);
   box-shadow:var(--box-shadow-m);
+}
+
+#addtaskForm{
+  margin-top: 2vh;
 }
 #addtaskForm> * {
   margin-bottom: 1.5vh;

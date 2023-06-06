@@ -154,12 +154,11 @@
                   All Task  <!--/<img src="assets/images/expand.svg" id="expand" /> -->
                  </div>
                 <table width="100%" id="todoTable">
-                  <tr>
+                  <tr id = "toDoTableheader">
                     <th id="statusColumn">Status</th>
                     <th id="taskColumn" width="90%">Task Title</th>
-                    <th id="categoryColumn">Category</th>
-                    <th id="timerColumn">Timer</th>
                     <th id="priorityColumn">Priority</th>
+                    <th id="timerColumn">Alarm</th>
                   </tr>
                 </table>
                 <button id="initialAddTask" onclick="initialAddtaskPopUp()">ADD TASK</button>
@@ -167,6 +166,7 @@
               </div>
               <p id="todo" onclick="todoList()">TODO</p>
               <div id =addTaskPopUp>
+                <div id=crossTodo><span>Add a new Task</span><img src="assets/images/close.svg" alt="Closs Icon" id="crossIcon"/></div>
                 <form id="addtaskForm">
                   <label for="taskName">Task</label>
                   <input

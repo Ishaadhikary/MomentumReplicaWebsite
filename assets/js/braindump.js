@@ -67,7 +67,7 @@ function editIdeas(index) {
   editIdeasButton.style.display = "inline-block";
   let oldIdeas = JSON.parse(localStorage.getItem("ideas"));
   let editValue = oldIdeas.slice(index - 1, index);//Get the idea to edit
-  
+  oldIdeas.splice(index-1,1)
   brainDumpInput.value = editValue;// Append the idea to edit in the input container
   addIdeasButton.style.display = "none";
   editIdeasButton.addEventListener("click", function () {//When edit button is clicked
