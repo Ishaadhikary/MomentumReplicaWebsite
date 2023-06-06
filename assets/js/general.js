@@ -27,6 +27,6 @@ function generalSetting() {
     themeText.textContent="Theme"
     darkTheme.textContent="Dark" 
     themeBorder.textContent="|"
-    lightTheam.textContent="Light"
+    lightTheme.textContent="Light"
   }
   

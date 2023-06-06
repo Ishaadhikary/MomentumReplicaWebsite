@@ -100,7 +100,7 @@ let themeDiv = document.createElement("div")
 themeDiv.id="themeDiv"
 let darkTheme = document.createElement("span")
 let themeBorder = document.createElement("span")
-let lightTheam = document.createElement("span")
+let lightTheme = document.createElement("span")
 //General Setting Appending
 linkDiv.append(linkText,linkCheckBox)
 greetingDiv.append(greetingText,greetingCheckBox)
@@ -110,7 +110,7 @@ quoteDiv.append(quoteText,quoteCheckbox)
 brainDumpDiv.append(brainDumpText,brainDumpCheckbox)
 timerDiv.append(timerText,timerCheckbox)
 weatherDiv.append(weatherText,weatherCheckbox)
-themeDiv.append(darkTheme,themeBorder,lightTheam)
+themeDiv.append(darkTheme,themeBorder,lightTheme)
 themeContainer.append(themeText,themeDiv)
 showContainer.append(linkDiv,greetingDiv,mainTaskDiv,todoDiv,quoteDiv,brainDumpDiv,timerDiv,weatherDiv, apperanceH2,themeContainer)
 
@@ -384,11 +384,20 @@ darkTheme.addEventListener("click" ,function(){
   settingElementD.classList.toggle("dark-theme",true)
   let todoElement = document.querySelector(".todoListContainer")
   todoElement.classList.toggle("dark-theme",true)
+  darkTheme.style.color="var(--secondary-color)"
+  darkTheme.style.fontWeight="bold"
+  lightTheme.style.color="var(--secondary-color-settings)"
+  lightTheme.style.fontWeight="normal"
+  
 })
 
-lightTheam.addEventListener("click",function(){
+lightTheme.addEventListener("click",function(){
   let settingElementL = document.getElementById("settingContainer")
   settingElementL.classList.toggle("dark-theme",false)
   let todoElementL = document.querySelector(".todoListContainer")
   todoElementL.classList.toggle("dark-theme",false)
+  lightTheme.style.color="var(--secondary-color)"
+  lightTheme.style.fontWeight="bold"
+  darkTheme.style.color="var(--secondary-color-settings)"
+  darkTheme.style.fontWeight="normal"
 })
