@@ -42,9 +42,9 @@ img {
   --h4font:15px;
   --timerFont:13vh;
   /* Font Color */
-  --primart-color: #e8e5e5;
-  --secondary-color-l: #e8e5e5;
-  --secondary-color-dark: rgb(33, 33, 33);
+  --primary-color: #e8e5e5;
+  --primary-color-l: #e9e6e6f9;
+  --secondary-color: rgb(33, 33, 33);
   --secondary-color-dark-t: rgba(148, 148, 148, 0.358);  /*secondary color darrk transparent */
   --border-radius: 8px;
   --secondary-color-settings:rgb(109 107 107);
@@ -55,11 +55,16 @@ img {
   --toggle-bg-green: #4cbf3f;
   /* Box Shadow */
   --box-shadow-m:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* --todoListHeader: rgb(37, 66, 37); */
+  --todo-container-color:#ECFBD5;
+  --todo-header-container-color:#0F5C08;
+  /* --todo-header-color: var(--primary-color); */
+
 }
 body {
   backface-visibility: hidden;
   font-family: var(--backup-font);
-  color: var(--primart-color);
+  color: var(--primary-color);
 }
 #main-box {
   background: url("../images/wallpaper0.svg") no-repeat ;
@@ -93,7 +98,7 @@ input[type="checkbox"]{
 
 input[type="checkbox"]::before {
   content: "";
-  background: var(--primart-color);
+  background: var(--primary-color);
   width: 1em;
   height: 1em;
   border-radius: 50%;
@@ -104,7 +109,7 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
   border-radius: 50%;
-  background: var(--primart-color);
+  background: var(--primary-color);
   margin-left: 18px;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
@@ -139,11 +144,11 @@ input[type="checkbox"]:checked::before {
   left: -12vw;
   width: 25vw;
   min-height: 10vh;
-  background: var(--secondary-color-l);
+  background: var(--primary-color-l);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-m);
   z-index: 1;
-  color: var(--secondary-color-dark);
+  color: var(--secondary-color);
   gap: 10px;
 }
 .brainDumpHeader {
@@ -172,7 +177,7 @@ input[type="checkbox"]:checked::before {
 .editIdeas {
   background: rgb(82, 163, 12);
   border-radius: var(--border-radius);
-  color: var(--primart-color);
+  color: var(--primary-color);
   height: max-content;
   width: max-content;
   border: none;
@@ -235,7 +240,7 @@ input[type="checkbox"]:checked::before {
   height: 2vw;
   right: 2vw;
   border-radius: var(--border-radius);
-  background-color: var(--secondary-color-l);
+  background-color: var(--primary-color-l);
   padding: 2%;
   top: 0;
   transition: transform 1s ease-in-out;
@@ -337,7 +342,7 @@ input[type="checkbox"]:checked::before {
 }
 #popUpTextH2{
   font-size: 12px;
-  color:var(--secondary-color-dark)
+  color:var(--secondary-color)
 }
 #pomodoroTopContainer button, #pomodoroBottomContainer button{
   border:none;
@@ -365,7 +370,7 @@ height:50%;
   font-size: var(--h3font);
 }
 #pomodoroBottom, #pomodoroBottomShortBreak, #pomodoroBottomLongBreak{
-  background: var(--primart-color);
+  background: var(--primary-color);
   color:#424242;
   letter-spacing: 1.2px;
 }
@@ -385,7 +390,7 @@ height:50%;
   background-color: #e8e5e5;
   border-radius: 4px;
   padding: 1vh;
-  color: var(--secondary-color-dark);
+  color: var(--secondary-color);
 }
 .popUp .show {
   visibility: visible;
@@ -423,7 +428,7 @@ height:50%;
   background: none;
   border: 0;
   outline: none;
-  color: var(--primart-color);
+  color: var(--primary-color);
   width: max-content;
   margin-left: 5px;
 }
@@ -431,11 +436,11 @@ hr {
   border-radius: var(--border-radius);
   border: 1.5px solid;
   width: 100%;
-  border-color: var(--primart-color);
+  border-color: var(--primary-color);
 }
 
 .center-container ::placeholder {
-  color: var(--primart-color);
+  color: var(--primary-color);
   font-family: "primary-font-l";
 }
 
@@ -460,10 +465,10 @@ hr {
   bottom: 5.5%;
   left: -50%;
   border-radius: 4px;
-  border: 2px solid var(--primart-color);
+  border: 2px solid var(--primary-color);
 }
 .mainTaskCheckBox:hover {
-  background-color: var(--secondary-color-l);
+  background-color: var(--primary-color-l);
 }
 .center-bottom input:checked ~ .mainTaskCheckBox {
   background: url("../images/charm_tick.svg") no-repeat center;
@@ -476,12 +481,12 @@ hr {
   position: fixed;
   top: 1%;
   left: 45%;
-  background-color: var(--primart-color);
+  background-color: var(--primary-color);
   border-radius: 20px;
   min-width: fit-content;
   padding: 0.5%;
   height: fit-content;
-  color: var(--secondary-color-dark);
+  color: var(--secondary-color);
   transition-timing-function: ease-in-out;
 }
 
@@ -522,20 +527,20 @@ hr {
   width: 400px;
   height: fit-content;
   min-height: 300px;
-  background: var(--secondary-color-l);
+  background: var(--todo-container-color);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-m);
   z-index: 1;
-  color: var(--secondary-color-dark);
+  color: var(--secondary-color);
 }
 .todoListContainer div {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(27, 126, 27);
+  background-color: var(--todo-header-container-color);
   height: 30px;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
-  color: var(--primart-color);
+  color: var(--primary-color);
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
@@ -547,7 +552,7 @@ hr {
 }
 .todoListContainer table,
 .todoListContainer th {
-  border: 1px solid black;
+  border: 1px solid --primary-color;
 }
 /* #todoTable tr th:nth-child(n+3) {
   display:table-cell
@@ -566,7 +571,7 @@ hr {
   width: 750px;
   height: 300px;
   padding: 3vh 1vh;
-  background-color: var(--primart-color);
+  background-color: var(--primary-color);
   border-radius: var(--border-radius);
   box-sizing: var(--box-shadow-m);
   color:  var(--secondary-color-settings);
@@ -588,7 +593,7 @@ hr {
 
 #settingOptions li:hover{
   cursor: pointer;
-  color: var(--secondary-color-dark);
+  color: var(--secondary-color);
   box-shadow: var(--box-shadow-m)
 }
 
@@ -627,7 +632,7 @@ hr {
 /* End of the scroll css */
 
 #settingOptionInformation h1{
-  color:var(--secondary-color-dark);
+  color:var(--secondary-color);
   font-size:var(--setting-h1);
   margin-bottom:0px
 }
@@ -638,7 +643,7 @@ hr {
 
 #settingOptionInformation h2{
   
-  color:var(--secondary-color-dark);
+  color:var(--secondary-color);
   font-size: var(--setting-h2);
 }
 #settingBackgroundChangeContainer{
@@ -681,7 +686,7 @@ background-size: cover;
 }
 #uptimeHourContainer>*:hover{
   cursor: pointer;
-  color: var(--secondary-color-dark);
+  color: var(--secondary-color);
 }
 
 
@@ -720,7 +725,13 @@ background-size: cover;
   justify-content: space-between;
 }
 
-.dark-mode{
-  color:var(--primart-color);
-  background:var(--secondary-color-dark);
+.dark-theme{
+ --primary-color:rgb(33, 33, 33);
+ --primary-color-l:rgb(80, 80, 80);
+ --secondary-color: #e8e5e5;
+ --secondary-color-l:#e9e6e6f9;
+ --secondary-color-settings:rgb(208, 208, 208);
+ --todo-header-container-color:var(--secondary-color-l);
+ --todo-container-color:rgb(33, 33, 33);
 }
+

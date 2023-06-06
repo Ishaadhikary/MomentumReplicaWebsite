@@ -2,6 +2,7 @@ let countS = 1;
 function setting() {
   if (countS % 2 != 0) {
     settingContainer.style.display = "flex";
+    // settingContainer.style.background="black"
     generalSetting()
 
     countS++;
@@ -378,8 +379,16 @@ weatherCheckbox.addEventListener("change",function(){
 })
 
 //For dark and light mode
-darkTheme.addEventListener("click", function(){
-  var element = document.getElementById("settingContainer")
-  element.classList.toggle("dark-mode",true)
-  console.log("darkmode on")
+darkTheme.addEventListener("click" ,function(){
+  let settingElementD = document.getElementById("settingContainer")
+  settingElementD.classList.toggle("dark-theme",true)
+  let todoElement = document.querySelector(".todoListContainer")
+  todoElement.classList.toggle("dark-theme",true)
+})
+
+lightTheam.addEventListener("click",function(){
+  let settingElementL = document.getElementById("settingContainer")
+  settingElementL.classList.toggle("dark-theme",false)
+  let todoElementL = document.querySelector(".todoListContainer")
+  todoElementL.classList.toggle("dark-theme",false)
 })
