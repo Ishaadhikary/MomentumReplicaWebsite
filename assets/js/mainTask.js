@@ -10,6 +10,7 @@ inputTask.addEventListener("click", function () {
   inputTask.textContent = "";
   mainTaskTextId.style.display = "inline-block";
   mainTaskCheckBox.style.display = "none";
+  mainTaskCheckId.checked=false
   addMainTaskInfo();
 });
 //Initial Main Task container

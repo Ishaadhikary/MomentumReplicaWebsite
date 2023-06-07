@@ -440,7 +440,9 @@ height:50%;
   cursor: pointer;
   transition-timing-function:  120s ease-in-out;
 }
-
+.center-bottom{
+  padding-left: 1vh;
+}
 .center-middle input,
 .center-bottom input {
   background: none;
@@ -448,7 +450,7 @@ height:50%;
   outline: none;
   color: var(--primary-color);
   width: max-content;
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }
 hr {
   border-radius: var(--border-radius);
