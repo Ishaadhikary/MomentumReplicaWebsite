@@ -39,7 +39,7 @@ function addMainTaskInfo() {
   //To add the new main task
   mainTaskTextId.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-      let pattern = /^[A-Za-z0-9\s]{1,20}$/;
+      let pattern = /^[A-Za-z0-9\s]{1,30}$/;
       if (mainTaskTextId.value==""|| !pattern.test(mainTaskTextId.value)  || mainTaskTextId.value == " ") {
         invalidPopUp.style.display="block"
         invalidPopUp.style.background="red"

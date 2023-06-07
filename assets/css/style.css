@@ -482,10 +482,11 @@ hr {
   position: absolute;
   width: 2.5vh;
   height: 2.5vh;
-  bottom: 5.5%;
-  left: -50%;
+  bottom: 14%;
+  left: -45%;
   border-radius: 4px;
   border: 2px solid var(--primary-color);
+  
 }
 .mainTaskCheckBox:hover {
   background-color: var(--primary-color-l);
