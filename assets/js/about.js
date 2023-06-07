@@ -19,7 +19,7 @@ aboutContent+= `
 
 <h2 class="bottom-border">Attribution</h2>
 <div>
-    <p><strong>GIFs Designed by:</strong></p>
+    <p><strong>GIFs Used:</strong></p>
     <a href="https://www.flaticon.com/free-animated-icons/detox" title="detox animated icons" target="_blank">Detox animated icons created by Freepik - Flaticon </a><br>
     <a href="https://www.flaticon.com/free-animated-icons/exercise" title="exercise animated icons" target="_blank">Exercise animated icons created by Freepik - Flaticon </a><br>
     <a href="https://www.flaticon.com/free-animated-icons/work" title="work animated icons" target="_blank">Work animated icons created by Freepik - Flaticon </a>
