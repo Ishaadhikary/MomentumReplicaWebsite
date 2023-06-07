@@ -59,7 +59,7 @@ function storeTaskInput(){
     let newStatus=false
     if (localStorage.getItem("todo")==null){
         localStorage.setItem("todo","[]")
-        console.log("Empty")
+    
     }
     let oldTasks = JSON.parse(localStorage.getItem("todo"))
     let taskObj = {status:newStatus,task:newTask, priority:priorityVal, category:categoryVal}
@@ -126,9 +126,6 @@ function showtoDOList() {
     let categories = tableBody.querySelectorAll("tr td:nth-child(4)")
     categories.forEach(function(element){
       let row = element.parentNode;
-      console.log(row)
-      console.log(element)
-      console.log(element.innerText)
       if(element.innerText=="Home"){
         row.style.background="var( --todo-home)"
       }
