@@ -92,7 +92,7 @@ function showtoDOList() {
       if(oldTask.category==1){categoryVal="Office"}
       todoContain += `
         <tr scope="row">
-          <td><input type="checkbox" ${checkedAttribute}></td>
+          <td id="todocheckbox"><input  type="checkbox" ${checkedAttribute}></td>
           <td style="${taskStyle}">${oldTask.task}</td>
           <td>${priorityVal}</td>
           <td>${categoryVal}</td>

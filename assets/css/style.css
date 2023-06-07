@@ -7,11 +7,7 @@
 img {
   width: 100%;
 }
-
-@font-face {
-  font-family: primary-font-eb;
-  src: url("../font/HelveticaNeue-BoldExt.otf");
-}
+/* Initializing the fonts used in the website */
 
 @font-face {
   font-family: primary-font-b;
@@ -28,10 +24,7 @@ img {
   src: url("../font/HelveticaNeueLight.ttf");
 }
 
-@font-face {
-  font-family: primary-font-thin;
-  src: url("../font/HelveticaNeueLight.ttf");
-}
+
 :root {
   /* Font Family and Size */
   --backup-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -41,11 +34,11 @@ img {
   --h3font: 3.5vh;
   --h4font:15px;
   --timerFont:13vh;
-  /* Font Color */
+  /* Font Color and background color */
   --primary-color: #e8e5e5;
   --primary-color-l: #e9e6e6f9;
   --secondary-color: rgb(33, 33, 33);
-  --secondary-color-dark-t: rgba(148, 148, 148, 0.358);  /*secondary color darrk transparent */
+  --secondary-color-dark-t: rgba(148, 148, 148, 0.358);  /*secondary color dark transparent */
   --border-radius: 8px;
   --secondary-color-settings:#6d6b6b;
   --setting-h1: 24px;
@@ -57,15 +50,13 @@ img {
   --todo-office:#DBEEF3;
   --brainDump-header-color:#ffd95a;
   --brainDump-list:rgb(255, 255, 255);
-  
-  
-  
-  /* Box Shadow */
-  --box-shadow-m:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --todo-container-color:#ECFBD5;
   --todo-header-container-color:#1a6840;
+  /* Box Shadow */
+  --box-shadow-m:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 }
+/* Initializing the contains */
 body {
   backface-visibility: hidden;
   font-family: var(--backup-font);
@@ -88,13 +79,7 @@ input {
   border: none;
   outline: none;
 }
-input:invalid {
-  border: 1px solid red;
-}
 
-input:valid {
-  border: 1px solid green;
-}
 /* Input box for all toggle items */
 #settingContainer input[type="checkbox"]{
   padding: 0;
@@ -147,6 +132,7 @@ input:valid {
   /* background-color: aliceblue; */
   justify-content: space-between;
 }
+/* Heading left:Search  */
 .header-left{
   background: var(--primary-color);
   height: fit-content;
@@ -156,8 +142,6 @@ input:valid {
   border-radius: 20px;
   box-shadow: var(--box-shadow-m);
   transition: box-shadow 0.3s;
-  
-  /* padding-left:1vh */
   
 }
 .header-left a{
@@ -179,6 +163,8 @@ input:valid {
   width: 16px;
   
 }
+/* End of heading left Css */
+/* Heading Center:BrainDump */
 .header-center {
   position: relative;
   cursor: pointer;
@@ -267,6 +253,7 @@ input:valid {
   width: 5%;
   /* height: 5%; */
 }
+/* End of heading center */
 /* Css for the top container ends here */
 
 /* Css for the center container starts her */
@@ -277,7 +264,7 @@ input:valid {
   align-items: center;
   height: 50vh;
 }
-
+/* Center top Container */
 .center-top-container {
   display: flex;
   gap: 2%;
@@ -308,6 +295,8 @@ input:valid {
 .center-right {
   width: 2.5vw;
 }
+/* End of center top container */
+/* Center Center container */
 .center-center {
   font-family: "primary-font-b";
   font-size: var(--h1font);
@@ -458,23 +447,8 @@ height:50%;
   visibility: visible;
 }
 
-.toggle-bar {
-  visibility: hidden;
-  position: inherit;
-  background: lightgreen;
-  border: 1px solid white;
-  width: 2vw;
-  height: 1vw;
-}
-
-.toggle-bar .icon {
-  visibility: inherit;
-  background: white;
-  width: inherit;
-  height: inherit;
-  border-radius: 50%;
-}
-
+/* End of Center top Css  */
+/* Center Middle Css */
 .center-middle {
   display: flex;
   flex-wrap: wrap;
@@ -496,7 +470,6 @@ height:50%;
   color: var(--primary-color);
   width: max-content;
   
-  /* margin-left: 5px; */
 }
 hr {
   border-radius: var(--border-radius);
@@ -573,9 +546,7 @@ hr {
 .bottom-container img {
   max-width: fit-content;
 }
-
-
-
+/* Css for bottom center container */
 .bottom-center {
   text-align: center;
   font-size: 20px;
@@ -587,7 +558,8 @@ hr {
 
   transition-duration: 2s;
 }
-
+/* End of center center container */
+/* Start of bottom rigth container */
 .bottom-right {
   position: relative;
 }
@@ -712,6 +684,40 @@ hr {
   font-weight: bolder;
   cursor: pointer;
 }
+
+/* TODo  customized Checkbox  */
+#todocheckbox input[type="checkbox"]{
+  padding: 0;
+  appearance: none;
+  background: var(--primary-color);
+  margin-left:30%;
+  font:inherit;
+  color:currentColor;
+  width: 1.5em;
+  height: 1.5em;
+  border: 0.15em solid var(--toggle-bg);
+  border-radius: 10px;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+#todocheckbox input[type="checkbox"]::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  margin-top: -10px;
+  margin-left: 5px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+#todocheckbox input[type="checkbox"]:checked::before {
+  content: "✔";
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+/* End of bottom right container */
 /* Setting Container */
 #settingContainer{
   display: none;
@@ -891,9 +897,6 @@ background-size: cover;
  --todo-office:#116D6E;
  --brainDump-header-color:#806200;
  --brainDump-list:rgb(42, 42, 42);
-
- 
- 
 }
 /* End of general container */
 
