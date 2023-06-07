@@ -18,8 +18,9 @@ function message() {
   }
 
   let storedUserName = localStorage.getItem("userName");
+  if(storedUserName!=null){
   centerMiddle.textContent = greeging + " " + storedUserName + ".";
-  userName.style.display = "none";
+  userName.style.display = "none";}
 }
 message();
 addUserInfo();
