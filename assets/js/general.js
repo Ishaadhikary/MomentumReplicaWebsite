@@ -28,5 +28,7 @@ function generalSetting() {
     darkTheme.textContent="Dark" 
     themeBorder.textContent="|"
     lightTheme.textContent="Light"
+    lightTheme.style.fontWeight="bold"
+    lightTheme.style.color="var(--secondary-color)"
   }
   

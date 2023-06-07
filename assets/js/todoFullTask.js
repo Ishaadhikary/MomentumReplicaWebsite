@@ -53,15 +53,13 @@ function storeTaskInput(){
     if(newPriority=="High"){priorityVal = 1}
     if(newPriority=="Medium"){priorityVal = 0}
     if(newPriority=="Low"){priorityVal = -1}
-    let newAlarm = inputAlarm.value
     let newStatus=false
-    let newAlarmType = inputAlarmType.value
     if (localStorage.getItem("todo")==null){
         localStorage.setItem("todo","[]")
         console.log("Empty")
     }
     let oldTasks = JSON.parse(localStorage.getItem("todo"))
-    let taskObj = {status:newStatus,task:newTask, priority:priorityVal,alarm:newAlarm,alarmType:newAlarmType}
+    let taskObj = {status:newStatus,task:newTask, priority:priorityVal}
     if(newTask != "" && flagTodo ==0){
         oldTasks.push(taskObj)
     }

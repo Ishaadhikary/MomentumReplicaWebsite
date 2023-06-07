@@ -63,8 +63,6 @@ let crossIcon = document.getElementById("crossIcon")
 let addNewTaskbutton = document.getElementById("addNewTask")
 let inputTaskName = document.getElementById("taskName")
 let inputPriority= document.getElementById("priority")
-let inputAlarm = document.getElementById("alarm")
-let inputAlarmType = document.getElementById("alarmType")
 let countTodo=1
 let priorityVal;
 let todoTable= document.getElementById("todoTable")
