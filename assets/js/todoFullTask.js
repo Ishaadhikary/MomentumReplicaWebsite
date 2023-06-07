@@ -13,13 +13,19 @@ let todoTable= document.getElementById("todoTable")
 let headerRow = document.querySelector("#todoTable tr")
 let taskColumn = document.getElementById("taskColumn")
 let tableBody = document.getElementById("tableBody")
+let invalidPopUp = document.querySelector(".invalidPopUp")
 let todoContain;
 var flag = 0
 addNewTaskbutton.addEventListener("click", function(event) {
     let pattern = /^[A-Za-z0-9\s]{1,20}$/;
-    if (inputTaskName.validity.valueMissing || !pattern.test(inputTaskName.value)) {
+    if (inputTaskName.validity.valueMissing || !pattern.test(inputTaskName.value)  || inputTaskName.value == " ") {
       event.preventDefault();
-      alert("Invalid Input!");
+      invalidPopUp.style.display="block"
+      invalidPopUp.style.background="red"
+      invalidPopUp.textContent="Invalid Input Please Enter a valid Input"
+      setTimeout(function(){
+        invalidPopUp.style.display="none"},3000
+      )
       flag = 1
     }
     else{
@@ -36,6 +42,7 @@ function todoList(){
     todoListContainer.style.width="600px"
     taskColumn.style.width="55%"
     initialAddTask.style.display="block"
+    invalidPopUp.style.display="none"
     // addItems()
     countTodo++
     }
@@ -128,7 +135,7 @@ function showtoDOList() {
         localStorage.setItem("todo", JSON.stringify(storedToDos));
       });
     });
-
+//To delete the items from the todo list
     let deletItems = tableBody.querySelectorAll("img")
     deletItems.forEach(function(deleteItem){
       deleteItem.addEventListener("click",function(){

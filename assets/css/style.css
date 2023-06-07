@@ -491,7 +491,7 @@ hr {
 }
 
 /* Pop Up after the main task is completed. */
-.mainTaskPopUp {
+.mainTaskPopUp,.invalidPopUp {
   display: none;
   position: fixed;
   top: 1%;
@@ -503,6 +503,9 @@ hr {
   height: fit-content;
   color: var(--secondary-color);
   transition-timing-function: ease-in-out;
+}
+.invalidPopUp{
+  left: 40%;
 }
 
 /* Css for the central container ends here */
