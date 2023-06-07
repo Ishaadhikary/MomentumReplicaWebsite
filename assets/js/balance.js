@@ -35,71 +35,68 @@ function balanceSchedule(eventListnerId){
   const [currentHour,currentMin] =getTime()
     let timeChecker = parseFloat(currentHour)+(parseFloat(currentMin/60))
 
-    if(eventListnerId == 0 ){
-      if(timeChecker<8 || timeChecker>17){
-        
-        uptimeHourOption1.style.color="var(--secondary-color-dark)"
+    if(eventListnerId == 0 || eventListnerId==undefined){
+      if(timeChecker<8.5 || timeChecker>16.5){
+        uptimeHourOption1.style.color="var(--secondary-color)"
         uptimeHourOption2.style.color="var(--secondary-color-settings)"
         uptimeHourOption3.style.color="var(--secondary-color-settings)"
+        uptimeHourOption1.style.fontWeight="bold"
+         uptimeHourOption2.style.fontWeight="normal"
+         uptimeHourOption3.style.fontWeight="normal"
      UptimeOver()
      }
      else{
      defaultValues()
-     uptimeHourOption1.style.color="var(--secondary-color-dark)"
+     uptimeHourOption1.style.color="var(--secondary-color)"
      uptimeHourOption2.style.color="var(--secondary-color-settings)"
      uptimeHourOption3.style.color="var(--secondary-color-settings)"
     }}
 
 
-    if(eventListnerId == 1 ){
-       if(timeChecker<17 || timeChecker>20){
-        uptimeHourOption2.style.color="var(--secondary-color-dark)"
+    else if(eventListnerId == 1 ){
+       if(timeChecker<9 || timeChecker>17){
+        uptimeHourOption2.style.color="var(--secondary-color)"
          uptimeHourOption1.style.color="var(--secondary-color-settings)"
          uptimeHourOption3.style.color="var(--secondary-color-settings)"
          uptimeHourOption2.style.fontWeight="bold"
+         uptimeHourOption1.style.fontWeight="normal"
+         uptimeHourOption3.style.fontWeight="normal"
 
          UptimeOver()
        }
        else{
         defaultValues()
-        uptimeHourOption2.style.color="var(--secondary-color-dark)"
+        uptimeHourOption2.style.color="var(--secondary-color)"
          uptimeHourOption1.style.color="var(--secondary-color-settings)"
          uptimeHourOption3.style.color="var(--secondary-color-settings)"
       }
     }
-    if(eventListnerId == 2 ){
-        if(timeChecker<13 || timeChecker>18.5){  
+    else if(eventListnerId == 2 ){
+        if(timeChecker<9.5 || timeChecker>17.5){  
           UptimeOver()
-        uptimeHourOption3.style.color="var(--secondary-color-dark)"
+        uptimeHourOption3.style.color="var(--secondary-color)"
         uptimeHourOption1.style.color="var(--secondary-color-settings)"
         uptimeHourOption2.style.color="var(--secondary-color-settings)"
+        uptimeHourOption3.style.fontWeight="bold"
+        uptimeHourOption1.style.fontWeight="normal"
+        uptimeHourOption2.style.fontWeight="normal"
            }
            else{
             defaultValues()   
-        uptimeHourOption3.style.color="var(--secondary-color-dark)"
+        uptimeHourOption3.style.color="var(--secondary-color)"
         uptimeHourOption1.style.color="var(--secondary-color-settings)"
         uptimeHourOption2.style.color="var(--secondary-color-settings)"
           }
     }
-    if(eventListnerId==undefined){
-      if(timeChecker<6 || timeChecker>23){
-        uptimeHourOption1.style.color="var(--secondary-color-dark)"
-        uptimeHourOption2.style.color="var(--secondary-color-settings)"
-        uptimeHourOption3.style.color="var(--secondary-color-settings)"
-        UptimeOver()
-       }
-       else{
-        defaultValues()
-        uptimeHourOption1.style.color="var(--secondary-color-dark)"
-        uptimeHourOption2.style.color="var(--secondary-color-settings)"
-        uptimeHourOption3.style.color="var(--secondary-color-settings)"
-      }
- }}
+}
 
 function defaultValues(){
   focusQue.textContent="What is your main focus for today"
             centerBottom.style.display="block"
-            bottomRight.style.visibility="visible"   
+            bottomRight.style.visibility="visible"  
+            uptimeHourOption3.style.fontWeight="normal"
+            uptimeHourOption1.style.fontWeight="normal"
+            uptimeHourOption2.style.fontWeight="normal" 
 }
 
 function UptimeOver(){

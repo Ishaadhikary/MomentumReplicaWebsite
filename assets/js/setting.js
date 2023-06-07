@@ -241,15 +241,16 @@ backgroundDiv6.addEventListener("click", function () {
 //Balance event listner
 let eventListnerId;
 
-setInterval(balanceSchedule(eventListnerId),1000)
 let intervalId;
 balanceCheckBox.addEventListener("change", function () {
+  
   if (this.checked) {
     balanceSchedule(eventListnerId);
     uptimeHourOption1.addEventListener("click", function (){balanceSchedule(0)})
     uptimeHourOption2.addEventListener("click", function (){balanceSchedule(1)})
     uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
     balanceCheckBox.style.background="var(--toggle-bg-green)"  
+    intervalId = setInterval(balanceSchedule(eventListnerId),1000)
   }
   if (!this.checked) {
     defaultValues()
@@ -260,7 +261,7 @@ balanceCheckBox.addEventListener("change", function () {
     uptimeHourOption2.addEventListener("click", function (){balanceSchedule(undefined)})
     uptimeHourOption1.addEventListener("click", function (){balanceSchedule(undefined)})
     balanceCheckBox.style.background="var(--toggle-bg)"
-    console.log("noChecked")
+    clearInterval(intervalId)
 
   }
 });
