@@ -96,7 +96,7 @@ function showtoDOList() {
           <td style="${taskStyle}">${oldTask.task}</td>
           <td>${priorityVal}</td>
           <td>${categoryVal}</td>
-          <td><img src="../assets/images/delete.svg"></td>
+          <td><img src="./assets/images/delete.svg"></td>
         </tr>`;
     });
     tableBody.innerHTML = todoContain;

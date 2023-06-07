@@ -49,7 +49,7 @@ function pomodoroTimer() {
     setTimeout(function () {
       pomodoroPopUpContainer.style.display = "none";
       pomodoroBottomShortBreak.style.display = "flex";
-    }, 7000);
+    }, 3000);
     pomodoroCenterLeft.innerHTML = "04:";
     pomodoroCenterRight.innerHTML = "59";
     pomodoroBottom.style.display = "none";
@@ -61,7 +61,7 @@ function pomodoroTimer() {
       setTimeout(function () {
         pomodoroPopUpContainer.style.display = "none";
         pomodoroBottomLongBreak.style.display = "flex";
-      }, 7000);
+      }, 3000);
       pomodoroBottom.style.display = "none";
       pomodoroBottomShortBreak.style.display = "none";
       pomodoroCenterLeft.innerHTML = "15:";
@@ -70,7 +70,7 @@ function pomodoroTimer() {
    
     console.log(countP, "count");
    
-  }, 5000);
+  }, 1500000);
   //This is ending the timer in one min: change it to 25 min for demo 1500000
   
 }
@@ -114,14 +114,14 @@ function shortBreakTimer() {
     setTimeout(function () {
       pomodoroPopUpContainer.style.display = "none";
       pomodoroBottom.style.display = "flex";
-    }, 5000);
+    }, 3000);
     pomodoroCenterLeft.innerHTML = "24:";
     pomodoroCenterRight.innerHTML = "00";
     alarm.play();
     pomodoroBottom.style.display = "inline-block";
     pomodoroBottomShortBreak.style.display = "none";
     pomodoroBottomLongBreak.style.display = "none";
-  }, 3000);
+  }, 300000);
   // 300000
 }
 let shortMin = 4;
@@ -165,13 +165,13 @@ function longBreakTimer() {
     setTimeout(function () {
       pomodoroPopUpContainer.style.display = "none";
       pomodoroBottom.style.display = "flex";
-    }, 5000);
+    }, 3000);
     pomodoroTopRight.style.background = "none";
     alarm.play();
     pomodoroBottom.style.display = "inline-block";
     pomodoroBottomShortBreak.style.display = "none";
     pomodoroBottomLongBreak.style.display = "none";
-  }, 5000);
+  }, 90000);
   //900000
 }
 let longMin = 14;

@@ -333,18 +333,19 @@ input:valid {
   position: absolute;
   width: 20vh;
   height: 20vh;
-  border: 1px solid red;
-  margin: 5vh;
+  border: 3px solid var(--primary-color);
+  margin: 5.1vh;
   border-radius: 50%;
+  
 }
 
 #outerCircle {
   position: absolute;
   width: 30vh;
   height: 30vh;
-
-  border: 1px solid red;
+  border: 5px solid var(--primary-color);
   border-radius: 50%;
+  
 }
 
 #innerText {
@@ -631,7 +632,7 @@ hr {
 }
 
 .todoListContainer tr {
-  border-bottom: 0.5px solid var(--primary-color);
+  border-bottom: 0.002px solid var(--secondary-color-dark-t);
   height:30px;
 }
 #toDoTableheader{
