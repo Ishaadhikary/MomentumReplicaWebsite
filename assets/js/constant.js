@@ -20,7 +20,7 @@ let mainTaskCheckBox = document.querySelector(".mainTaskCheckBox");
 let inputTask = document.querySelector(".inputTask");
 let mainTaskPopUp = document.querySelector(".mainTaskPopUp");
 const MainTaskPopUpTxt = ["Great job!","Well done!","You did it!","Keep up the good work!","That’s amazing!","You’re a rockstar!","Keep it up!"]
-
+var flagMain= 0;
 //For Center-Container
 let  percentageImg = document.getElementById("percentageImg")
 let clockImg = document.getElementById("clockImg")
@@ -74,3 +74,17 @@ let invalidPopUp = document.querySelector(".invalidPopUp")
 let categoryVal;
 let todoContain;
 var flagTodo = 0
+
+//FOr Balance
+let focusQue = document.getElementById("focusQue")
+let centerBottom = document.querySelector(".center-bottom")
+let bottomRight = document.querySelector(".bottom-right")
+
+//For brain Dump container
+let brainDumpInput = document.getElementById("brainDumpInput");
+let brainDumpContainer = document.querySelector(".brainDumpContainer");
+let bulbId = document.getElementById("bulb");
+let brainDumpIdeas = document.querySelector(".brainDumpIdeas");
+let editIdeasButton = document.getElementById("editIdeas");
+let addIdeasButton = document.querySelector(".addIdeas");
+let countB = 1;

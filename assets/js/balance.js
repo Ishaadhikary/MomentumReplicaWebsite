@@ -1,6 +1,4 @@
-let focusQue = document.getElementById("focusQue")
-let centerBottom = document.querySelector(".center-bottom")
-let bottomRight = document.querySelector(".bottom-right")
+
 function balanceSetting(){
     //Initializing the container
     settingGeneralContainer.style.display="none"

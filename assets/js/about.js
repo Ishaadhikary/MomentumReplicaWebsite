@@ -1,4 +1,3 @@
-about()
 function about(){
 settingAboutContainer.style.display = "block";
 settingOptionsAboutList.style.color="var(--secondary-color-dark)"

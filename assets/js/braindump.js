@@ -1,11 +1,4 @@
-let brainDumpInput = document.getElementById("brainDumpInput");
-let brainDumpContainer = document.querySelector(".brainDumpContainer");
-let bulbId = document.getElementById("bulb");
-let brainDumpIdeas = document.querySelector(".brainDumpIdeas");
-let editIdeasButton = document.getElementById("editIdeas");
-let addIdeasButton = document.querySelector(".addIdeas");
 
-let countB = 1;
 function bulb() {
   if (countB % 2 != 0) {
     bulbId.src = "assets/images/bulbOn.svg";
@@ -55,8 +48,8 @@ function getTheBrainIdeas(){
     brainDumpIdeas.append(eachIdeaContainer);
 
     editIndex++;
-    editIcon.onclick = () => editIdeas(editIndex);//Function to edit the idea
-    deleteIcon.onclick=() =>deleteIdeas(editIndex);//Function to delete the idea 
+    editIcon.onclick = () => editIdeas(editIndex);
+    deleteIcon.onclick=() =>deleteIdeas(editIndex);
   });
 }
 

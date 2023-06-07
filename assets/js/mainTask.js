@@ -1,4 +1,4 @@
-var flagMain= 0;
+
 
 //To edit the main task
 inputTask.addEventListener("click", function () {
