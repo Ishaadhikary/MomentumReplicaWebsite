@@ -47,7 +47,7 @@ img {
   --secondary-color: rgb(33, 33, 33);
   --secondary-color-dark-t: rgba(148, 148, 148, 0.358);  /*secondary color darrk transparent */
   --border-radius: 8px;
-  --secondary-color-settings:rgb(109 107 107);
+  --secondary-color-settings:#6d6b6b;
   --setting-h1: 24px;
   --setting-p: 15px;
   --setting-h2: 18px;
@@ -64,6 +64,10 @@ body {
   backface-visibility: hidden;
   font-family: var(--backup-font);
   color: var(--primary-color);
+}
+a{
+  text-decoration: none;
+  color:inherit
 }
 #main-box {
   background: url("../images/wallpaper0.svg") no-repeat ;
@@ -137,7 +141,32 @@ input:valid {
   /* background-color: aliceblue; */
   justify-content: space-between;
 }
-
+.header-left{
+  background: var(--primary-color);
+  height: fit-content;
+  width:5vw;
+  padding: 0.5vh 1.5vh;
+  color: var(--secondary-color-settings);
+  border-radius: 20px;
+  box-shadow: var(--box-shadow-m);
+  transition: box-shadow 0.3s;
+  
+  /* padding-left:1vh */
+  
+}
+.header-left a{
+  /* padding-left: 2vh; */
+  display: flex;
+  align-items: center;
+  gap:2%
+}
+.header-left:hover,.header-right:hover,.header-center img:hover,.center-left img:hover,.center-right:hover, .bottom-left:hover,.bottom-right:hover{
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);;
+}
+.header-left img{
+  width: 16px;
+  
+}
 .header-center {
   position: relative;
 }
@@ -681,6 +710,7 @@ hr {
   width: 30%;
   border-right: 2px solid var(--secondary-color-dark-t);
   padding-top: 5%;
+  cursor: pointer;
 }
 #settingOptions li{
   padding-bottom: 5%;
@@ -702,6 +732,7 @@ hr {
   color: var(--secondary-color-settings);
   overflow-y: auto;
   overflow-x: hidden;
+  cursor: pointer;
 }
 /* For Setting Scroll */
 /* width */
