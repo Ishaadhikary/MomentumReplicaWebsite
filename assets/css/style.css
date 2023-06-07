@@ -816,6 +816,7 @@ background-size: cover;
 #uptimeHourContainer>*:hover{
   cursor: pointer;
   color: var(--secondary-color);
+  /* color:inherit */
 }
 
 

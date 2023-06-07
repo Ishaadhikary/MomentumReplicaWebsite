@@ -31,11 +31,31 @@ function balanceSetting(){
     uptimeHourOption2.innerText = " 09:00 - 17:00 |"
     uptimeHourOption3.innerText = " 09:30 - 17:30"
 }
+
 function balanceSchedule(eventListnerId){
+  //Adding hover effect only when the balance mode is on
+  uptimeHourOption1.addEventListener("mouseover", function(){
+    uptimeHourOption1.style.color="var(--secondary-color)"
+  })
+  uptimeHourOption1.addEventListener("mouseleave",function(){
+    uptimeHourOption1.style.color="inherit"
+  })
+  uptimeHourOption2.addEventListener("mouseover", function(){
+    uptimeHourOption2.style.color="var(--secondary-color)"
+  })
+  uptimeHourOption2.addEventListener("mouseleave",function(){
+    uptimeHourOption2.style.color="inherit"
+  })
+  uptimeHourOption3.addEventListener("mouseover", function(){
+    uptimeHourOption3.style.color="var(--secondary-color)"
+  })
+  uptimeHourOption3.addEventListener("mouseleave",function(){
+    uptimeHourOption3.style.color="inherit"
+  })
   const [currentHour,currentMin] =getTime()
     let timeChecker = parseFloat(currentHour)+(parseFloat(currentMin/60))
 
-    if(eventListnerId == 0 || eventListnerId==undefined){
+    if(eventListnerId == 0){
       if(timeChecker<8.5 || timeChecker>16.5){
         uptimeHourOption1.style.color="var(--secondary-color)"
         uptimeHourOption2.style.color="var(--secondary-color-settings)"
@@ -54,6 +74,7 @@ function balanceSchedule(eventListnerId){
 
 
     else if(eventListnerId == 1 ){
+      uptimeHourOption2.removeEventListener("mouseleave" ,function(){})
        if(timeChecker<9 || timeChecker>17){
         uptimeHourOption2.style.color="var(--secondary-color)"
          uptimeHourOption1.style.color="var(--secondary-color-settings)"
@@ -87,6 +108,13 @@ function balanceSchedule(eventListnerId){
         uptimeHourOption1.style.color="var(--secondary-color-settings)"
         uptimeHourOption2.style.color="var(--secondary-color-settings)"
           }
+    }
+    else if(eventListnerId == 3){
+      
+      uptimeHourOption1.style.color="var(--secondary-color-settings)"
+      uptimeHourOption1.style.color="var(--secondary-color-settings)"
+      uptimeHourOption3.style.color="var(--secondary-color-settings)"
+      defaultValues()
     }
 }
 

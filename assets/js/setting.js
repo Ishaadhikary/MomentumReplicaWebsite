@@ -166,6 +166,9 @@ let uptimeHourContainer = document.createElement("div");
 let uptimeHourOption1 = document.createElement("span");
 let uptimeHourOption2 = document.createElement("span");
 let uptimeHourOption3 = document.createElement("span");
+uptimeHourOption1.id ="uptimeHourOption1"
+uptimeHourOption2.id ="uptimeHourOption2"
+uptimeHourOption3.id ="uptimeHourOption3"
 uptimeHourContainer.id = "uptimeHourContainer";
 //Balance setting appending
 
@@ -245,7 +248,7 @@ let intervalId;
 balanceCheckBox.addEventListener("change", function () {
   
   if (this.checked) {
-    balanceSchedule(eventListnerId);
+    balanceSchedule(0);
     uptimeHourOption1.addEventListener("click", function (){balanceSchedule(0)})
     uptimeHourOption2.addEventListener("click", function (){balanceSchedule(1)})
     uptimeHourOption3.addEventListener("click", function (){balanceSchedule(2)})
@@ -257,9 +260,9 @@ balanceCheckBox.addEventListener("change", function () {
     uptimeHourOption1.style.color="var(--secondary-color-settings)"
     uptimeHourOption2.style.color="var(--secondary-color-settings)"
     uptimeHourOption3.style.color="var(--secondary-color-settings)"
-    uptimeHourOption3.addEventListener("click", function (){balanceSchedule(undefined)})
-    uptimeHourOption2.addEventListener("click", function (){balanceSchedule(undefined)})
-    uptimeHourOption1.addEventListener("click", function (){balanceSchedule(undefined)})
+    uptimeHourOption3.addEventListener("click", function (){balanceSchedule(3)})
+    uptimeHourOption2.addEventListener("click", function (){balanceSchedule(3)})
+    uptimeHourOption1.addEventListener("click", function (){balanceSchedule(3)})
     balanceCheckBox.style.background="var(--toggle-bg)"
     clearInterval(intervalId)
 
