@@ -50,16 +50,19 @@ crossIcon.addEventListener("click",function(){
 function storeTaskInput(){
     let newTask = inputTaskName.value
     let newPriority = inputPriority.value
+    let newCategory= inputCategory.value
     if(newPriority=="High"){priorityVal = 1}
     if(newPriority=="Medium"){priorityVal = 0}
     if(newPriority=="Low"){priorityVal = -1}
+    if(newCategory=="Home"){categoryVal=0}
+    if(newCategory=="Office"){categoryVal=1}
     let newStatus=false
     if (localStorage.getItem("todo")==null){
         localStorage.setItem("todo","[]")
         console.log("Empty")
     }
     let oldTasks = JSON.parse(localStorage.getItem("todo"))
-    let taskObj = {status:newStatus,task:newTask, priority:priorityVal}
+    let taskObj = {status:newStatus,task:newTask, priority:priorityVal, category:categoryVal}
     if(newTask != "" && flagTodo ==0){
         oldTasks.push(taskObj)
     }
@@ -85,11 +88,14 @@ function showtoDOList() {
       if(oldTask.priority==1){priorityVal= "High"}
       if(oldTask.priority==0){priorityVal= "Medium"}
       if(oldTask.priority==-1){priorityVal= "Low"}
+      if(oldTask.category==0){categoryVal="Home"}
+      if(oldTask.category==1){categoryVal="Office"}
       todoContain += `
         <tr scope="row">
           <td><input type="checkbox" ${checkedAttribute}></td>
           <td style="${taskStyle}">${oldTask.task}</td>
           <td>${priorityVal}</td>
+          <td>${categoryVal}</td>
           <td><img src="../assets/images/delete.svg"></td>
         </tr>`;
     });
@@ -106,6 +112,7 @@ function showtoDOList() {
   
         if (checkbox.checked) {
           taskCompleted.style.setProperty("text-decoration", "line-through");
+          taskCompleted.style.setProperty("text-decoration-thickness","3px")
           storedToDos[taskIndex].status = true;
         } else {
           taskCompleted.style.removeProperty("text-decoration");
@@ -115,16 +122,27 @@ function showtoDOList() {
         localStorage.setItem("todo", JSON.stringify(storedToDos));
       });
     });
+    //Category color
+    let categories = tableBody.querySelectorAll("tr td:nth-child(4)")
+    categories.forEach(function(element){
+      let row = element.parentNode;
+      console.log(row)
+      console.log(element)
+      console.log(element.innerText)
+      if(element.innerText=="Home"){
+        row.style.background="var( --todo-home)"
+      }
+      else if(element.innerText=="Office"){
+        row.style.background="var(--todo-office)"
+      }
+    })
 //To delete the items from the todo list
     let deletItems = tableBody.querySelectorAll("img")
     deletItems.forEach(function(deleteItem){
       deleteItem.addEventListener("click",function(){
           let row = deleteItem.parentNode.parentNode.rowIndex
-          console.log("Clicked Row:",row)
           let storedToDos = JSON.parse(localStorage.getItem("todo"))
-          console.log("Before:",storedToDos)
           storedToDos.splice(row-1,1)
-          console.log("After",storedToDos)
           localStorage.setItem("todo",JSON.stringify(storedToDos))
           showtoDOList()
       })

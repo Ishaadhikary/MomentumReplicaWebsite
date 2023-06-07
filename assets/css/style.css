@@ -53,11 +53,17 @@ img {
   --setting-h2: 18px;
   --toggle-bg:rgb(211, 211, 211);
   --toggle-bg-green: #4cbf3f;
+  --todo-home:#fdeada;
+  --todo-office:#DBEEF3;
+  --brainDump-header-color:#ffd95a;
+  --brainDump-list:rgb(255, 255, 255);
+  
+  
   
   /* Box Shadow */
   --box-shadow-m:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --todo-container-color:#ECFBD5;
-  --todo-header-container-color:#0d9a00;
+  --todo-header-container-color:#1a6840;
 
 }
 body {
@@ -194,7 +200,7 @@ input:valid {
   gap: 10px;
 }
 .brainDumpHeader {
-  background: #ffd95a;
+  background: var(--brainDump-header-color);
   z-index: 2;
   padding: 8px 20px;
   border-top-right-radius: var(--border-radius);
@@ -206,7 +212,7 @@ input:valid {
   padding: 4px;
   display: flex;
   justify-content: space-between;
-  background: #ffffe3;
+  background:var(--primary-color);
   border-radius: var(--border-radius);
 }
 .brainDumpContainer input {
@@ -249,7 +255,7 @@ input:valid {
   display: flex;
   justify-content: space-between;
   border-radius: var(--border-radius);
-  background: #ffffff;
+  background:var(--brainDump-list);
   padding: 8px;
   margin-bottom: 8px;
   box-shadow: var(--box-shadow-m);
@@ -625,7 +631,7 @@ hr {
 }
 
 .todoListContainer tr {
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 0.5px solid var(--primary-color);
   height:30px;
 }
 #toDoTableheader{
@@ -879,6 +885,13 @@ background-size: cover;
  --secondary-color-settings:rgb(208, 208, 208);
  --todo-header-container-color:var(--secondary-color-l);
  --todo-container-color:rgb(33, 33, 33);
+ --todo-home:#5F264A;
+ --todo-office:#116D6E;
+ --brainDump-header-color:#806200;
+ --brainDump-list:rgb(42, 42, 42);
+
+ 
+ 
 }
 /* End of general container */
 

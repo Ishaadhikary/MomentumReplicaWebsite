@@ -392,6 +392,9 @@ darkTheme.addEventListener("click" ,function(){
   darkTheme.style.fontWeight="bold"
   lightTheme.style.color="var(--secondary-color-settings)"
   lightTheme.style.fontWeight="normal"
+  let brainDumpContainerD= document.querySelector(".brainDumpContainer")
+  brainDumpContainerD.classList.toggle("dark-theme",true)
+
   
 })
 
@@ -400,6 +403,9 @@ lightTheme.addEventListener("click",function(){
   settingElementL.classList.toggle("dark-theme",false)
   let todoElementL = document.querySelector(".todoListContainer")
   todoElementL.classList.toggle("dark-theme",false)
+  let brainDumpContainerL= document.querySelector(".brainDumpContainer")
+  brainDumpContainerL.classList.toggle("dark-theme",false)
+
   lightTheme.style.color="var(--secondary-color)"
   lightTheme.style.fontWeight="bold"
   darkTheme.style.color="var(--secondary-color-settings)"

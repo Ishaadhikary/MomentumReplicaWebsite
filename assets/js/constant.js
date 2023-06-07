@@ -35,7 +35,7 @@ let click = new Audio("./assets/audio/click.mp3");
 let alarm = new Audio("./assets/audio/alarm.mp3");
 let countP = 0;
 //Pomodoro Pop-ups
-const gifArray = ["../assets/images/short.gif","../assets/images/work.gif","../assets/images/long.gif"];
+const gifArray = ["./assets/images/short.gif","./assets/images/work.gif","./assets/images/long.gif"];
 const textArrayH1 = [
   "Short Break",
   "Work-Time",
@@ -63,6 +63,7 @@ let crossIcon = document.getElementById("crossIcon")
 let addNewTaskbutton = document.getElementById("addNewTask")
 let inputTaskName = document.getElementById("taskName")
 let inputPriority= document.getElementById("priority")
+let inputCategory= document.getElementById("category")
 let countTodo=1
 let priorityVal;
 let todoTable= document.getElementById("todoTable")
@@ -70,5 +71,6 @@ let headerRow = document.querySelector("#todoTable tr")
 let taskColumn = document.getElementById("taskColumn")
 let tableBody = document.getElementById("tableBody")
 let invalidPopUp = document.querySelector(".invalidPopUp")
+let categoryVal;
 let todoContain;
 var flagTodo = 0
