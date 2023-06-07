@@ -13,7 +13,12 @@ let centerMiddle = document.querySelector(".center-middle span");
 let userName = document.getElementById("nameId");
 let greeging = " ";
 
-//MainTask completion message
+//MainTask Section : Center-bottom container
+let mainTaskCheckId = document.getElementById("mainTaskCheckId");
+let mainTaskTextId = document.getElementById("mainTaskTextId");
+let mainTaskCheckBox = document.querySelector(".mainTaskCheckBox");
+let inputTask = document.querySelector(".inputTask");
+let mainTaskPopUp = document.querySelector(".mainTaskPopUp");
 const MainTaskPopUpTxt = ["Great job!","Well done!","You did it!","Keep up the good work!","That’s amazing!","You’re a rockstar!","Keep it up!"]
 
 //For Center-Container
@@ -49,3 +54,23 @@ let headerLeft = document.querySelector(".header-left")
 let headerCenter = document.querySelector(".header-center")
 let centerTopContainer = document.querySelector(".center-top-container")
 let topRight = document.querySelector(".header-right")
+
+//For todoFull Task
+let todoListContainer = document.querySelector(".todoListContainer")
+let addTaskPopUp = document.getElementById("addTaskPopUp")
+let initialAddTask = document.getElementById("initialAddTask")
+let crossIcon = document.getElementById("crossIcon")
+let addNewTaskbutton = document.getElementById("addNewTask")
+let inputTaskName = document.getElementById("taskName")
+let inputPriority= document.getElementById("priority")
+let inputAlarm = document.getElementById("alarm")
+let inputAlarmType = document.getElementById("alarmType")
+let countTodo=1
+let priorityVal;
+let todoTable= document.getElementById("todoTable")
+let headerRow = document.querySelector("#todoTable tr")
+let taskColumn = document.getElementById("taskColumn")
+let tableBody = document.getElementById("tableBody")
+let invalidPopUp = document.querySelector(".invalidPopUp")
+let todoContain;
+var flagTodo = 0

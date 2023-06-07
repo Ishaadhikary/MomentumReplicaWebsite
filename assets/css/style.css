@@ -511,6 +511,7 @@ hr {
 }
 .invalidPopUp{
   left: 40%;
+  color: var(--primary-color);
 }
 
 /* Css for the central container ends here */

@@ -1,9 +1,4 @@
-let mainTaskCheckId = document.getElementById("mainTaskCheckId");
-let mainTaskTextId = document.getElementById("mainTaskTextId");
-let mainTaskCheckBox = document.querySelector(".mainTaskCheckBox");
-let inputTask = document.querySelector(".inputTask");
-let mainTaskPopUp = document.querySelector(".mainTaskPopUp");
-
+var flagMain= 0;
 
 //To edit the main task
 inputTask.addEventListener("click", function () {
@@ -44,13 +39,28 @@ function addMainTaskInfo() {
   //To add the new main task
   mainTaskTextId.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-
-      localStorage.setItem("mainTaskText", (mainTaskTextId.value));
-      let storageMainTask = localStorage.getItem("mainTaskText");
-      inputTask.textContent = storageMainTask;
-      mainTaskTextId.style.display = "none";
-      mainTaskCheckBox.style.display = "inline-block";
-      inputTask.style.textDecoration = "none";
+      let pattern = /^[A-Za-z0-9\s]{1,20}$/;
+      if (mainTaskTextId.value==""|| !pattern.test(mainTaskTextId.value)  || mainTaskTextId.value == " ") {
+        invalidPopUp.style.display="block"
+        invalidPopUp.style.background="red"
+        invalidPopUp.textContent="Invalid Input Please Enter a valid Input"
+        console.log("invalid Input")
+        flagMain=1
+        setTimeout(function(){
+          invalidPopUp.style.display="none"},3000
+        )}
+        else{
+          flagMain=0
+        }
+        if(flagMain==0){
+          localStorage.setItem("mainTaskText", (mainTaskTextId.value));
+          let storageMainTask = localStorage.getItem("mainTaskText");
+          inputTask.textContent = storageMainTask;
+          mainTaskTextId.style.display = "none";
+          mainTaskCheckBox.style.display = "inline-block";
+          inputTask.style.textDecoration = "none";}
+        
+     
     }
   });
 }

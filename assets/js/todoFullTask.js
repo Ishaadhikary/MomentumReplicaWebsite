@@ -1,21 +1,3 @@
-let todoListContainer = document.querySelector(".todoListContainer")
-let addTaskPopUp = document.getElementById("addTaskPopUp")
-let initialAddTask = document.getElementById("initialAddTask")
-let crossIcon = document.getElementById("crossIcon")
-let addNewTaskbutton = document.getElementById("addNewTask")
-let inputTaskName = document.getElementById("taskName")
-let inputPriority= document.getElementById("priority")
-let inputAlarm = document.getElementById("alarm")
-let inputAlarmType = document.getElementById("alarmType")
-let countTodo=1
-let priorityVal;
-let todoTable= document.getElementById("todoTable")
-let headerRow = document.querySelector("#todoTable tr")
-let taskColumn = document.getElementById("taskColumn")
-let tableBody = document.getElementById("tableBody")
-let invalidPopUp = document.querySelector(".invalidPopUp")
-let todoContain;
-var flag = 0
 addNewTaskbutton.addEventListener("click", function(event) {
     let pattern = /^[A-Za-z0-9\s]{1,20}$/;
     if (inputTaskName.validity.valueMissing || !pattern.test(inputTaskName.value)  || inputTaskName.value == " ") {
@@ -26,10 +8,10 @@ addNewTaskbutton.addEventListener("click", function(event) {
       setTimeout(function(){
         invalidPopUp.style.display="none"},3000
       )
-      flag = 1
+      flagTodo = 1
     }
     else{
-        flag = 0
+      flagTodo = 0
     }
   });
 // let toDoTableheader
@@ -80,7 +62,7 @@ function storeTaskInput(){
     }
     let oldTasks = JSON.parse(localStorage.getItem("todo"))
     let taskObj = {status:newStatus,task:newTask, priority:priorityVal,alarm:newAlarm,alarmType:newAlarmType}
-    if(newTask != "" && flag ==0){
+    if(newTask != "" && flagTodo ==0){
         oldTasks.push(taskObj)
     }
     localStorage.setItem("todo", JSON.stringify(oldTasks))
