@@ -11,6 +11,7 @@ function generalSetting() {
     settingOptionsBalanceList.style.fontWeight="normal"
     settingOptionsChangeBgList.style.fontWeight="normal"
     settingBalanceContainer.style.display = "none";
+    settingAboutContainer.style.display="none"
     //Content for the general Setting container
     headingGeneral.textContent = "General";
     headingDescriptionGeneral.textContent = "Customize Your Dashboard";

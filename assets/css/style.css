@@ -824,13 +824,14 @@ background-size: cover;
  }
 /* End of background Container */
 /* Balance Setting */
-#enableBalanceModeContainer, #hourContainer{
+#enableBalanceModeContainer, #hourContainer,.bottom-border{
   margin-top:1.5vh;
   border-top: 0.5px solid var(--secondary-color-dark-t);
   padding: 1.5vh 0;
   border-bottom: 0.5px solid var(--secondary-color-dark-t);
   margin-bottom: 1.5vh;
 }
+
 #enableBalanceModeContainer{
   display: flex;
   justify-content: space-between;

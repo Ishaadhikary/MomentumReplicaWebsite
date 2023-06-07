@@ -221,6 +221,7 @@ settingOptionsAboutList.textContent = "About";
 settingOptionsGeneralList.addEventListener("click", generalSetting);
 settingOptionsChangeBgList.addEventListener("click", changeBackgroundSetting);
 settingOptionsBalanceList.addEventListener("click", balanceSetting);
+settingOptionsAboutList.addEventListener("click",about);
 //Changing the background on clicking the background option
 backgroundDiv1.addEventListener("click", function () {
   mainBox.style.backgroundImage = "url('../assets/images/wallpaper0.svg')";
