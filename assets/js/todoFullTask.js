@@ -16,7 +16,7 @@ let tableBody = document.getElementById("tableBody")
 let todoContain;
 var flag = 0
 addNewTaskbutton.addEventListener("click", function(event) {
-    let pattern = /^[A-Za-z0-9]{1,20}$/;
+    let pattern = /^[A-Za-z0-9\s]{1,20}$/;
     if (inputTaskName.validity.valueMissing || !pattern.test(inputTaskName.value)) {
       event.preventDefault();
       alert("Invalid Input!");
@@ -86,6 +86,7 @@ function storeTaskInput(){
 // ...
 
 function showtoDOList() {
+    inputTaskName.value=null
     let storedToDos = JSON.parse(localStorage.getItem("todo"));
     if (storedToDos == null) {
       storedToDos = [];
@@ -94,17 +95,18 @@ function showtoDOList() {
     storedToDos.forEach((oldTask) => {
       let checkedAttribute = oldTask.status ? "checked" : "";
       let taskStyle = oldTask.status ? "text-decoration: line-through;" : "";
+      if(oldTask.priority==1){priorityVal= "High"}
+      if(oldTask.priority==0){priorityVal= "Medium"}
+      if(oldTask.priority==-1){priorityVal= "Low"}
       todoContain += `
         <tr scope="row">
           <td><input type="checkbox" ${checkedAttribute}></td>
           <td style="${taskStyle}">${oldTask.task}</td>
-          <td>${oldTask.priority}</td>
-          <td>${oldTask.alarm}</td>
-          <td>${oldTask.alarmType}</td>
+          <td>${priorityVal}</td>
+          <td><img src="../assets/images/delete.svg"></td>
         </tr>`;
     });
     tableBody.innerHTML = todoContain;
-  
     //To add strike through when checked
     let checkboxes = tableBody.querySelectorAll("input[type='checkbox']");
     checkboxes.forEach(function (checkbox) {
@@ -126,7 +128,25 @@ function showtoDOList() {
         localStorage.setItem("todo", JSON.stringify(storedToDos));
       });
     });
+
+    let deletItems = tableBody.querySelectorAll("img")
+    deletItems.forEach(function(deleteItem){
+      deleteItem.addEventListener("click",function(){
+          let row = deleteItem.parentNode.parentNode.rowIndex
+          console.log("Clicked Row:",row)
+          let storedToDos = JSON.parse(localStorage.getItem("todo"))
+          console.log("Before:",storedToDos)
+          storedToDos.splice(row-1,1)
+          console.log("After",storedToDos)
+          localStorage.setItem("todo",JSON.stringify(storedToDos))
+          showtoDOList()
+      })
+      
+    })
   }
+
+  //To Delete an element
+
   
   // ...
   
