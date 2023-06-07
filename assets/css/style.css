@@ -67,7 +67,7 @@ a{
   color:inherit
 }
 #main-box {
-  background: url("../images/wallpaper0.svg") no-repeat ;
+  background: url("../images/wallpaper0.svg") no-repeat center ;
   /* background-position: center; */
   background-size: cover;
   /* opacity: 0.80; */
@@ -176,7 +176,7 @@ input {
   position: absolute;
   top: 5vh;
   left: -12vw;
-  width: 25vw;
+  width: 400px;
   min-height: 10vh;
   background: var(--primary-color-l);
   border-radius: var(--border-radius);
@@ -567,8 +567,8 @@ hr {
   display: none;
   position: absolute;
   bottom: 40px;
-  right: 0;
-  width: 400px;
+  right: 2%;
+  width: 600px;
   flex-direction: column;
   height: fit-content;
   min-height: 300px;
@@ -899,4 +899,25 @@ background-size: cover;
  --brainDump-list:rgb(42, 42, 42);
 }
 /* End of general container */
+
+/* Media query */
+
+
+@media screen and (max-width: 780px ) and (min-width:420px) {
+  #settingContainer {
+    width: 374px;
+    height: 300px;
+    font-size: 16px;
+  }
+
+  .brainDumpContainer {
+    width: 60vw;
+    left:-120px;
+  }
+  .todoListContainer {
+    width: 400px;
+    margin-right: 4%;
+  
+  }
+}
 

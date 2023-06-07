@@ -21,7 +21,6 @@ function todoList(){
     if(countTodo % 2 != 0 )
     {
     todoListContainer.style.display ="flex"
-    todoListContainer.style.width="600px"
     taskColumn.style.width="55%"
     initialAddTask.style.display="block"
     invalidPopUp.style.display="none"
