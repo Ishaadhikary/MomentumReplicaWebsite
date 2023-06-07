@@ -14,6 +14,18 @@ let headerRow = document.querySelector("#todoTable tr")
 let taskColumn = document.getElementById("taskColumn")
 let tableBody = document.getElementById("tableBody")
 let todoContain;
+var flag = 0
+addNewTaskbutton.addEventListener("click", function(event) {
+    let pattern = /^[A-Za-z0-9]{1,20}$/;
+    if (inputTaskName.validity.valueMissing || !pattern.test(inputTaskName.value)) {
+      event.preventDefault();
+      alert("Invalid Input!");
+      flag = 1
+    }
+    else{
+        flag = 0
+    }
+  });
 // let toDoTableheader
 storeTaskInput()
 
@@ -61,11 +73,8 @@ function storeTaskInput(){
     }
     let oldTasks = JSON.parse(localStorage.getItem("todo"))
     let taskObj = {status:newStatus,task:newTask, priority:priorityVal,alarm:newAlarm,alarmType:newAlarmType}
-    if(newTask != ""){
+    if(newTask != "" && flag ==0){
         oldTasks.push(taskObj)
-    }
-    if(newTask==""){
-        alert("Please add values for the task ")
     }
     localStorage.setItem("todo", JSON.stringify(oldTasks))
     let storedToDos = JSON.parse(localStorage.getItem("todo"))
@@ -74,23 +83,56 @@ function storeTaskInput(){
     showtoDOList()
 }
 
-function showtoDOList(){
-    let storedToDos = JSON.parse(localStorage.getItem("todo"))
-    if (storedToDos==null){
-        oldTasks = []
+// ...
+
+function showtoDOList() {
+    let storedToDos = JSON.parse(localStorage.getItem("todo"));
+    if (storedToDos == null) {
+      storedToDos = [];
     }
-    else{
-        oldTasks= JSON.parse(localStorage.getItem("todo"))
-    }
-    todoContain=""
-    oldTasks.forEach((oldTask) => {
-    todoContain+=` <tr scope="row">
-    <td><input type="checkbox"></td>
-    <td>${oldTask.task}</td>
-    <td>${oldTask.priority}</td>
-    <td>${oldTask.alarm}  ${oldTask.alarmType}</td>
-  </tr>`     
+    todoContain = "";
+    storedToDos.forEach((oldTask) => {
+      let checkedAttribute = oldTask.status ? "checked" : "";
+      let taskStyle = oldTask.status ? "text-decoration: line-through;" : "";
+      todoContain += `
+        <tr scope="row">
+          <td><input type="checkbox" ${checkedAttribute}></td>
+          <td style="${taskStyle}">${oldTask.task}</td>
+          <td>${oldTask.priority}</td>
+          <td>${oldTask.alarm}</td>
+          <td>${oldTask.alarmType}</td>
+        </tr>`;
     });
-    tableBody.innerHTML=todoContain
-}
+    tableBody.innerHTML = todoContain;
+  
+    //To add strike through when checked
+    let checkboxes = tableBody.querySelectorAll("input[type='checkbox']");
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener("change", function () {
+        let row = checkbox.parentNode.parentNode;
+        let taskCompleted = row.querySelector("td:nth-child(2)");
+        let taskName = taskCompleted.innerText;
+        let storedToDos = JSON.parse(localStorage.getItem("todo"));
+        let taskIndex = storedToDos.findIndex((task) => task.task === taskName);
+  
+        if (checkbox.checked) {
+          taskCompleted.style.setProperty("text-decoration", "line-through");
+          storedToDos[taskIndex].status = true;
+        } else {
+          taskCompleted.style.removeProperty("text-decoration");
+          storedToDos[taskIndex].status = false;
+        }
+  
+        localStorage.setItem("todo", JSON.stringify(storedToDos));
+      });
+    });
+  }
+  
+  // ...
+  
+
+
+
+
+
 
