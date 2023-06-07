@@ -33,35 +33,44 @@ function pomodoroTimer() {
   click.play();
   pomodoroCenterLeft.innerHTML = "24:";
   pomodoroCenterRight.innerHTML = "59";
-  secIntervalId = setInterval(secChange, 1000);
+  secIntervalId = setInterval(pomoSecChange, 1000);
   minIntervalId = setInterval(pomoMinChange, 60000);
   //Stop the pomodoro time after 25 mins 
   setTimeout(function () {
     clearInterval(minIntervalId);
     clearInterval(secIntervalId);
+    alarm.play();
+    countP++;
     pomodoroTopLeft.style.background = "none";
     pomodoroTopRight.style.backgroundColor = "#424242";
     pomodoroPopUpContainer.style.display = "flex";
+    if(countP%4 !=0){
     pomodoroPopUpDisplay(0);
     setTimeout(function () {
       pomodoroPopUpContainer.style.display = "none";
       pomodoroBottomShortBreak.style.display = "flex";
-    }, 5000);
+    }, 7000);
     pomodoroCenterLeft.innerHTML = "04:";
     pomodoroCenterRight.innerHTML = "59";
-    alarm.play();
     pomodoroBottom.style.display = "none";
-    pomodoroBottomLongBreak.style.display = "none";
-    console.log(countP, "count");
-    countP++;//To check if the pomodoroTimer has been executed 4 times
+    pomodoroBottomLongBreak.style.display = "none";}
+    
+    //To check if the pomodoroTimer has been executed 4 times
     if (countP % 4 == 0) {
+      pomodoroPopUpDisplay(2);
+      setTimeout(function () {
+        pomodoroPopUpContainer.style.display = "none";
+        pomodoroBottomLongBreak.style.display = "flex";
+      }, 7000);
       pomodoroBottom.style.display = "none";
       pomodoroBottomShortBreak.style.display = "none";
-      pomodoroBottomLongBreak.style.display = "inline-block";
       pomodoroCenterLeft.innerHTML = "15:";
       pomodoroCenterRight.innerHTML = "59";
     }
-  }, 3000);
+   
+    console.log(countP, "count");
+   
+  }, 5000);
   //This is ending the timer in one min: change it to 25 min for demo 1500000
   
 }
@@ -76,24 +85,25 @@ function pomoMinChange() {
   }
 }
 
-let sec = 60;
-//Function to change the second
-function secChange() {
+let pomoSec = 60;
+//Function to change the second for pomo
+function pomoSecChange() {
+  pomodoroBottom.style.display="none"
+
   let pomodoroCenterRight = document.querySelector("#pomodoroCenterRight");
-  if (sec > 0) {
-    sec--;
-    pomodoroCenterRight.innerHTML = sec >= 10 ? " " + sec : " 0" + sec;
+  if (pomoSec > 0) {
+    pomoSec--;
+    pomodoroCenterRight.innerHTML = pomoSec >= 10 ? " " + pomoSec : " 0" + pomoSec;
   } else {
-    sec = 60;
+    pomoSec = 60;
   }
 }
 
 //Function to run when short break is activated
 function shortBreakTimer() {
-  let popUpIndex = 2;
   click.play();
   minIntervalId = setInterval(shortMinChange, 60000);
-  secIntervalId = setInterval(secChange, 1000);
+  secIntervalId = setInterval(shortSecChange, 1000);
   setTimeout(function () {
     clearInterval(minIntervalId);
     clearInterval(secIntervalId);
@@ -123,12 +133,27 @@ function shortMinChange() {
     pomodoroCenterLeft.innerHTML = "0" + shortMin + " :";
   }
 }
+
+let shortSec = 60;
+//Function to change the second for pomo
+function shortSecChange() {
+  pomodoroBottomShortBreak.style.display="none"
+
+  let pomodoroCenterRight = document.querySelector("#pomodoroCenterRight");
+  if (shortSec > 0) {
+    shortSec--;
+    pomodoroCenterRight.innerHTML = shortSec >= 10 ? " " + shortSec : " 0" + shortSec;
+  } else {
+    shortSec = 60;
+  }
+}
 //Function to run when long break is activated
 function longBreakTimer() {
+  
+  pomodoroBottomLongBreak.style.display="none"
   click.play();
-
   minIntervalId = setInterval(longMinChange, 60000);
-  secIntervalId = setInterval(secChange, 1000);
+  secIntervalId = setInterval(longSecChange, 1000);
   setTimeout(function () {
     clearInterval(minIntervalId);
     clearInterval(secIntervalId);
@@ -136,7 +161,7 @@ function longBreakTimer() {
     pomodoroCenterRight.innerHTML = "59";
     pomodoroTopLeft.style.background = "#424242";  
     pomodoroPopUpContainer.style.display = "flex";
-    pomodoroPopUpDisplay(2);
+    pomodoroPopUpDisplay(1);
     setTimeout(function () {
       pomodoroPopUpContainer.style.display = "none";
       pomodoroBottom.style.display = "flex";
@@ -146,7 +171,7 @@ function longBreakTimer() {
     pomodoroBottom.style.display = "inline-block";
     pomodoroBottomShortBreak.style.display = "none";
     pomodoroBottomLongBreak.style.display = "none";
-  }, 900000);
+  }, 5000);
   //900000
 }
 let longMin = 14;
@@ -155,6 +180,19 @@ function longMinChange() {
     longMin--;
     pomodoroCenterLeft.innerHTML =
       longMin < 10 ? "0" + longMin + " :" : longMin + " :";
+  }
+}
+let longSec = 60;
+//Function to change the second for pomo
+function longSecChange() {
+  pomodoroBottom.style.display="none"
+
+  let pomodoroCenterRight = document.querySelector("#pomodoroCenterRight");
+  if (longSec > 0) {
+    longSec--;
+    pomodoroCenterRight.innerHTML = longSec >= 10 ? " " + longSec : " 0" + longSec;
+  } else {
+    longSec = 60;
   }
 }
 //Pop Ups after each interval(pomodoro-shortBreak-longBreak) is completed

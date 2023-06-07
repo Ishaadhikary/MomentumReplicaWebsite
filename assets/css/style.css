@@ -389,7 +389,10 @@ height:50%;
   color:#424242;
   letter-spacing: 1.2px;
 }
-
+.not-allowed-cursor{
+  cursor:not-allowed;
+  background:"red"
+}
 
 /* End of the pomodoro timer css */
 .popUp {
