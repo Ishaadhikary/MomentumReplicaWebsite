@@ -224,22 +224,22 @@ settingOptionsBalanceList.addEventListener("click", balanceSetting);
 settingOptionsAboutList.addEventListener("click",about);
 //Changing the background on clicking the background option
 backgroundDiv1.addEventListener("click", function () {
-  mainBox.style.backgroundImage = "url('../assets/images/wallpaper0.svg')";
+  mainBox.style.backgroundImage = "url('./assets/images/wallpaper0.svg')";
 });
 backgroundDiv2.addEventListener("click", function () {
-  mainBox.style.backgroundImage = "url('../assets/images/wallpaper1.svg')";
+  mainBox.style.backgroundImage = "url('./assets/images/wallpaper1.svg')";
 });
 backgroundDiv3.addEventListener("click", function () {
-  mainBox.style.backgroundImage = "url('../assets/images/wallpaper2.svg')";
+  mainBox.style.backgroundImage = "url('./assets/images/wallpaper2.svg')";
 });
 backgroundDiv4.addEventListener("click", function () {
-  mainBox.style.backgroundImage = "url('../assets/images/wallpaper3.svg')";
+  mainBox.style.backgroundImage = "url('./assets/images/wallpaper3.svg')";
 });
 backgroundDiv5.addEventListener("click", function () {
-  mainBox.style.backgroundImage = "url('../assets/images/wallpaper4.svg')";
+  mainBox.style.backgroundImage = "url('./assets/images/wallpaper4.svg')";
 });
 backgroundDiv6.addEventListener("click", function () {
-  mainBox.style.backgroundImage = "url('../assets/images/wallpaper5.svg')";
+  mainBox.style.backgroundImage = "url('./assets/images/wallpaper5.svg')";
 });
 
 //Balance event listner
