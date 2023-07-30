@@ -31,25 +31,7 @@ function balanceSetting(){
 }
 
 function balanceSchedule(eventListnerId){
-  //Adding hover effect only when the balance mode is on
-  uptimeHourOption1.addEventListener("mouseover", function(){
-    uptimeHourOption1.style.color="var(--secondary-color)"
-  })
-  uptimeHourOption1.addEventListener("mouseleave",function(){
-    uptimeHourOption1.style.color="inherit"
-  })
-  uptimeHourOption2.addEventListener("mouseover", function(){
-    uptimeHourOption2.style.color="var(--secondary-color)"
-  })
-  uptimeHourOption2.addEventListener("mouseleave",function(){
-    uptimeHourOption2.style.color="inherit"
-  })
-  uptimeHourOption3.addEventListener("mouseover", function(){
-    uptimeHourOption3.style.color="var(--secondary-color)"
-  })
-  uptimeHourOption3.addEventListener("mouseleave",function(){
-    uptimeHourOption3.style.color="inherit"
-  })
+
   const [currentHour,currentMin] =getTime()
     let timeChecker = parseFloat(currentHour)+(parseFloat(currentMin/60))
 
@@ -91,7 +73,7 @@ function balanceSchedule(eventListnerId){
       }
     }
     else if(eventListnerId == 2 ){
-        if(timeChecker<9.5 || timeChecker>17.5){  
+        if(timeChecker<15 || timeChecker>17.5){  
           UptimeOver()
         uptimeHourOption3.style.color="var(--secondary-color)"
         uptimeHourOption1.style.color="var(--secondary-color-settings)"
